@@ -1,0 +1,103 @@
+time;logger;level;database;message;exception
+2013-07-02 22:56:47.8186;Raven.Database.Impl.DocumentCacher;Info;<system>;"MemoryCache Settings:
+  PhysicalMemoryLimit = 99
+  CacheMemoryLimit    = 7505707008
+  PollingInterval     = 00:02:00";
+2013-07-02 22:56:47.8876;Raven.Storage.Esent.TransactionalStorage;Info;<system>;"Esent Settings:
+  MaxVerPages      = 16384
+  CacheSizeMax     = 262144
+  DatabasePageSize = 4096";
+2013-07-02 22:56:51.3091;Raven.Database.Storage.IndexDefinitionStorage;Info;<system>;"New index Raven%2fDocumentsByEntityName:
+using Raven.Abstractions;
+using Raven.Database.Linq;
+using System.Linq;
+using System.Collections.Generic;
+using System.Collections;
+using System;
+using Raven.Database.Linq.PrivateExtensions;
+using Lucene.Net.Documents;
+using System.Globalization;
+using System.Text.RegularExpressions;
+using Raven.Database.Indexing;
+
+
+public class Index_Raven_2fDocumentsByEntityName : Raven.Database.Linq.AbstractViewGenerator
+{
+	public Index_Raven_2fDocumentsByEntityName()
+	{
+		this.ViewText = @""from doc in docs 
+let Tag = doc[""""@metadata""""][""""Raven-Entity-Name""""]
+select new { Tag, LastModified = (DateTime)doc[""""@metadata""""][""""Last-Modified""""] };"";
+		this.AddMapDefinition(docs => 
+			from doc in docs
+			let Tag = doc[""@metadata""][""Raven-Entity-Name""]
+			select new {
+				Tag,
+				LastModified = (DateTime)doc[""@metadata""][""Last-Modified""],
+				__document_id = doc.__document_id
+			});
+		this.AddField(""LastModified"");
+		this.AddField(""__document_id"");
+		this.AddField(""Tag"");
+		this.AddQueryParameterForMap(""__document_id"");
+		this.AddQueryParameterForReduce(""__document_id"");
+	}
+}
+
+Compiled to:
+using Raven.Abstractions;
+using Raven.Database.Linq;
+using System.Linq;
+using System.Collections.Generic;
+using System.Collections;
+using System;
+using Raven.Database.Linq.PrivateExtensions;
+using Lucene.Net.Documents;
+using System.Globalization;
+using System.Text.RegularExpressions;
+using Raven.Database.Indexing;
+
+
+public class Index_Raven_2fDocumentsByEntityName : Raven.Database.Linq.AbstractViewGenerator
+{
+	public Index_Raven_2fDocumentsByEntityName()
+	{
+		this.ViewText = @""from doc in docs 
+let Tag = doc[""""@metadata""""][""""Raven-Entity-Name""""]
+select new { Tag, LastModified = (DateTime)doc[""""@metadata""""][""""Last-Modified""""] };"";
+		this.AddMapDefinition(docs => 
+			from doc in docs
+			let Tag = doc[""@metadata""][""Raven-Entity-Name""]
+			select new {
+				Tag,
+				LastModified = (DateTime)doc[""@metadata""][""Last-Modified""],
+				__document_id = doc.__document_id
+			});
+		this.AddField(""LastModified"");
+		this.AddField(""__document_id"");
+		this.AddField(""Tag"");
+		this.AddQueryParameterForMap(""__document_id"");
+		this.AddQueryParameterForReduce(""__document_id"");
+	}
+}
+";
+2013-07-02 22:56:51.3921;Raven.Database.Indexing.IndexStorage.Startup;Debug;<system>;Loading saved index Raven/DocumentsByEntityName;
+2013-07-02 22:56:51.4428;Raven.Database.Indexing.Index.Indexing;Debug;<system>;Creating index for Raven/DocumentsByEntityName;
+2013-07-02 22:56:53.3756;Raven.Database.Indexing.WorkContext;Warn;<system>;Could not setup performance counters properly because of access permissions, perf counters will not be used;"System.Security.SecurityException: Den begärda registeråtkomsten tillåts inte.
+   vid Microsoft.Win32.RegistryKey.OpenSubKey(String name, Boolean writable)
+   vid System.Diagnostics.PerformanceCounterLib.CreateRegistryEntry(String categoryName, PerformanceCounterCategoryType categoryType, CounterCreationDataCollection creationData, Boolean& iniRegistered)
+   vid System.Diagnostics.PerformanceCounterLib.RegisterCategory(String categoryName, PerformanceCounterCategoryType categoryType, String categoryHelp, CounterCreationDataCollection creationData)
+   vid System.Diagnostics.PerformanceCounterCategory.Create(String categoryName, String categoryHelp, PerformanceCounterCategoryType categoryType, CounterCreationDataCollection counterData)
+   vid Raven.Database.Indexing.WorkContext.SetupPerformanceCounter(String name) i c:\Builds\RavenDB-Unstable-v2.5\Raven.Database\Indexing\WorkContext.cs:rad 337
+   vid Raven.Database.Indexing.WorkContext.Init(String name) i c:\Builds\RavenDB-Unstable-v2.5\Raven.Database\Indexing\WorkContext.cs:rad 377
+Zonen för sammansättningen som misslyckades var:
+MyComputer"
+2013-07-02 22:56:53.6303;Raven.Storage.Esent.StorageActions.DocumentStorageActions;Debug;<system>;Document with key 'Raven/Backup/Status' was not found;
+2013-07-02 22:56:53.6983;Raven.Database.Indexing.WorkContext;Debug;<system>;No work was found, workerWorkCounter: 0, for: ReducingExecuter, will wait for additional work;
+2013-07-02 22:56:53.8814;Raven.Storage.Esent.StorageActions.DocumentStorageActions;Debug;;Document with key 'Raven/Authorization/WindowsSettings' was not found;
+2013-07-02 22:56:53.8915;Raven.Database.Indexing.AbstractIndexingExecuter;Debug;<system>;Found a total of 1 documents that requires indexing since etag: 00000000-0000-0000-FFFF-FFFFFFFFFFFF: (Raven/Databases/Easyfy.CrossfitHighscore);
+2013-07-02 22:56:54.1026;Raven.Database.Impl.DocumentRetriever;Debug;;Trigger Raven.Database.Plugins.Builtins.FilterRavenInternalDocumentsReadTrigger asked us to ignore Raven/Databases/Easyfy.CrossfitHighscore;
+2013-07-02 22:56:54.1026;Raven.Database.Indexing.AbstractIndexingExecuter;Debug;<system>;After read triggers executed, 1 documents remained;
+2013-07-02 22:56:54.1596;Raven.Database.Indexing.WorkContext;Debug;;Incremented work counter to 1 because: WORK BY IndexingExecuter;
+2013-07-02 22:56:54.1596;Raven.Database.Indexing.WorkContext;Debug;<system>;No work was found, workerWorkCounter: 1, for: ReducingExecuter, will wait for additional work;
+2013-07-02 22:56:54.1596;Raven.Database.Indexing.WorkContext;Debug;;No work was found, workerWorkCounter: 1, for: IndexingExecuter, will wait for additional work;

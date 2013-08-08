@@ -1,0 +1,28 @@
+{
+  "Name": "WallPost/View",
+  "LockMode": "Unlock",
+  "Map": "docs.WallPosts.Select(wallpost => new {\r\n    FullName = String.Format(\"{0} {1}\", this.LoadDocument(wallpost.ReferenceTo).FirstName, this.LoadDocument(wallpost.ReferenceTo).LastName),\r\n    ReferenceTo = wallpost.ReferenceTo,\r\n    ReferenceFrom = wallpost.ReferenceFrom,\r\n    Date = wallpost.Date,\r\n    Content = wallpost.Content,\r\n    Comments = wallpost.Comments.OrderBy(m => m.Created),\r\n    PictureUrl = this.LoadDocument(wallpost.ReferenceTo).ListImageUrl,\r\n    WallId = wallpost.__document_id,\r\n    FriendlyUrl = this.LoadDocument(wallpost.ReferenceTo).FriendlyUrl\r\n})",
+  "Maps": [
+    "docs.WallPosts.Select(wallpost => new {\r\n    FullName = String.Format(\"{0} {1}\", this.LoadDocument(wallpost.ReferenceTo).FirstName, this.LoadDocument(wallpost.ReferenceTo).LastName),\r\n    ReferenceTo = wallpost.ReferenceTo,\r\n    ReferenceFrom = wallpost.ReferenceFrom,\r\n    Date = wallpost.Date,\r\n    Content = wallpost.Content,\r\n    Comments = wallpost.Comments.OrderBy(m => m.Created),\r\n    PictureUrl = this.LoadDocument(wallpost.ReferenceTo).ListImageUrl,\r\n    WallId = wallpost.__document_id,\r\n    FriendlyUrl = this.LoadDocument(wallpost.ReferenceTo).FriendlyUrl\r\n})"
+  ],
+  "Reduce": null,
+  "TransformResults": null,
+  "IsMapReduce": false,
+  "IsCompiled": false,
+  "Stores": {
+    "FullName": "Yes",
+    "PictureUrl": "Yes",
+    "FriendlyUrl": "Yes",
+    "WallId": "Yes"
+  },
+  "Indexes": {
+    "ReferenceTo": "NotAnalyzed"
+  },
+  "SortOptions": {},
+  "Analyzers": {},
+  "Fields": [],
+  "Suggestions": {},
+  "TermVectors": {},
+  "SpatialIndexes": {},
+  "Type": "Map"
+}

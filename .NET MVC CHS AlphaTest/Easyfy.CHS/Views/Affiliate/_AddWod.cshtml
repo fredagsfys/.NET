@@ -1,0 +1,13 @@
+﻿@model List<Easyfy.CHS.Model.Affiliate.WorkoutWod>
+
+<div id="wodNameResult"></div>
+<div class="control-group" id="wodResult">
+    <div class="controls" id="moveLeft">
+      <div class="ui-sortable">
+        @foreach (var item in Model)
+        {
+          <span>@item.WodName </span> <button class="btn btn-danger btn-small removeAddedWod">Remove</button>
+        }
+      </div>
+    </div>
+</div>

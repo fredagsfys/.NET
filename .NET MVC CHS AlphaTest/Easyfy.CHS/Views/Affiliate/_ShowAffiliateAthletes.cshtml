@@ -1,0 +1,116 @@
+﻿﻿@model Easyfy.CHS.ViewModels.AthleteAffiliateViewModel
+@{var CurrentUser = Session["CurrentUser"] as Easyfy.CHS.Model.Athlete.Athlete; }
+@{
+    ViewBag.Title = "ShowAffiliateAthletes";
+
+    var options = new AjaxOptions()
+    {
+
+    };
+}
+
+<div id="Content" class="span12 row-fluid">
+    <h4>Athletes in @Model.Affiliate.Name</h4>
+    <i class="icon-remove-circle" id="ClosePageArrow"><span id="ClosePageText">Close</span></i>
+
+    @{
+        bool ownerHeadVisible = false;
+        bool memberHeadVisible = false;
+    }
+
+    @foreach (var item in Model.AthleteList)
+    {
+        var cssclass = String.Empty;
+        if (item.Affiliates.Find(u => u.FriendlyUrl == Model.Affiliate.FriendlyUrl).AffiliateRoles.Contains("Owner"))
+        {
+            cssclass = "OwnerContainer";
+            if (!ownerHeadVisible)
+            {
+        <p id="AffiliateOwnerHeader" class="AffiliateAthleteHeaders">Owners:</p>
+            }
+            ownerHeadVisible = true;
+        }
+        else
+        {
+            cssclass = "profileSectionContainer";
+            if (!memberHeadVisible)
+            {
+        <p class="AffiliateAthleteHeaders">Members:</p>
+            }
+            memberHeadVisible = true;
+        }
+        <div class="span2 @cssclass">
+            <div class="profileSection">
+                <a href="@Url.Action("Details", "Athlete", new { id = item.Username })">
+                    @item.FirstName @item.LastName
+                </a>
+                <div class="image img-polaroid">
+                    @if (item.ProfilePicture == null)
+                    {
+                        <i class="icon-user"></i>
+                    }
+                    else
+                    {
+                        <img src="@item.ProfilePicture" class="" />
+                    }
+                </div>
+
+                @if ((CurrentUser.Affiliates.Find(u => u.FriendlyUrl == Model.Affiliate.FriendlyUrl) != null &&
+                                CurrentUser.Affiliates.Find(u => u.FriendlyUrl == Model.Affiliate.FriendlyUrl).AffiliateRoles.Contains("Owner")) || CurrentUser.Admin)
+                {
+                    <div class="userInfo">
+                        <div class="btn-group">
+                            <button type="button" data-toggle="dropdown" class="editAthlete"><i class="icon-pencil"></i>Edit role</button>
+                            <a class="editAthlete" href="@Url.Action("RemoveAffiliateAthlete", new { controller = "Affiliate", id = Model.Affiliate.FriendlyUrl, Username = @item.Username })"><i class="icon-remove-circle"></i>Delete</a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    @if (item.Affiliates.Find(u => u.FriendlyUrl == Model.Affiliate.FriendlyUrl).AffiliateRoles.Contains("Owner"))
+                                    {
+                                        @Html.ActionLink("Remove owner", "UpdateAffiliateRole", new { controller = "Affiliate", affiliateid = Model.Affiliate.FriendlyUrl, username = item.Username, role = "Owner" })
+                                    }
+                                    else
+                                    {
+                                        @Html.ActionLink("Make owner", "UpdateAffiliateRole", new { controller = "Affiliate", affiliateid = Model.Affiliate.FriendlyUrl, username = item.Username, role = "Owner" })
+                                    }
+                                </li>
+
+                                <li>
+                                    @if (item.Affiliates.Find(u => u.FriendlyUrl == Model.Affiliate.FriendlyUrl).AffiliateRoles.Contains("Coach"))
+                                    {
+                                        @Html.ActionLink("Remove coach", "UpdateAffiliateRole", new { controller = "Affiliate", affiliateid = Model.Affiliate.FriendlyUrl, username = item.Username, role = "Coach" })
+                                    }
+                                    else
+                                    {
+                                        @Html.ActionLink("Make coach", "UpdateAffiliateRole", new { controller = "Affiliate", affiliateid = Model.Affiliate.FriendlyUrl, username = item.Username, role = "Coach" })
+                                    }
+                                </li>
+
+                                <li>
+                                    @if (item.Affiliates.Find(u => u.FriendlyUrl == Model.Affiliate.FriendlyUrl).AffiliateRoles.Contains("Member"))
+                                    {
+                                        @Html.ActionLink("Remove member", "UpdateAffiliateRole", new { controller = "Affiliate", affiliateid = Model.Affiliate.FriendlyUrl, username = item.Username, role = "Member" })
+                                    }
+                                    else
+                                    {
+                                        @Html.ActionLink("Make member", "UpdateAffiliateRole", new { controller = "Affiliate", affiliateid = Model.Affiliate.FriendlyUrl, username = item.Username, role = "Member" })
+                                    }
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    }
+</div>
+
+<script type="text/javascript">
+    var header = $("#AffiliateOwnerHeader");
+    var container = $(".OwnerContainer");
+    header.remove();
+    container.remove();
+
+    var ownerDiv = $("<div id='OwnerDiv'></div>").insertAfter($("#Content h4"));
+    $(ownerDiv).append(header);
+    $(ownerDiv).append(container);
+</script>

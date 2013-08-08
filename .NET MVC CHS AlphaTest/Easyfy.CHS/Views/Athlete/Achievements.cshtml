@@ -1,0 +1,18 @@
+﻿@model Easyfy.CHS.Model.Athlete.Athlete
+
+@{
+    ViewBag.Title = "Achievements";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Achievements</h2>
+
+<article>
+    Mumblecore flexitarian bushwick jean shorts tofu, pitchfork pork belly you probably haven't heard of them photo booth. High life 
+    thundercats put a bird on it seitan, ennui wolf banksy terry richardson dreamcatcher. Gastropub swag truffaut, PBR +1 direct trade cosby sweater.
+    Letterpress marfa godard church-key. Locavore retro brunch mlkshk terry richardson, master cleanse single-origin coffee ethical fashion axe cliche.  
+    Sustainable youprobably haven't heard of them mixtape forage lomo, small batch etsy messenger bag vice PBR banksy locavore. 
+    Hoodie gluten-free bicycle rights next level keytar keffiyeh four loko wes anderson, cray small batch.
+</article>
+
+@Html.ActionLink("Go Back", "Details", new { controller = "Athlete" , id = Model.Username })

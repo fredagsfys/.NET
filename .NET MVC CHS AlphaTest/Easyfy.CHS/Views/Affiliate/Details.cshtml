@@ -1,0 +1,92 @@
+@model Easyfy.CHS.ViewModels.AthleteAffiliateViewModel
+@{var CurrentUser = Session["CurrentUser"] as Easyfy.CHS.Model.Athlete.Athlete; }
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row-fluid" id="AffiliateProfileSection">
+    <div class="span12">
+        <h2 id="AffiliateProfileHeader" class="clearfix">
+            <span id="AffiliateProfileHeaderName">
+                @if (Model.Affiliate.Name != null)
+                {
+                    @Model.Affiliate.Name<i class="icon-double-angle-right"></i>
+                }              
+            </span>
+            <span id="AffiliateProfileHeaderArrow">
+                <i class="icon-double-angle-down"></i>
+            </span>
+        </h2>
+    </div>
+
+    <div class="row-fluid span12" id="ProfileAffiliateSection">
+        <div class="span2">
+            <div id="AffiliateProfilePicture" class="img-polaroid">
+                <i class="icon-user"></i>
+            </div>
+        </div>
+
+        <div class="span9">
+            <div id="AffiliateInfo">
+                @Html.Partial("_AffiliateInfo", Model.Affiliate)
+            </div>
+            <div id="EditPartial"></div>
+        </div>
+    </div>
+
+    <div class="span12 scheduledWod" id="scheduledWODs">
+        @Html.Action("ScheduledWods", "Affiliate", new { affiliateUrl= Model.Affiliate.FriendlyUrl })
+    </div>
+    <div id="AffiliateButtons">
+        @if (Model.Athlete.Affiliates.Exists(s => s.FriendlyUrl == Model.Affiliate.FriendlyUrl))
+        {
+            if (Model.Athlete.Affiliates.SingleOrDefault(i => i.FriendlyUrl == Model.Affiliate.FriendlyUrl).AffiliateRoles.Contains("Member"))
+            {
+                @Html.ActionLink("Leave affiliate", "LeaveAffiliate", new { controller = "Affiliate", id = Model.Affiliate.FriendlyUrl, url = @Model.Affiliate.FriendlyUrl, role = "Member" }, 
+                    new { @class = "createButtons" })
+            }
+            else
+            {
+                @Html.ActionLink("Join", "JoinAffiliate", new { controller = "Affiliate", id = Model.Affiliate.FriendlyUrl, gymid = @Model.Affiliate.Id, 
+                name = Model.Affiliate.Name, role = "Member" }, new { @class = "joinButton" }) 
+            }
+
+            if (Model.Athlete.Affiliates.SingleOrDefault(i => i.FriendlyUrl == Model.Affiliate.FriendlyUrl).AffiliateRoles.Contains("Follow"))
+            {             
+                @Html.ActionLink("Unfollow affiliate", "LeaveAffiliate", new { controller = "Affiliate", id = Model.Affiliate.FriendlyUrl, url = @Model.Affiliate.FriendlyUrl, role = "Follow" },
+                    new { @class = "createButtons" })
+            }
+            else
+            {                
+                @Html.ActionLink("Follow", "JoinAffiliate", new { controller = "Affiliate", id = Model.Affiliate.FriendlyUrl, gymid = @Model.Affiliate.Id,
+                name = Model.Affiliate.Name, role = "Follow" }, new { @class = "socialButton" })    
+            }
+        }
+        else
+        {
+            @Html.ActionLink("Join", "JoinAffiliate", new { controller = "Affiliate", id = Model.Affiliate.FriendlyUrl, gymid = @Model.Affiliate.Id, 
+            name = Model.Affiliate.Name, role = "Member" }, new { @class = "joinButton" }) 
+            @Html.ActionLink("Follow", "JoinAffiliate", new { controller = "Affiliate", id = Model.Affiliate.FriendlyUrl, gymid = @Model.Affiliate.Id,
+            name = Model.Affiliate.Name, role = "Follow" }, new { @class = "socialButton" })  
+        }
+    </div>
+</div>
+<nav id="affiliateMenuList">
+    <ul class="unstyled">
+        @if (CurrentUser.Affiliates.FirstOrDefault(m => m.Id == Model.Affiliate.Id) != null &&
+                (CurrentUser.Affiliates.FirstOrDefault(m => m.Id == Model.Affiliate.Id).AffiliateRoles.Contains("Owner") || 
+                    CurrentUser.Affiliates.FirstOrDefault(m => m.Id == Model.Affiliate.Id).AffiliateRoles.Contains("Coach")) || 
+                        CurrentUser.Admin)
+        {
+            <li class="profileMenuListLinks">
+                <button type="button" id="CreateWODLink" class="affiliateDetailsLinks" data-url="@Url.Action("CreateWOD", "WOD", new {id = Model.Affiliate.FriendlyUrl })" data-loading-text="Loading...">Create WOD</button></li>        
+            <li class="profileMenuListLinks">
+                <button type="button" id="ScheduleWodsLink" class="affiliateDetailsLinks" data-url="@Url.Action("ScheduleWod", "Affiliate", new { controller = "Affiliate", affiliateUrl = Model.Affiliate.FriendlyUrl })" data-loading-text="Loading...">Schedule wods</button></li>
+        }
+        <li class="profileMenuListLinks">
+            <button type="button" id="AffiliateMembersLink" class="affiliateDetailsLinks" data-url="@Url.Action("ShowAffiliateAthletes", "Affiliate", new { controller = "Affiliate", id = Model.Affiliate.FriendlyUrl })" data-loading-text="Loading...">Affiliate members</button></li>
+    </ul>
+</nav>
+<div class="row-fluid" id="AffiliateDetailsContent">
+</div>

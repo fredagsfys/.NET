@@ -1,0 +1,21 @@
+{
+  "Name": "Auto/wodbases/ByName",
+  "LockMode": "Unlock",
+  "Map": "from doc in docs.wodbases\r\nselect new { Name = doc.Name }",
+  "Maps": [
+    "from doc in docs.wodbases\r\nselect new { Name = doc.Name }"
+  ],
+  "Reduce": null,
+  "TransformResults": null,
+  "IsMapReduce": false,
+  "IsCompiled": false,
+  "Stores": {},
+  "Indexes": {},
+  "SortOptions": {},
+  "Analyzers": {},
+  "Fields": [],
+  "Suggestions": {},
+  "TermVectors": {},
+  "SpatialIndexes": {},
+  "Type": "Auto"
+}

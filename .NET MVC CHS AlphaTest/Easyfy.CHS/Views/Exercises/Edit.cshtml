@@ -1,0 +1,65 @@
+﻿@using Easyfy.CHS.Model.Exercise
+@using Easyfy.CHS.Helpers
+@model Easyfy.CHS.ViewModels.ExerciseViewModel
+
+<div class="span4">
+    <h4>Create Exercise:</h4>
+    @using (Html.BeginForm("AddExercise", "Exercises", FormMethod.Post, new Dictionary<string, object> { { "id", "createExerciseForm" }, { "class", "form-horizontal"} }))
+    {
+        <div class="control-group">
+            @Html.LabelFor(m => m.ExerciseBase.ExerciseType)
+            <div class="controls">
+                <select id="exerciseType" name="exerciseType">
+                    @foreach (var exercise in Enum.GetNames(typeof(ExerciseType)))
+                    {
+                        <option value="@(exercise)">@(exercise)</option>
+                    }
+               </select>
+            </div>
+        </div>
+    
+        <div class="control-group">
+            @Html.LabelFor(m => m.ExerciseBase.Name)
+            <div class="controls" id="moveLeft">
+                @Html.ValidationMessageFor(m => m.ExerciseBase.Name)
+                <input type="text" id="exerciseName" name="exerciseName" />
+            </div>
+        </div>
+    
+        <div class="dd_Metabolic">
+            <div class="control-group">
+                @Html.LabelFor(m => m.ExerciseBase.Length, new { @class = "dd_Metabolic", @id = "dt_Metabolic", @for = "inputExerciseLength" })
+                <div class="controls" id="moveLeft">
+                    @Html.ValidationMessageFor(m => m.ExerciseBase.Length)
+                    <input type="text" id="exerciseLength" name="exerciseLength" />
+                </div>
+            </div>
+                
+            <div class="control-group">
+                <label class="dd_Metabolic">Unit:</label>
+                <div class="controls">
+                    <select id="exerciseMetabolicUnit" name="exerciseMetabolicUnit">
+                        <option value="m">m</option>
+                        <option value="km">km</option>
+                        <option value="feet">feet</option>
+                        <option value="mile">mile</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div id="createMessage"></div>
+        <button type="button" class="createButtons" id="create_exercise_link">Create exercise</button>
+    }
+</div>
+
+<div class="span4">
+    <h4>All exercises:</h4>
+
+    <div id="divExerciseList">
+        @{Html.RenderPartial("ExerciseListEdit", Model.Exercises);}
+    </div>
+</div>
+
+@Scripts.Render("~/bundles/jquery")
+<script src="@Url.Content("~/Scripts/exercise.js")" type="text/javascript"></script>

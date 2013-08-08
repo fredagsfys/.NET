@@ -1,0 +1,33 @@
+{
+  "Name": "MultiWallPost/View",
+  "LockMode": "Unlock",
+  "Map": "docs.WallPosts.Select(wallpost => new {\r\n    FullName = String.Format(\"{0} {1}\", this.LoadDocument(wallpost.ReferenceFrom).FirstName, this.LoadDocument(wallpost.ReferenceFrom).LastName),\r\n    Content = wallpost.Content,\r\n    ReferenceTo = wallpost.ReferenceTo,\r\n    ReferenceFrom = wallpost.ReferenceFrom,\r\n    Date = wallpost.Date,\r\n    Comments = wallpost.Comments.OrderBy(m => m.Created),\r\n    PictureUrl = this.LoadDocument(wallpost.ReferenceFrom).ListImageUrl,\r\n    FriendlyUrl = this.LoadDocument(wallpost.ReferenceFrom).FriendlyUrl,\r\n    WallId = wallpost.__document_id,\r\n    WallPostType = wallpost.WallPostType,\r\n    Workout = (string) null,\r\n    ScheduleWodId = (string) null,\r\n    Rank = (string) null\r\n})",
+  "Maps": [
+    "docs.WallPosts.Select(wallpost => new {\r\n    FullName = String.Format(\"{0} {1}\", this.LoadDocument(wallpost.ReferenceFrom).FirstName, this.LoadDocument(wallpost.ReferenceFrom).LastName),\r\n    Content = wallpost.Content,\r\n    ReferenceTo = wallpost.ReferenceTo,\r\n    ReferenceFrom = wallpost.ReferenceFrom,\r\n    Date = wallpost.Date,\r\n    Comments = wallpost.Comments.OrderBy(m => m.Created),\r\n    PictureUrl = this.LoadDocument(wallpost.ReferenceFrom).ListImageUrl,\r\n    FriendlyUrl = this.LoadDocument(wallpost.ReferenceFrom).FriendlyUrl,\r\n    WallId = wallpost.__document_id,\r\n    WallPostType = wallpost.WallPostType,\r\n    Workout = (string) null,\r\n    ScheduleWodId = (string) null,\r\n    Rank = (string) null\r\n})",
+    "docs.Workouts.Select(workout => new {\r\n    FullName = String.Format(\"{0} {1}\", this.LoadDocument(workout.ReferenceFrom).FirstName, this.LoadDocument(workout.ReferenceFrom).LastName),\r\n    Content = workout.Content,\r\n    ReferenceTo = workout.ReferenceTo,\r\n    ReferenceFrom = workout.ReferenceFrom,\r\n    Date = workout.Date,\r\n    Comments = workout.Comments.OrderBy(m => m.Created),\r\n    PictureUrl = this.LoadDocument(workout.ReferenceFrom).ListImageUrl,\r\n    FriendlyUrl = this.LoadDocument(workout.ReferenceFrom).FriendlyUrl,\r\n    WallId = workout.__document_id,\r\n    WallPostType = workout.WallPostType,\r\n    Workout = new {\r\n        AffiliateName = this.LoadDocument(this.LoadDocument(workout.ScheduleWodId).AffiliateId).Name,\r\n        Results = workout.Results,\r\n        ScheduleWOD = this.LoadDocument(workout.ScheduleWodId)\r\n    },\r\n    ScheduleWodId = this.LoadDocument(workout.ScheduleWodId).Id,\r\n    Rank = (string) null\r\n})",
+    "docs.AchievementPosts.Select(newlevel => new {\r\n    FullName = String.Format(\"{0} {1}\", this.LoadDocument(newlevel.ReferenceFrom).FirstName, this.LoadDocument(newlevel.ReferenceFrom).LastName),\r\n    Content = newlevel.Content,\r\n    ReferenceTo = newlevel.ReferenceTo,\r\n    ReferenceFrom = newlevel.ReferenceFrom,\r\n    Date = newlevel.Date,\r\n    Comments = newlevel.Comments.OrderBy(m => m.Created),\r\n    PictureUrl = this.LoadDocument(newlevel.ReferenceFrom).ListImageUrl,\r\n    FriendlyUrl = this.LoadDocument(newlevel.ReferenceFrom).FriendlyUrl,\r\n    WallId = newlevel.__document_id,\r\n    WallPostType = newlevel.WallPostType,\r\n    Workout = (string) null,\r\n    ScheduleWodId = (string) null,\r\n    Rank = new {\r\n        Title = newlevel.Title,\r\n        AchievementPictureUrls = newlevel.AchievementPictureUrls\r\n    }\r\n})"
+  ],
+  "Reduce": null,
+  "TransformResults": null,
+  "IsMapReduce": false,
+  "IsCompiled": false,
+  "Stores": {
+    "Workout": "Yes",
+    "Rank": "Yes",
+    "PictureUrl": "Yes",
+    "FriendlyUrl": "Yes",
+    "FullName": "Yes",
+    "WallId": "Yes"
+  },
+  "Indexes": {
+    "ScheduleWodId": "NotAnalyzed",
+    "ReferenceTo": "NotAnalyzed"
+  },
+  "SortOptions": {},
+  "Analyzers": {},
+  "Fields": [],
+  "Suggestions": {},
+  "TermVectors": {},
+  "SpatialIndexes": {},
+  "Type": "Map"
+}

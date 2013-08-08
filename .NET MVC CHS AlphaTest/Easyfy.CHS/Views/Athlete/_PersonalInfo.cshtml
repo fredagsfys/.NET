@@ -1,0 +1,123 @@
+﻿@model Easyfy.CHS.Model.Athlete.Athlete
+@{var CurrentUser = Session["CurrentUser"] as Easyfy.CHS.Model.Athlete.Athlete; }
+<div id="PersonalInfoContent">
+    <table class="table">
+        <tbody>
+            <tr>
+                <td class="iconCell">
+                    <i class="icon-envelope-alt"></i>
+                </td>
+                @if (!String.IsNullOrWhiteSpace(Model.Email))
+                {
+                    <td>
+                        @Model.Email
+                    </td>
+                }
+                else
+                {
+                    <td>
+                        <span class="muted"><em>Not specified.</em></span>
+                    </td>
+                }
+            </tr>
+            <tr>
+                <td class="iconCell">
+                    <i class="icon-home"></i>
+                </td>
+                @if (!String.IsNullOrWhiteSpace(Model.City) || !String.IsNullOrWhiteSpace(Model.Country))
+                {
+                <td>
+                    <span class="muted">Living in</span> @Model.City
+                    @if (!String.IsNullOrWhiteSpace(Model.City) && !String.IsNullOrWhiteSpace(Model.Country))
+                    {
+                        <span>,</span>
+                    }
+                    <br />
+                    @Model.Country
+                </td>
+                }
+                else
+                {
+                    <td>
+                        <span class="muted"><em>Not specified.</em></span>
+                    </td>
+                }
+            </tr>
+            <tr>
+                <td class="iconCell">
+                    <i class="icon-resize-vertical"></i>
+                </td>
+                @if(!String.IsNullOrWhiteSpace(Model.Height))
+                {
+                <td>
+                    @Model.Height cm
+                </td>
+                }
+                else
+                {
+                    <td>
+                        <span class="muted"><em>Not specified.</em></span>
+                    </td>
+                }
+            </tr>
+            <tr>
+                <td class="iconCell">
+                    <i class="icon-resize-horizontal"></i>
+                </td>
+                @if (!String.IsNullOrWhiteSpace(Model.Weight))
+                {
+                    <td>
+                        @Model.Weight kg
+                    </td>
+                }
+                else
+                {
+                    <td>
+                        <span class="muted"><em>Not specified.</em></span>
+                    </td>
+                }
+            </tr>
+            <tr>
+                <td class="iconCell">
+                    <i class="icon-heart"></i>
+                </td>
+                @if(!Model.Birth.ToString().Contains("0001-01-01"))
+                {
+                    <td>
+                        @Model.CalcAge()
+                    </td>
+                }
+                else
+                {
+                    <td>
+                        <span class="muted"><em>Not specified.</em></span>
+                    </td>
+                }
+            </tr>
+            <tr>
+                <td class="iconCell">
+                    <img src="~/Content/img/unisex.png" />
+                </td>
+                @if(!String.IsNullOrWhiteSpace(Model.Gender))
+                {
+                <td>
+                    @Model.Gender
+                </td>
+                }
+                else
+                {
+                    <td>
+                        <span class="muted"><em>Not specified.</em></span>
+                    </td>
+                }
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+@if(Model.Username == CurrentUser.Username || CurrentUser.Admin)
+{
+    <span class="editLink">
+        <button type="button" class="editAthlete" id="editAthlete" data-url="@Url.Action("Edit", "Athlete", new { id = Model.Username })" data-loading-text="Loading..."><i class="icon-pencil"></i>Edit profile</button>
+    </span>
+}

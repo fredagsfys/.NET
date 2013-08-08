@@ -1,0 +1,6 @@
+C:\Builds\RavenDB-Unstable-v2.5\build\Raven.Sample.Suggestions.exe.config
+C:\Builds\RavenDB-Unstable-v2.5\build\Raven.Sample.Suggestions.exe
+C:\Builds\RavenDB-Unstable-v2.5\build\Raven.Sample.Suggestions.pdb
+C:\Builds\RavenDB-Unstable-v2.5\Samples\Raven.Sample.Suggestions\obj\x86\Release\Raven.Sample.Suggestions.exe
+C:\Builds\RavenDB-Unstable-v2.5\Samples\Raven.Sample.Suggestions\obj\x86\Release\Raven.Sample.Suggestions.pdb
+C:\Builds\RavenDB-Unstable-v2.5\Samples\Raven.Sample.Suggestions\obj\x86\Release\Raven.Sample.Suggestions.csprojResolveAssemblyReference.cache

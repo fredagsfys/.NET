@@ -1,0 +1,23 @@
+{
+  "Name": "Auto/contentpages/BySortOrderAndTemplate_AreaSortBySortOrder",
+  "LockMode": "Unlock",
+  "Map": "from doc in docs.contentpages\r\nselect new { SortOrder = doc.SortOrder, Template_Area = doc.Template_Area }",
+  "Maps": [
+    "from doc in docs.contentpages\r\nselect new { SortOrder = doc.SortOrder, Template_Area = doc.Template_Area }"
+  ],
+  "Reduce": null,
+  "TransformResults": null,
+  "IsMapReduce": false,
+  "IsCompiled": false,
+  "Stores": {},
+  "Indexes": {},
+  "SortOptions": {
+    "SortOrder": "Int"
+  },
+  "Analyzers": {},
+  "Fields": [],
+  "Suggestions": {},
+  "TermVectors": {},
+  "SpatialIndexes": {},
+  "Type": "Auto"
+}

@@ -1,0 +1,21 @@
+{
+  "Name": "Auto/schedulewods/ByAffiliateId",
+  "LockMode": "Unlock",
+  "Map": "from doc in docs.schedulewods\r\nselect new { AffiliateId = doc.AffiliateId }",
+  "Maps": [
+    "from doc in docs.schedulewods\r\nselect new { AffiliateId = doc.AffiliateId }"
+  ],
+  "Reduce": null,
+  "TransformResults": null,
+  "IsMapReduce": false,
+  "IsCompiled": false,
+  "Stores": {},
+  "Indexes": {},
+  "SortOptions": {},
+  "Analyzers": {},
+  "Fields": [],
+  "Suggestions": {},
+  "TermVectors": {},
+  "SpatialIndexes": {},
+  "Type": "Auto"
+}

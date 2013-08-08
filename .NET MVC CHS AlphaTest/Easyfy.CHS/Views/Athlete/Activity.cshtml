@@ -1,0 +1,44 @@
+﻿@model Easyfy.CHS.Model.ViewModel.ActivityViewModel
+@{var CurrentUser = Session["CurrentUser"] as Easyfy.CHS.Model.Athlete.Athlete; }
+
+@{
+    ViewBag.Title = "Achievements";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="~/Scripts/jquery-1.9.1.min.js"></script>
+
+<h2>Activity</h2>
+<input type="text" class="input-medium search-query" id="msg" />
+<button id="button" class="btn-medium btn-primary">skicka</button>
+
+@if(Model.Activity.Count() != 0)
+{
+
+<div id="messages">
+    @Html.Partial("_WallPost", Model)
+</div>
+}
+@if(Model.Id == CurrentUser.Username)
+{
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            Start('@CurrentUser.Id');
+
+            @if (CurrentUser.Follows.Count != 0)
+            {
+
+            <text>
+            var raw = @Html.Raw(Json.Encode(CurrentUser.Follows))
+            GetFollowers(raw, '@CurrentUser.Id');
+            </text>
+            
+            }
+
+            SendSomeMessage('@CurrentUser.Id');
+        });
+
+
+    </script>
+}

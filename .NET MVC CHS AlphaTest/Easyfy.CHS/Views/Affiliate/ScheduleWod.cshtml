@@ -1,0 +1,44 @@
+﻿@model Easyfy.CHS.Model.Affiliate.ScheduledWod
+@{
+    ViewBag.Title = "ScheduleWod";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <h4>Schedule wod</h4>
+    <i class="icon-remove-circle" id="ClosePageArrow"><span id="ClosePageText">Close</span></i>
+    Add wod for: @Model.AffiliateId with url: @Model.AffiliateUrl
+
+@using (Html.BeginForm("ScheduleWod", "Affiliate", FormMethod.Post, new Dictionary<string, object> { {"id", "scheduleForm"}, { "class", "form-horizontal" } }))
+    {
+        @Html.ValidationSummary(true)
+
+        @Html.HiddenFor(m => m.AffiliateId)
+        @Html.HiddenFor(m => m.AffiliateUrl)
+        
+<input class="add-wod-to-list" />      
+  
+  <div class="wodlist">
+    @foreach (var wod in Model.WodList) {
+
+      @Html.Partial("_AddWod", wod)
+    }     
+  </div>
+  
+  <div class="control-group">
+            @Html.ValidationMessageFor(m => m.Date)
+            @Html.LabelFor(m => m.Date)
+            <div class="controls" id="moveLeft">
+                @Html.TextBoxFor(m => m.Date, new { @class = "datepicker" })
+            </div>
+        </div>
+        
+        <div class="control-group">
+            @Html.ValidationMessageFor(m => m.Description)
+            @Html.LabelFor(m => m.Description)
+            <div class="controls" id="moveLeft">
+                @Html.TextBoxFor(m => m.Description)
+            </div>
+        </div>
+
+        <p><button type="submit" class="createButtons">Save</button></p>
+    }

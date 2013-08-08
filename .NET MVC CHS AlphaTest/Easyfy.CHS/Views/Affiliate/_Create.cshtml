@@ -1,0 +1,71 @@
+﻿@model Easyfy.CHS.Model.Affiliate.Affiliate
+
+@using (Html.BeginForm("Create", "Affiliate", FormMethod.Post, new { @class = "form-horizontal", @id = "CreateAffiliateForm" }))
+{
+    @Html.ValidationSummary(true)
+        <div class="row-fluid">
+            <h4>Create your own affiliate</h4>
+            <div class="span5">
+
+                <div class="control-group">
+                    @Html.LabelFor(model => model.Name, new { @class = "control-label", @for = "inputName" })
+                    <div class="controls">
+                        @Html.ValidationMessageFor(model => model.Name)
+                        @Html.TextBoxFor(model => model.Name, new { @id = "inputName", placeholder = "Affiliate name" })
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    @Html.LabelFor(model => model.Description, new { @class = "control-label", @for = "inputDescription" })
+                    <div class="controls">
+                        @Html.ValidationMessageFor(model => model.Description)
+                        @Html.TextAreaFor(model => model.Description, new { @id = "descTextArea", placeholder = "Description" })
+                    </div>
+                </div>
+
+            </div>
+            <div class="span5">
+
+                <div class="control-group">
+                    @Html.LabelFor(model => model.Address, new { @class = "control-label", @for = "inputAddress" })
+                    <div class="controls">
+                        @Html.ValidationMessageFor(model => model.Address)
+                        @Html.TextBoxFor(model => model.Address, new { @id = "inputAddress", placeholder = "Address" })
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    @Html.LabelFor(model => model.City, new { @class = "control-label", @for = "inputCity" })
+                    <div class="controls">
+                        @Html.ValidationMessageFor(model => model.City)
+                        @Html.TextBoxFor(model => model.City, new { @id = "inputCity", placeholder = "City" })
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    @Html.LabelFor(model => model.Postal, new { @class = "control-label", @for = "inputPostal" })
+                    <div class="controls">
+                        @Html.ValidationMessageFor(model => model.Postal)
+                        @Html.TextBoxFor(model => model.Postal, new { @id = "inputPostal", placeholder = "Eg. 12345" })
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    @Html.LabelFor(model => model.Country, new { @class = "control-label", @for = "inputCountry" })
+                    <div class="controls">
+                        @Html.ValidationMessageFor(model => model.Country)
+                        @Html.TextBoxFor(model => model.Country, new { @id = "inputCountry", placeholder = "Country" })
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <div class="controls">
+                        <input type="submit" id="AffiliateCreateButton" class="createButtons" value="Create affiliate" />
+                    </div>
+                </div>
+            </div>
+        </div>
+}
+<script>
+    $.validator.unobtrusive.parse("form");
+</script>

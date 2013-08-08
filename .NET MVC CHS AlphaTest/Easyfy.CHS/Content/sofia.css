@@ -1,0 +1,39 @@
+﻿.exerciseList
+{
+    list-style-type: none;
+    -width: 200px;
+}
+
+.exerciseList li 
+{
+  border-bottom: 1px solid #ebebeb;
+}
+ 
+.exerciseList li:last-child 
+{
+  border: none;
+}
+
+.menuHeader
+{
+    margin-right: 10px;
+}
+
+#createExerciseForm, #scheduleForm
+{
+    -width: 250px;
+}
+
+#moveLeft input, #exerciseType, #exerciseMetabolicUnit
+{
+    margin-left: -90px;
+}
+
+#createWODResultForm input
+{
+    width: 30px;
+}
+
+.activePage {
+  text-decoration: underline;
+}

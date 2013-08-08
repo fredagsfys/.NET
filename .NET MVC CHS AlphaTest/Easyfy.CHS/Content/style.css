@@ -1,0 +1,1820 @@
+
+/* Windows 8 Metro fonts */
+/* Buttons */
+#LoginButton, #LoginButtonOr, #LogoutButton, .socialButton,
+.fakeUploadButton, .uploadButton, .moveOnButton, .createButtons,
+/* Headers */
+.container article .span4 h4, nav a, footer, #affiliateMenuList ul li button,
+.container div .span4 h4, .span6 h4, .row-fluid h4, #AffiliateBox,
+.loginSection fieldset h4, .row-fluid .span9 h4, #PersonalInfoContent div table tbody tr,
+.profileSection p, #ClosePageText, .exerciseType
+{
+	font-family: 'wf_SegoeUI', "Segoe UI", "Segoe WP", "Tahoma", Arial, Verdana, sans-serif !important;
+	font-weight: normal !important;
+	padding-bottom: 30px !important;
+}
+
+.exerciseType {
+	padding-bottom: 0px !important;
+}
+
+.leftsearch {
+  float: left;
+width: 330px;
+}
+
+/* Text selection if needed */
+::-moz-selection { background: #5af; color: #fff; text-shadow: none; }
+::selection { background: #5af; color: #fff; text-shadow: none; }
+
+body {
+	color: rgb(78, 78, 78);
+}
+
+legend {
+	color: #555;
+}
+
+/* Header content */
+header {
+	margin: 0 auto 30px auto;
+}
+
+#HeaderContent {
+	border-bottom: 2px solid #444;
+}
+
+#Logo {
+	color: #333;
+	float: left;
+}
+
+header h2 {
+	font-family: Helvetica;
+	font-weight: normal;
+	margin-bottom: -3px;
+}
+
+#Logo span {
+	font-size: 20px;
+	letter-spacing: 3px;
+}
+
+.field-validation-error {
+	display: none;
+	color: #b94a48 !important;
+    position: relative;
+}
+
+    .field-validation-error span
+    {
+        display: block;
+        position: absolute;
+        padding: .6em;
+        content: attr(title);
+        min-width: 120px;
+        text-align: center;
+        width: auto;
+        height: auto;
+        white-space: nowrap;
+        bottom: 12px;
+        background: rgba(204, 0, 0, .8);
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+        border-radius: 10px;
+        color: #fff !important;
+        font-size: .86em;
+    }
+
+        .field-validation-error span:after
+        {
+            position: absolute;
+            display: block;
+            content: "";
+            border-color: rgba(204, 0, 0, .8) transparent transparent transparent;
+            border-style: solid;
+            border-width: 10px;
+            height: 0;
+            width: 0;
+            position: absolute;
+            bottom: -20px;
+            left: 1em;
+        }
+
+#CreateAffiliateForm .field-validation-error span {
+    left: -180px;
+}
+
+.input-validation-error {
+    border: 1px solid rgba(160, 0, 0, 0.19) !important;
+    -background-color: #ffeeee !important;
+
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgb(255, 0, 0) !important;
+	-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6) !important;
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 0, 0, .8) !important;
+}
+
+
+/* General style for inputs */
+#LoginForm div form fieldset input[type=text], 
+#LoginForm form fieldset input[type=password],
+#RetrievePasswordContent form fieldset input[type=text],
+.setChangePassword input[type=text],
+.setChangePassword input[type=password],
+.form-horizontal .control-group .controls input[type=text],
+.form-horizontal .control-group .controls select,
+.registerInput, #EditPartial input,
+#EditPartial select,
+#ui-datepicker-div select,
+#AffiliateProfileSection #EditPartial form .span6 p #Description,
+#CreateWODForm .control-group .controls textarea,
+#createWODResultForm #Result_WeightResult {
+	-moz-border-radius: 0px !important;
+	-webkit-border-radius: 0px !important;
+	border-radius: 0px !important;
+	border: 1px solid #a3a3a3 !important;
+	padding: 8px 10px !important;
+	width: 60% !important;
+}
+
+#LoginForm div form fieldset input[type=text]:focus, 
+#LoginForm form fieldset input[type=password]:focus,
+.setChangePassword input[type=text]:focus,
+.setChangePassword input[type=password]:focus,
+.form-horizontal .control-group .controls input[type=text]:focus,
+.form-horizontal .control-group .controls select:focus,
+.registerInput:focus, #EditPartial input:focus, 
+#EditPartial select:focus,
+#ui-datepicker-div select:focus,
+#AffiliateProfileSection #EditPartial form p textarea:focus,
+#CreateWODForm .control-group .controls textarea:focus {
+	border-color: #9b9b9b;
+}
+
+#createExerciseForm div div input {
+	width: 92.5% !important;
+}
+
+#AffiliateProfileSection #EditPartial form .span6 p #Description {
+	width: 94.5% !important;
+	max-width: 100%;
+	height: 280px !important;
+	max-height: 280px;
+}
+
+#descTextArea
+{
+    resize: none;
+    margin: 0px;
+    width: 93.4%;
+    height: 145px;
+    margin-left: 0px;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+}
+
+#AffiliateCreateButton
+{
+    float:right;
+    margin-right: 4px;
+    background-color: #1570A6;
+}
+    #AffiliateCreateButton:hover
+    {
+        background-color: #126191;
+    }
+
+#EditPartial input, #EditPartial select {
+	width: 88% !important;
+}
+
+#EditPartial select {
+	width: 100% !important;
+}
+
+#EditPartial input[type=submit] {
+	width: auto !important;
+}
+
+#LoginForm div .retrievePassword {
+	margin-top: 15px;
+}
+
+.loginRememberMe input[type=checkbox] {
+	float: left;
+}
+
+.form-horizontal .controls {
+	margin-left: 90px !important;
+}
+
+.form-horizontal .control-label {
+	width: 80px !important;
+}
+
+.form-horizontal .control-group .controls select,
+.form-horizontal .control-group .controls input[type=text] {
+	width: 92% !important;
+}
+
+.form-horizontal .control-group .controls select {
+	height: 36px;
+	width: 100% !important;
+}
+
+#FirstViewSaveButton {
+	float: right;
+}
+
+#SocialLogin
+{
+	float: right;
+	margin-top: 35px;
+	position: relative;
+}
+
+	#SocialLogin form {
+		-margin: 0 0 0 0;
+	}
+
+#logoutForm {
+	display: none;
+}
+
+#LogoutFacebook {
+	margin-top: 20px;
+}
+
+#LogoutFacebook img {
+	margin-right: 10px;
+}
+
+/* Shared button style, ordinary */
+#LoginButton, #LoginButtonOr, #LogoutButton, .socialButton,
+.fakeUploadButton, .uploadButton, .moveOnButton, .createButtons,
+.joinButton
+{
+	padding: 10px 26px !important;
+	color: #fff;
+	background-color: #1570A6;
+	border: none;
+	
+	-webkit-transition: background-color 0.15s ease-in-out;
+	-moz-transition: background-color 0.15s ease-in-out;
+	-o-transition: background-color 0.15s ease-in-out;
+	transition: background-color 0.15s ease-in-out;
+}
+
+	#LoginButton:hover, #LogoutButton:hover, .socialButton:hover,
+	.uploadButton:hover {
+		color: #fff;
+		text-decoration: none;
+		background-color: #126191;
+		cursor: pointer;
+	}
+
+	#LoginButton:active, #LogoutButton:active, .socialButton:active,
+	.uploadButton:active {
+		background-color: #115C8A;
+	}
+
+
+/* Shared button style, create */
+.createButtons {
+	background-color: rgb(43, 43, 43);
+}
+
+	.createButtons:hover {
+		background-color: rgb(29, 29, 29);
+		text-decoration: none;
+		color: #fff;
+	}
+
+	.createButtons:active {
+		background-color: rgb(10, 10, 10);
+	}
+
+.createButtonSection {
+	position: relative;
+    margin-bottom: 20px;
+}
+
+.readMore {
+    
+	position: absolute;
+	bottom: 4px;
+	right: 0px;	
+}
+
+#CreateAffiliateButton i {
+	margin-left: 10px;
+	vertical-align: -1px;
+}
+
+.username {
+	position: absolute;
+	bottom: -38px;
+	right: 0px;
+}
+
+#LogoutButton {
+	-float: right;
+}
+
+.loginSection .row-fluid {
+	margin-top: 30px;
+}
+
+.loginSection p {
+}
+
+.loginSection .row-fluid .span9 #UserName {
+	width: 50%;
+}
+
+.loginSection .row-fluid .span9 i {
+	font-size: 9px;
+	vertical-align: 2px;
+	color: red;
+}
+
+.uploadButton i {
+	margin: 0px 5px 0px -5px;
+}
+
+.socialButton {
+		border: none;
+}
+
+	.socialButton i {
+		margin-right: 10px;
+	}
+
+#ThumbsUp {
+	font-size: 28px;
+	margin-right: 20px;
+	color: #1570A6;
+	float: left;
+}
+
+
+/* Navigation top */
+nav {
+	float: left;
+	margin: 45px 0px 0px 30px;	
+}
+
+	nav ul {
+		margin-bottom: 0px;
+	}
+
+	nav ul li {
+		display: inline;
+	}
+
+		nav ul li a {
+			font-size: 16px;
+			color: #333;
+			margin-right: 25px;
+			padding-bottom: 3.5px !important;
+			padding-left: 5px;
+			padding-right: 5px;
+		}
+
+			nav ul li a:hover {
+				text-decoration: none;
+				border-bottom: 2px solid #FF9900;
+			}
+
+		nav ul li .current {
+			background-color: #fff;
+			border-bottom: 2px solid #FF9900;
+		}
+
+#affiliateMenuList {
+	margin: 0px 0px 35px 0px !important;
+}
+
+#affiliateMenuList ul li button {
+	margin-right: 5px;
+	color: rgb(148, 148, 148);
+	background-color: transparent;
+	border: none;
+	color: #333;
+	padding: 18px 8px 18px 8px !important;
+	border-bottom: 2px solid transparent;
+}
+
+	#affiliateMenuList ul li button:hover {
+	    background-color: rgba(247, 247, 247, .8);
+	}
+
+.active {
+	background-color: rgba(247, 247, 247, .8) !important;
+	border-bottom: 2px solid #FF9900 !important;
+	color: rgb(37, 37, 37);
+}
+
+nav select {
+	display: none;
+}
+
+
+/* Container content */
+html, body {
+	height: 100%;
+}
+
+#Wrap  {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -200px;
+}
+
+.container {
+	margin-bottom: 50px;
+}
+
+.container section {
+	margin: 0 auto;
+	width: 80%;
+}
+
+.container article {
+	margin: 50px auto 0px auto;
+}
+
+.container article .span4 {
+	-height: 250px;
+	border-bottom: 2px solid #555;
+	position: relative;
+}
+
+.container article .span4:hover
+{
+	border-bottom: 2px solid #FF9900;
+	color: #000;
+}
+
+.container article .span4 h4
+{
+	font-size: 21px;
+	-background-color: #FF9933;
+	padding: 5px;
+}
+
+.container article .span4 section
+{
+	-position: absolute;
+	-bottom: 0px;
+	width: 100%;
+}
+
+.container article .span4 section p
+{
+	font-size: 12px;
+	position: absolute;
+	bottom: -11px;
+}
+
+/* First time view */
+#FirstTimeViewHead {
+	padding-bottom: 50px;
+}
+
+#ProfileImage {
+	margin-top: 30px;
+}
+
+    #ProfileImage .span6 span
+    {
+        float: left;
+        margin-top: 10px;
+    }
+
+.form-horizontal {
+	margin-top: 30px;
+}
+
+#ProfileImage img {
+    max-height: 200px;
+    max-width: 150px;
+    float: left;
+}
+
+#ProfileImage div {
+    -float: left;
+}
+
+.moveOnButton {
+    margin-right: .5px;
+	float: right;
+	background-color: #FF9900;
+}
+
+.joinButton {
+	background-color: #FF9900;
+	padding-top: 12px !important;
+	padding-bottom: 10.5px !important;
+}
+
+#FirstTimeDefaultProfilePicture i {
+	font-size: 150px;
+}
+
+#DefaultProfilePicture, #FirstTimeDefaultProfilePicture, #AffiliateProfilePicture {
+	color: rgb(70, 70, 70);
+	text-align: center;
+	border: 1px solid #dedede;
+	background-color: rgba(247, 247, 247, .3);
+}
+
+	#DefaultProfilePicture i {
+		font-size: 113px;
+	}
+
+.validationFailMessage {
+	color: rgba(255, 0, 0, .5);
+	font-size: 11px;
+}
+
+.Handle, .roundHandle
+{
+    cursor: pointer;
+}
+
+/* File upload */
+#UploadImageContainer {
+	margin-left: 0px;
+}
+
+#UploadImage {
+	margin-top: 50px;
+}
+
+.fileUploadForm
+{
+	color: #BCBCBC;
+	width: 400px;
+	margin-top: 0px;
+	position: relative;
+}
+
+.fileUpload
+{
+	float: none;
+	font-family: Calibri, Sans-Serif;
+	color: #333;
+	font-size: 12px;
+	-margin: 15px 0px 0px 20px;
+}
+
+.deleteImage
+{
+	font-family: WebSymbolsRegular;
+	color: #ff3333;
+	font-size: 20px;
+	position: absolute;
+	top: 5px;
+	right: 28px;
+	display: none;
+}
+
+.fileInputs 
+{
+	position: relative;
+	margin: 30px 0px 0px 20px;
+	float: left;
+}
+
+input.fileUpload 
+{
+    position: relative;
+    text-align: right;
+    z-index: 2;
+    top: 9px;
+    display: none;
+    
+    -webkit-opacity: 0;
+	-moz-opacity: 0;
+	opacity: 0;
+	Filter: Alpha(opacity=0);
+}
+
+.fakeButton 
+{
+    position: absolute;
+    bottom: 45px;
+    left: 0px;
+    z-index: 1;
+}
+
+	.fakeButton input[type=text] {
+        display: none;
+		font-family: Arial, Sans-Serif;
+		color: #BCBCBC;
+		font-size: 14px;
+		position: absolute;
+		-margin-left: 10px;
+		bottom: 3px;
+		left: 170px;
+		border: none;
+		background: none;
+		-moz-box-shadow: none;
+		-webkit-box-shadow: none;
+		box-shadow: none;
+		margin-bottom: 0px;
+		width: auto;
+	}
+
+.uploadButton {
+    width: 160px !important;
+}
+
+.fakeUploadButton
+{
+    cursor: default;
+    width: 160px !important;
+	background-color: #FF9900;    
+    letter-spacing: 1px;
+}
+
+	.fakeUploadButton:hover, .moveOnButton:hover,
+	.joinButton:hover {
+		color: #fff;
+		text-decoration: none;
+		background-color: rgb(241, 145, 0);
+	}
+
+	.fakeUploadButton:active, .moveOnButton:active,
+	.joinButton:active {
+		color: #fff;
+		text-decoration: none;
+		background-color: rgb(231, 139, 0);
+	}
+
+
+/* Affiliate Index */
+.affiliateBox {
+	position: relative;
+	-width: 60%;
+	height: 200px;
+	min-height: 175px;
+	background: rgb(253, 253, 253);
+	border: 1px solid rgba(128, 128, 128, 0.19);
+	padding: 2em 1.5em;
+	color: #333;
+	-text-shadow: 0 1px 0 #fff;
+	line-height: 1.5;
+	margin: 0px auto 30px auto;
+
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+
+	-moz-transition: border-color linear .25s;
+	-o-transition: border-color linear .25s;
+	-webkit-transition: border-color linear .25s;
+	transition: border-color linear .25s;
+}
+
+	.affiliateBox:hover {
+		-border: 1px solid rgba(128, 128, 128, 0.4);
+		border-color: rgba(128, 128, 128, 0.4);
+	}
+
+.affiliateBox:before, .affiliateBox:after 
+{
+  z-index: -1;
+  position: absolute; 
+  content: "";
+  bottom: 15px;
+  left: 10px;
+  width: 50%; 
+  top: 80%;
+  max-width:300px;
+  background: rgba(0, 0, 0, 0.7); 
+  -webkit-box-shadow: 0 15px 10px rgba(0,0,0, 0.7);   
+  -moz-box-shadow: 0 15px 10px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 15px 10px rgba(0, 0, 0, 0.7);
+  -webkit-transform: rotate(-3deg);    
+  -moz-transform: rotate(-3deg);   
+  -o-transform: rotate(-3deg);
+  -ms-transform: rotate(-3deg);
+  transform: rotate(-3deg);
+}
+
+.affiliateBox:after 
+{
+  -webkit-transform: rotate(3deg);
+  -moz-transform: rotate(3deg);
+  -o-transform: rotate(3deg);
+  -ms-transform: rotate(3deg);
+  transform: rotate(3deg);
+  right: 10px;
+  left: auto;
+}
+
+    .affiliateBox:hover {
+        text-decoration: none !important;
+    }
+
+	.affiliateHeadName {
+		font-weight: 200;
+		padding: 5px;
+		background-color: rgb(255, 204, 0);
+
+		font-size: 13px;
+		letter-spacing: 1px;
+		-webkit-text-shadow: 0px 1px 1px #000;
+
+		color: rgb(87, 87, 87);
+		text-shadow: 0px 1px 0px rgba(255, 240, 184, .6);
+		-filter: dropshadow(color=#a52a2a,offX=0,offY=1);
+
+		-moz-transition: background-color linear .25s;
+		-o-transition: background-color linear .25s;
+		-webkit-transition: background-color linear .25s;
+		transition: background-color linear .25s;
+	}
+
+		.affiliateHeadName:hover {
+			background-color: rgb(243, 194, 0);
+			text-decoration: none;
+		}
+
+    .affiliateImage {
+        position: absolute;
+        right: 10px;
+        bottom: -20px;
+        font-size: 8em;
+        z-index: 0;
+    }
+
+        .affiliateImage i {
+            color: rgba(49, 49, 49, 0.06);
+        }
+
+	.affiliateBox .affiliateCountry {
+		-color: #333;
+		font-size: 13px;
+	}
+
+.affiliateDescription {
+	font-size: 13px;
+    position: relative;
+    z-index: 1;
+    margin-top: 10px;
+    color: rgb(102, 102, 102);
+    height: 60%;
+}
+
+.affiliateBoxFooter {
+	position: absolute;
+	width: 100%;
+	-height: 25%;
+	bottom: 5px;
+	color: #727272;
+	font-size: 12px;
+}
+
+#CreatePartial {
+	margin-top: -40px;
+	height: 40px;
+	width: 92px;
+	padding: 0px !important;
+	background-color: #333 !important;
+	color: #fff;
+	text-align: center;
+}
+
+    #CreatePartial form
+    {
+		margin-top: 0px !important;
+        margin-left: 30px;
+    }
+
+/* Create WOD */
+#AffiliateDetailsContent #Content {
+	position: relative;
+}
+
+#ClosePageArrow
+{
+    color: rgb(63, 63, 63);
+    height: 50px;
+    width: 43px;
+    overflow: hidden;
+    font-size: 40px !important;
+    position: absolute !important;
+    top: -3px !important;
+    right: 0px !important;
+
+    -moz-transition: all .1s linear;
+    -o-transition: all .1s linear;
+    -webkit-transition: all .1s linear;
+    transition: all .1s linear;
+}
+
+    #ClosePageArrow:hover
+    {
+        cursor: pointer;
+        font-size: 50px !important;
+        color: rgb(255, 0, 0);
+    }	
+
+#ClosePageText {
+	font-size: 35px;
+	vertical-align: 4px;
+	position: absolute;
+	margin-left: 10px;
+}
+
+#AffiliateDetailsContent #Content, #AffiliateDetailsContent #Content {
+    margin: 0 auto;
+	-padding-left: 50px;
+	-padding-right: 50px;
+}
+
+#AffiliateDetailsContent #Content .span12, #AffiliateDetailsContent #Content {
+    margin-left: 0px;
+}
+
+#CreateWODForm {
+    margin-top: 0px;
+}
+
+#CreateWODForm .control-group .controls select {
+    width: 100% !important;
+}
+
+#CreateWODForm .control-group .controls textarea,
+#CreateWODForm .control-group .controls input[type=text],
+#CreateWODForm .control-group .dd_er_Time {
+    width: 95.5% !important;
+}
+
+#CreateWODForm .control-group .control-label {
+    text-align: left;
+    width: 100% !important;
+}
+
+#CreateWODForm .control-group .controls {
+    margin-left: 0px !important;
+}
+
+#CreateWODForm .control-group .control-label {
+    float: none;
+}
+
+#rightside-WOD {
+	margin: 30px 0px 0px 0px;
+}
+
+#CreateWODRoundDiv {
+    margin: 0px;
+}
+
+#divRounds, .divRounds {
+	border: none !important;
+    width: auto !important;
+}
+
+.exRound {
+    width: auto !important;
+}
+
+.autocompleteinput {
+    -margin: 10px 0px 10px 0px !important;
+    padding: 2px 0px 2px 0px;
+}
+
+.showExerciseRoundSearch {
+    margin: 10px 0px 10px 0px !important;
+}
+
+.autocompleteERinput {
+    margin: 10px 0px 10px 0px !important;
+    padding: 5px 0px 4px 0px;
+}
+
+#CreateWODButton {
+	margin-top: 20px;
+    float: right;
+}
+
+.ui-sortable {
+	padding: 10px;
+}
+
+	.ui-sortable .wodbase_round {
+		padding: 0px 10px 0px 15px;
+		margin-bottom: 30px;
+	}
+
+.deleteRound {
+	color: #bd362f;
+}
+
+.deleteRound {
+	padding: 0px 10px 0px 15px;
+}
+
+
+/* Schedule wods */
+#scheduleForm div div div {
+	padding: 0px;
+}
+
+#scheduleForm  input {
+	width: 50% !important;
+}
+
+
+/* Affiliate members */
+#Content .profileSectionContainer, .OwnerContainer {
+    position: relative;
+    min-height: 185px !important;
+	margin: 0px 50px 0px 0px;
+}
+
+#Content .OwnerContainer
+{
+    float: none;
+    margin: 0px 0px 50px 0px;
+}
+
+.AffiliateAthleteHeaders, .AthleteGymHeaders
+{
+    background-color: #5af;
+    color: white;
+    padding: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+	#Content .profileSectionContainer .profileSection, 
+    .OwnerContainer .profileSection {
+		min-height: 145px !important;
+        min-width: 170px !important;
+        max-width: 170px !important;
+		position: absolute;
+		padding: 8px 8px 4px 8px;
+		-moz-transition: all .4s linear;
+		-o-transition: all .4s linear;
+		-webkit-transition: all .4s linear;
+		transition: all .4s linear;
+	}
+
+		#Content .profileSectionContainer .profileSection:hover,
+         .OwnerContainer .profileSection:hover {
+			box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
+			-border: 1px solid rgb(161, 161, 161);
+
+			/*
+			-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+			-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+			box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+			*/
+		}
+
+        #Content .profileSectionContainer .profileSection a,
+          .OwnerContainer .profileSection a {
+            color: rgb(87, 87, 87);
+            margin-bottom: 4px;
+            padding: 0px;
+        }
+
+		.image, #DefaultProfilePicture {
+			background-color: rgb(255, 254, 254);
+            max-height: 117px;
+			min-height: 117px;
+			text-align: center;
+			position: relative;
+			z-index: 1;
+			height: 120px;
+			margin-bottom: 5px;
+			-width: 147px;
+			line-height: 115px;
+        }
+
+			.image img {
+				max-height: 106px;
+                max-width: 140px;
+				border: 1px solid rgba(0, 0, 0, 0.19);
+			}
+
+    #Content .profileSectionContainer .profileSection .image #DefaultProfilePicture,
+     .profileSectionContainer .profileSection .image i,
+     .OwnerContainer .profileSection .image i  {
+        margin-top: 8px;
+        z-index: 1;
+        position: relative;
+		line-height: 115px;
+        font-size: 100px;
+    }
+
+.userInfo {
+    margin-top: -25px;
+}
+
+	.userInfo .btn-group .editAthlete {
+		padding: 0px 8px 0px 8px;
+        color: #777;
+	}
+        .userInfo .btn-group .editAthlete:hover
+        {
+            color: #333;
+        }
+
+    .userInfo .btn-group .editAthlete i {
+        font-size: 14px;
+    }
+
+.dropdown-menu {
+	-moz-border-radius: 0px !important;
+	-webkit-border-radius: 0px !important;
+	border-radius: 0px !important;
+	-left: 70px !important;
+}
+
+	.dropdown-menu li {
+	}
+
+		.dropdown-menu a {
+			padding: 2px 0px 2px 5px !important;
+		}
+
+			.dropdown-menu li > a:hover {
+				background-color: #FF9900 !important;
+				background-image: none !important;
+			}
+
+
+/* Footer content */
+#Push, footer
+{
+	height: 200px;
+}
+
+footer
+{
+	width: 100%;
+	background-color: #333;
+	text-align: center;
+}
+
+footer .row-fluid {
+	-width: 60%;
+	margin: 0 auto;
+}
+
+#FooterLeft {
+	-border-right: 1px solid #444;
+	text-align: left;
+}
+
+#FooterMiddle
+{
+	border-left: 1px solid #444;
+	border-right: 1px solid #444;
+	padding: 20px 2% 20px 2%;
+	margin-top: 50px;
+}
+
+#FooterRight 
+{
+	-border-left: 1px solid #444;
+	text-align: right;
+}
+
+footer .span4 
+{
+	margin-top: 25px;
+	padding: 10px 0px 10px 0px;
+	color: gray;
+	font-size: 12px;
+}
+
+footer .span4 h4
+{
+	font-size: 30px;
+	margin-bottom: 20px;
+}
+
+#FooterLeft ul li
+{
+	margin: 0px 0px 10px 0px;
+}
+
+#FooterLeft ul li i
+{
+	-margin-left: -22px;
+	color: #666;
+	font-size: 17px;
+	vertical-align: middle;
+	
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
+  	filter: alpha(opacity=40);
+  	-moz-opacity: 0.4;
+  	-khtml-opacity: 0.4;
+  	opacity: 0.4;
+}
+
+footer a 
+{
+	color: #FF9900;
+	
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  	filter: alpha(opacity=50);
+  	-moz-opacity: 0.5;
+  	-khtml-opacity: 0.5;
+  	opacity: 0.5;
+}
+
+footer a:hover
+{
+	color: #FF9900;
+	text-decoration: underline;
+	
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  	filter: alpha(opacity=90);
+  	-moz-opacity: 0.9;
+  	-khtml-opacity: 0.9;
+  	opacity: 0.9;
+}
+
+#footerContent
+{
+	min-height: 132px;
+	margin: 0 auto;
+	width: 80%;
+}
+
+#contact 
+{
+	float: left;
+	width: 48%;
+}
+
+#address
+{
+	float: right;
+	width: 48%;
+}
+
+#contact p, #address p {
+	border-top: 1px solid #111;
+	padding-top: 5px;
+	padding-left: 5px;
+}
+
+#copyright
+{
+	background-color: red;
+	padding-left: 20%;
+}
+
+
+
+
+/* Clearfix if needed */
+/* float clearing for IE6 */
+* html .clearfix{
+  height: 1%;
+  overflow: visible;
+}
+
+/* float clearing for IE7 */
+*+html .clearfix{
+  min-height: 1%;
+}
+
+/* float clearing for everyone else */
+.clearfix:after{
+  clear: both;
+  content: ".";
+  display: block;
+  height: 0;
+  visibility: hidden;
+  font-size: 0;
+}
+
+
+/* Athlete Profile */
+.profileRight
+{
+    margin-left: 20px;
+    float: left;
+    width: 500px;
+}
+
+#profileMenuList {
+	margin: 0px;
+}
+
+#profileMenuList li {
+    float: left;
+    list-style: none;
+}
+
+.profileMenuListHead, .adminMenuListHead {
+	margin-right: 50px;
+}
+
+	.profileMenuListHead h2, .adminMenuListHead h2 {
+        background-color: #0088cc;
+        color: #fff;
+        padding: 6px 6px 6px 16px;
+	}
+
+	.adminMenuListHead h2 {
+        background-color: transparent;
+        color: #333;
+	}
+
+        .profileMenuListHead h2 i
+        {
+            margin-left: 20px;
+            color: #fff;
+        }
+
+.profileMenuListLinks {
+	margin-top: 25px;
+}
+
+	#profileMenuList li a {
+		font-size: 14px;
+	}
+
+#ProfileSection, .profileSection {
+	position: relative;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	padding: 8px;
+	border: 1px solid #ddd;
+	background-color: rgb(253, 253, 253);
+}
+
+    #ProfileSection .image
+    {
+		background-color: transparent !important;
+    }
+
+#PersonalInfo {
+	margin-top: 20px;
+}
+
+	#PersonalInfo p {
+		word-wrap: break-word;
+	}
+
+#PersonalInfoContent {
+	font-size: 12px;
+}
+
+	#PersonalInfoContent table {
+        word-break:break-all;
+	}
+	
+		#PersonalInfoContent table tr {
+			word-wrap: break-word;
+			color: #555;
+		}
+
+			#PersonalInfoContent table tr .iconCell {
+				padding-right: 10px;
+				text-align: center;
+			}
+
+			#PersonalInfoContent table tr td {
+				padding: 4px;
+				border: none;
+			}
+
+				#PersonalInfoContent table tr .iconCell .icon-home {
+					font-size: 15px;
+				}
+
+				#PersonalInfoContent table tr td img {
+					width: 20px;
+				}
+
+#PersonalInfoContent i {
+	color: rgb(122, 122, 122);
+	font-size: 12px;
+}
+
+.athleteWOD .content
+{
+    padding-left: 4px;
+    border-left: 2px solid #5af;
+}
+
+    .athleteWOD .content:hover
+    {
+        border-left: 2px solid #FF9900;
+        background-color: rgba(240, 240, 240, .8);
+    }
+    .athleteWOD .WODResult:hover
+    {
+        cursor: pointer;
+        background-color: #dbffc8;
+    }
+
+.wodResultContent {
+	margin: 30px 0px 0px 20px;
+	border-top: 1px dashed rgb(223, 223, 223);
+}
+
+#createWODResultForm #Result_WeightResult {
+	width: 25% !important;
+}
+
+#createWODResultForm .checkbox {
+	padding-left: 0px;
+}
+
+#createWODResultForm .checkbox #Result_Recommended {
+	margin-left: -7px !important;
+}
+
+.AthleteGymHeaders {
+    margin-bottom: 15px;
+    font-weight: normal;
+    background-color: rgb(78, 78, 78);
+}
+
+    .AthleteGymHeaders:hover {
+        cursor: pointer;
+        background-color: rgb(65, 64, 64);
+    }
+
+.athleteAffiliateConnections {
+    margin-bottom: 30px;
+    background-color: rgba(247, 247, 247, .8);
+    border-bottom: 1px dashed rgba(0, 0, 0, 0.06);
+}
+
+#AthleteGyms .content p {
+    border-left: 2px solid #5af;
+    padding: 4px;
+}
+
+    #AthleteGyms .content p:hover {
+        border-left: 2px solid #FF9900;
+        background-color: rgba(240, 240, 240, .8);
+    }
+
+    #AthleteGyms .content a {
+        color: #333;
+        text-decoration: none;
+    }
+
+.numberOfAffiliates {
+    color: rgba(255, 153, 0, .6);
+    font-size: 12px;
+    float: right;
+    margin-right: 5px;
+    -moz-transition: all .3s linear;
+    -o-transition: all .3s linear;
+    -webkit-transition: all .3s linear;
+    transition: all .3s linear;
+}
+
+.emptyDetailsPart i {
+	font-size: 26px;
+	vertical-align: -4px;
+	color: #666;
+}
+
+
+
+/* Affiliate Profile */
+
+#AffiliateProfileSection {
+	background-color: rgba(247, 247, 247, .8);
+	padding-bottom: 30px;
+	position: relative;
+}
+
+	#AffiliateProfileSection span9 {
+		-position: relative;
+	}
+
+	#AffiliateProfileSection #ProfileAffiliateSection {
+		display: none;
+	}
+
+#AffiliateProfilePicture {
+	padding: 10px;
+	background-color: transparent;
+}
+
+	#AffiliateProfilePicture i {
+		font-size: 150px;
+	}
+
+#AffiliateProfileHeader {
+	text-align: center;
+	background-color: #ff9900;
+	padding: 8px;
+	color: #fff;
+	margin-bottom: 20px;
+
+	-moz-transition: background-color linear .25s;
+	-o-transition: background-color linear .25s;
+	-webkit-transition: background-color linear .25s;
+	transition: background-color linear .25s;
+}
+
+	#AffiliateProfileHeader:hover {
+		cursor: pointer;
+		background-color: rgb(233, 140, 0);
+	}
+
+	#AffiliateProfileHeaderName {
+		float: left;
+	}
+
+		#AffiliateProfileHeaderName i {
+			color: #fff;
+			margin-left: 20px;
+		}
+
+	#AffiliateProfileHeaderArrow {
+		display: none;
+	}
+
+		#AffiliateProfileHeaderArrow i {
+			-color: #2f96b4 !important;
+		}
+
+#PersonalInfoContent div table {
+	margin-top: -20px;
+	width: 97%;
+}
+
+	#PersonalInfoContent .span6 {
+	}
+
+	#PersonalInfoContent div table tbody tr {
+		font-size: 16px;
+		margin: 0px 20px 0px 0px;
+		border-bottom: 1px solid #ebebeb;
+	}
+
+	#PersonalInfoContent div table tbody #DescriptionRow {
+		border-bottom: none;
+	}
+
+		#PersonalInfoContent div table tbody #DescriptionRow .iconCell {
+			float: none;
+			width: 30px;
+			margin-right: 20px;
+		}
+
+		#PersonalInfoContent div table tbody #DescriptionRow td {
+			float: left;
+		}
+
+	#PersonalInfoContent div table tbody tr td {
+		padding: 20px 0px 20px 0px;
+		color: rgb(92, 92, 92);
+	}
+
+	#PersonalInfoContent div table tbody td i {
+		font-size: 16px !important;
+		color: rgb(129, 129, 129);
+	}
+
+	.editAffiliate {
+		font-size: 16px;
+	}
+
+#AffiliateButtons {
+	position: absolute;
+	bottom: 9px;
+	right: 0px;
+}
+
+#AffiliateButtons a {
+	margin-left: 10px;
+}
+
+
+/* Edit Athlete */
+.editAthlete, .cancelButtons, .editAffiliate,
+.editLinks a, .editLinks button {
+	float: right;
+
+	padding: 5px 8px;
+	font-size: 12px;
+	text-decoration: none;
+	color: rgb(148, 148, 148);
+	background-color: transparent;
+	border: none;
+}
+
+.cancelButtons {
+	float: left;
+	padding: 0px;
+	margin-top: 16px;
+	text-decoration: underline;
+}
+
+.editAthlete:hover, .cancelButtons:hover, .editAffiliate:hover {
+	cursor: pointer;
+	color: #333;
+    text-decoration: none;
+}
+
+	.editAthlete i, .editAffiliate i {
+		font-size: 12px;
+		color: rgb(148, 148, 148);
+		margin-right: 8px;
+	}
+
+.editAffiliate i {
+	font-size: 18px !important;
+}
+
+#EditPartial
+{
+    margin-top: 10px;
+	position: relative;
+}
+
+	#EditPartial form p {
+		margin-bottom: -3px;
+	}
+
+	#EditPartial form #ShowProfilePicture {
+		z-index: 1;
+		position: absolute;
+		top: -50px;
+		right: 17px;
+		padding: 4px;
+		border-radius: 4px;
+		background-color: rgba(255, 255, 255, 0.85);
+		display: none;
+	}
+
+		#EditPartial form #ShowProfilePicture #ShowPicture {
+			width: auto !important;
+		}
+		
+		#EditPartial form #ShowProfilePicture span {
+			float: left;
+			margin-right: 10px;
+		}
+
+		#EditPartial form #ShowProfilePicture #ShowPicture {
+			width: auto !important;
+			float: left;
+		}
+
+		#EditPartial form p span {
+            z-index: 100;
+			margin-bottom: 2px;
+			font-family: 'wf_SegoeUI', "Segoe UI", "Segoe WP", "Tahoma", Arial, Verdana, sans-serif;
+			color: #666;
+		}
+
+    #EditPartial input {
+        width: 88%;
+    }
+
+	#EditPartial select {
+		width: 100%;
+		height: 36px;
+	}
+
+    #EditPartial #EditSubmit {
+        padding: 10px;
+        padding-top: 3px !important;
+        padding-bottom: 3px !important;
+        width: auto !important;
+        height: auto;
+        margin-top: 4px;
+		float: right;
+    }
+
+#ui-datepicker-div {
+    background-color: rgb(255, 255, 255);
+    border-top-left-radius: 4px;
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+    #ui-datepicker-div select {
+        width: 100px !important;
+        height: 36px;
+        margin-right: 10px;
+    }
+
+
+
+/* Edit Affiliate */
+#AffiliateProfileSection #EditPartial {
+	margin-bottom: 50px;
+}
+
+	#AffiliateProfileSection #EditPartial form .span6 p {
+		width: 100% !important;
+	}
+
+
+/* Affiliate Report Result */
+.reportWOD
+{
+    color: #0088cc;
+}
+
+.SaveResultButton
+{    
+    margin-top: 20px;
+    text-align: right;
+}
+
+.reportForm
+{
+    
+}
+
+
+/* Responsive override for twitter bootstrap */
+@media (min-width: 1200px) {
+	.row-fluid .span3 {
+		width: 20.076923076923077% !important;
+	}
+}
+
+@media (max-width: 979px) and (min-width: 768px) {
+	body {
+		padding: 0px !important;
+	}
+
+	.affiliateBox {
+		height: 250px;
+	}
+
+    #CreateAffiliateForm .field-validation-error span {
+        left: -92px;
+    }
+
+	.affiliateHeadName {
+		font-size: 13px;
+		letter-spacing: 0px;
+	}
+
+    .affiliateDescription {
+        font-size: 12px;
+        height: 55%;
+    }
+
+    .affiliateImage {
+        bottom: -10px;
+        right: 10px;
+        font-size: 6em;
+    }
+
+	#AffiliateProfilePicture i {
+		font-size: 100px;
+	}
+
+	#CreateWODForm .control-group .controls select {
+		width: 100% !important;
+	}
+
+	#CreateWODForm .control-group .controls textarea,
+	#CreateWODForm .control-group .dd_er_Time {
+		width: 90% !important;
+	}
+
+	#PersonalInfoContent div table tbody tr {
+		font-size: 14px;
+	}
+
+	#PersonalInfoContent div table tbody tr td {
+		padding: 10px 0px 20px 0px;
+	}
+
+	#PersonalInfoContent div table tbody td i {
+		font-size: 14px !important;
+	}
+
+	#AffiliateProfileSection #EditPartial form .span6 p #Description {
+		width: 91% !important;
+	}
+
+	.editLinks {
+		position: absolute;
+		bottom: 0px;
+		left: 140px;
+	}
+
+	html body {
+		padding: 0px;
+	}
+
+	#Wrap {
+		padding: 30px !important;
+	}	
+}
+
+@media (max-width: 767px) {	
+	body {
+		padding: 0px !important;
+	}
+
+	#Wrap 
+	{
+	    min-height: 100%;
+	    height: auto !important;
+	    height: 100%;
+	    margin: 0 auto -400px;
+		padding: 30px !important;
+	}
+
+	.editLinks {
+		position: absolute;
+		bottom: 0px;
+		left: 5px;
+	}
+	
+	#Push, footer
+	{
+		height: 450px;
+	}
+
+	.container article .span4
+	{
+		height: 175px;
+	}
+
+	#ProfileSection {
+		width: 30%;
+	}
+	
+	#PersonalInfoContent div table {
+		margin: 0 auto;
+	}
+
+	#AffiliateProfileSection #EditPartial form .span6 p #Description {
+		width: 88% !important;
+	}
+
+	#CreateWODForm .control-group .controls select {
+		width: 100% !important;
+	}
+
+	#CreateWODForm .control-group .controls textarea,
+	#CreateWODForm .control-group .dd_er_Time {
+		width: 97% !important;
+	}
+
+	#DescriptionTable {
+		margin-bottom: 20px;
+	}
+	
+	#FooterMiddle
+	{
+		border-left: none;
+		border-right: none;
+		border-top: 1px solid #444;
+		border-bottom: 1px solid #444;
+		padding: 20px 2% 20px 2%;
+		margin-top: 0px;
+	}
+	
+	#FooterLeft, #FooterMiddle, #FooterRight
+	{
+		text-align: center;
+		width: 90%;
+		margin: 0 auto;
+	}
+}
+
+
+@media (max-width: 500px) {
+	/* Transform menu to dropdown */
+	nav ul {
+		display: none;
+	}
+
+	#Logo {
+		float: none;
+	}
+	  
+	nav select {
+		float: left;
+		display: block;
+		height: 30px;
+		font-size: 16px;
+	}
+}

@@ -1,0 +1,25 @@
+{
+  "Name": "Banner/View",
+  "LockMode": "Unlock",
+  "Map": "docs.BannerSections.Select(banner => new {\r\n    Id = banner.__document_id,\r\n    IsPublished = banner.IsPublished,\r\n    Section = banner.Section,\r\n    Banners = banner.BannerReferences.Select(o => this.LoadDocument(o.ToString(CultureInfo.InvariantCulture)))\r\n})",
+  "Maps": [
+    "docs.BannerSections.Select(banner => new {\r\n    Id = banner.__document_id,\r\n    IsPublished = banner.IsPublished,\r\n    Section = banner.Section,\r\n    Banners = banner.BannerReferences.Select(o => this.LoadDocument(o.ToString(CultureInfo.InvariantCulture)))\r\n})"
+  ],
+  "Reduce": null,
+  "TransformResults": null,
+  "IsMapReduce": false,
+  "IsCompiled": false,
+  "Stores": {
+    "Banners": "Yes"
+  },
+  "Indexes": {
+    "Id": "Analyzed"
+  },
+  "SortOptions": {},
+  "Analyzers": {},
+  "Fields": [],
+  "Suggestions": {},
+  "TermVectors": {},
+  "SpatialIndexes": {},
+  "Type": "Map"
+}

@@ -1,0 +1,24 @@
+{
+  "Name": "Exercise/Search",
+  "LockMode": "Unlock",
+  "Map": "docs.ExerciseBases.Select(exercise => new {\r\n    Id = exercise.__document_id,\r\n    ExerciseTitle = exercise.ExerciseTitle,\r\n    Group = exercise.Group,\r\n    ExerciseType = exercise.ExerciseType,\r\n    FriendlyUrl = exercise.FriendlyUrl\r\n})",
+  "Maps": [
+    "docs.ExerciseBases.Select(exercise => new {\r\n    Id = exercise.__document_id,\r\n    ExerciseTitle = exercise.ExerciseTitle,\r\n    Group = exercise.Group,\r\n    ExerciseType = exercise.ExerciseType,\r\n    FriendlyUrl = exercise.FriendlyUrl\r\n})"
+  ],
+  "Reduce": null,
+  "TransformResults": null,
+  "IsMapReduce": false,
+  "IsCompiled": false,
+  "Stores": {},
+  "Indexes": {
+    "ExerciseTitle": "Analyzed",
+    "ExerciseType": "Analyzed"
+  },
+  "SortOptions": {},
+  "Analyzers": {},
+  "Fields": [],
+  "Suggestions": {},
+  "TermVectors": {},
+  "SpatialIndexes": {},
+  "Type": "Map"
+}

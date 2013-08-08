@@ -1,0 +1,6 @@
+C:\Builds\RavenDB-Unstable-v2.5\build\Raven.Sample.FullTextSearch.exe.config
+C:\Builds\RavenDB-Unstable-v2.5\build\Raven.Sample.FullTextSearch.exe
+C:\Builds\RavenDB-Unstable-v2.5\build\Raven.Sample.FullTextSearch.pdb
+C:\Builds\RavenDB-Unstable-v2.5\Samples\Raven.Sample.FullTextSearch\obj\x86\Release\Raven.Sample.FullTextSearch.exe
+C:\Builds\RavenDB-Unstable-v2.5\Samples\Raven.Sample.FullTextSearch\obj\x86\Release\Raven.Sample.FullTextSearch.pdb
+C:\Builds\RavenDB-Unstable-v2.5\Samples\Raven.Sample.FullTextSearch\obj\x86\Release\Raven.Sample.FullTextSearch.csprojResolveAssemblyReference.cache

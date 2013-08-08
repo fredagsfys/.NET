@@ -1,0 +1,80 @@
+﻿@using Easyfy.CHS.Helpers
+@using Easyfy.CHS.Model.Exercise
+@model Easyfy.CHS.Model.Exercise.ExerciseRound
+
+@using (Html.BeginAjaxContentValidation("form0"))
+{
+    using (Html.BeginCollectionItem("ExerciseRounds"))
+    {
+        var showWeightOptions = "";
+        var timedisplay = "";
+        
+        if (Model != null)
+        {
+            <div class="exRound row-fluid" id="@Model.ExerciseId">
+
+                @Html.HiddenFor(o=>o.ExerciseId)
+                @Html.HiddenFor(o=>o.ExerciseType)
+                @Html.HiddenFor(o=>o.ExerciseName)
+                @Html.HiddenFor(o=>o.Time.TotalSeconds)
+                @Html.TextBoxFor(o => Model.SortOrder, new { style = "display: none;" })
+
+
+                <div class="Handle">Exercise: @Model.ExerciseName @(Model.ExerciseType == ExerciseType.Metabolic ? (" " + Model.Length + " " + Model.LengthTypeToString) : "")</div>
+                <a class="deleteExercise btn btn-small btn-danger pull-right" onclick="return confirm('Do you want to delete exercise?');">Delete exercise</a>
+
+                
+                @if (Model.ExerciseType != ExerciseType.RestPeriod)
+                { 
+                    <br />
+                    <div class="Weight span3">
+                        @if (Model.ExerciseType == ExerciseType.WeightLift)
+                        {
+                            <h6>Weight:</h6>
+                            <p>@Html.EnumDropDownListFor(o => o.WeightType, null, new { @class = "row-fluid", onchange = "onWeightChooseChanged(this)"})</p>
+                        }
+                        else
+                        {
+                            showWeightOptions = "display:none;";
+                          
+                            <h6>Extra Weight:</h6>
+                            <p>@Html.DropDownListFor(o => o.WeightExtra, new List<SelectListItem>() { new SelectListItem() { Text = "No", Value = "false" }, new SelectListItem() { Text = "Yes", Value = "true" } }, new { @class = "row-fluid", onchange="onExtraWeightChanged(this)" })</p>
+                        }
+            
+                        <div class="WeightOptions" style="@(showWeightOptions)">
+                            <p> @Html.ValidationMessageFor(o => o.Weight)
+                                @Html.TextBoxFor(o => o.Weight, "1", new { @class = "span4" }) 
+                                @Html.EnumDropDownListFor(o=>o.WeightUnit, null, new { @class = "span7" })</p>
+                        </div>
+                        <p class="BodyWeight" style="display:none;"> @Html.TextBoxFor(o => o.BodyWeightPercentage, "1", new { @class = "span4" }) (%)</p>
+                    </div>                                                                                                                                                                         
+                        <div class="Reps span3">
+                            <h6>Reps:</h6>
+                            <p>@Html.EnumDropDownListFor(o=>o.RepsType, null, new { @class = "row-fluid", onchange="onIsRepsMax(this)"})</p>
+                            @Html.ValidationMessageFor(o => o.Reps)
+                            @Html.TextBoxFor(o => o.Reps, "1", new { @class = "span4 RepsTxtBox" }) <ut class="RepsTxtBox">(reps)</ut>
+                        </div>
+                                                                                                                                                                                                          
+                }
+
+                <div class="Time span3">     
+                    <h6>Timed:</h6>
+                        @if (Model.ExerciseType != ExerciseType.RestPeriod)
+                        {
+                            timedisplay = "display:none;";
+                            <p>@Html.DropDownList("IsTimed", new List<SelectListItem>() { new SelectListItem() { Text = "No", Value = "true" }, new SelectListItem() { Text = "Yes", Value = "yes" } }, new { @class = "row-fluid", @id = "exercise_TimedChoose", onchange="exerciseTime_changed(this)" })</p>
+                        }
+  
+                    <div class="showTimeOption" style="@(timedisplay)">
+                        @Html.TextBoxFor(o => o.Time.TotalSeconds, "1", new { @class = "span4" }) (sec)
+                    </div>   
+                </div>
+            </div>
+        }
+    }
+}
+<script>
+    $("form").removeData("validator");
+    $("form").removeData("unobtrusiveValidation");
+    $.validator.unobtrusive.parse("form");
+</script>

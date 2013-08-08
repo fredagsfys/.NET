@@ -1,0 +1,27 @@
+time;logger;level;database;message;exception
+2013-06-05 18:42:22.6740;Raven.Database.Impl.DocumentCacher;Info;<system>;"MemoryCache Settings:
+  PhysicalMemoryLimit = 99
+  CacheMemoryLimit    = 7505707008
+  PollingInterval     = 00:02:00";
+2013-06-05 18:42:22.7270;Raven.Storage.Esent.TransactionalStorage;Info;<system>;"Esent Settings:
+  MaxVerPages      = 16384
+  CacheSizeMax     = 262144
+  DatabasePageSize = 4096";
+time;logger;level;database;message;exception
+2013-06-05 19:01:47.5326;Raven.Database.Impl.DocumentCacher;Info;<system>;"MemoryCache Settings:
+  PhysicalMemoryLimit = 99
+  CacheMemoryLimit    = 7505707008
+  PollingInterval     = 00:02:00";
+2013-06-05 19:01:47.5836;Raven.Storage.Esent.TransactionalStorage;Info;<system>;"Esent Settings:
+  MaxVerPages      = 16384
+  CacheSizeMax     = 262144
+  DatabasePageSize = 4096";
+time;logger;level;database;message;exception
+2013-06-05 19:26:09.4742;Raven.Database.Impl.DocumentCacher;Info;<system>;"MemoryCache Settings:
+  PhysicalMemoryLimit = 99
+  CacheMemoryLimit    = 7505707008
+  PollingInterval     = 00:02:00";
+2013-06-05 19:26:09.5263;Raven.Storage.Esent.TransactionalStorage;Info;<system>;"Esent Settings:
+  MaxVerPages      = 16384
+  CacheSizeMax     = 262144
+  DatabasePageSize = 4096";

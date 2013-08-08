@@ -1,0 +1,6 @@
+C:\Builds\RavenDB-Unstable-v2.5\build\Raven.Sample.LiveProjections.exe.config
+C:\Builds\RavenDB-Unstable-v2.5\build\Raven.Sample.LiveProjections.exe
+C:\Builds\RavenDB-Unstable-v2.5\build\Raven.Sample.LiveProjections.pdb
+C:\Builds\RavenDB-Unstable-v2.5\Samples\Raven.Sample.LiveProjections\obj\x86\Release\Raven.Sample.LiveProjections.exe
+C:\Builds\RavenDB-Unstable-v2.5\Samples\Raven.Sample.LiveProjections\obj\x86\Release\Raven.Sample.LiveProjections.pdb
+C:\Builds\RavenDB-Unstable-v2.5\Samples\Raven.Sample.LiveProjections\obj\x86\Release\Raven.Sample.LiveProjections.csprojResolveAssemblyReference.cache

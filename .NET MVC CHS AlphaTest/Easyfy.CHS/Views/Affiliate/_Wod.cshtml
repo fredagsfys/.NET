@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Easyfy.CHS.Model.Affiliate.ScheduledWod>
+
+@{
+    var ci = new System.Globalization.CultureInfo("en");
+}
+
+@if (Model != null) {
+  <h2>WOD for @DateTime.Now.ToString("dddd, dd MMMM yyyy", ci)</h2>
+
+  var count = 0;
+  foreach (var item in Model) {
+      <div class="scheduledWod span12">
+          <p>@item.Description</p>
+
+          @foreach (var i in item.WodList) {
+              <h3>@i.WodTitleDescription</h3>
+              <p>@i.WodTimeDescription</p>
+              <p>@i.WodHeroesDescription</p>
+              <p>@i.WodDescription</p>
+
+              if (i.WodExerciseInfo != null) {
+                  foreach (var e in i.WodExerciseInfo) {
+                      <p>@e.LapInfo</p>
+                      <ul>
+                          @foreach (var exercise in e.ExerciseInfoList) {
+                              <li>@exercise</li>
+                          }
+                      </ul>
+                  }
+              }
+
+              <p>@i.WodResultDescription</p>
+
+              <div class="reportForm"></div>
+
+              <div id="scheduledList_@count" class="reportLink">
+                  <p>@Ajax.ActionLink("Report result »", "WodReportResult", new {controller = "WOD", wodId = i.WodId, scheduledId = item.Id}, new AjaxOptions {UpdateTargetId = "scheduledList_"+count}, new {@class = "btn btn-success btn-small"})</p>
+              </div>
+          }
+      </div>
+    count++;
+  }
+}

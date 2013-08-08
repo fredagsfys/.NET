@@ -1,0 +1,36 @@
+﻿@model Easyfy.CHS.Models.LocalPasswordModel
+@{
+    ViewBag.Title = "Manage your accounts";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<p class="message-success">@ViewBag.StatusMessage</p>
+
+<div class="row-fluid">
+    @if (ViewBag.HasLocalPassword)
+    {
+        <div class="span5">
+            <h4>Change Password Form</h4>
+            @*<p>You're logged in as <strong>@User.Identity.Name</strong>.</p>*@
+            @Html.Partial("_ChangePasswordPartial")
+        </div>
+    }
+    else
+    { 
+        <div class="span5">            
+            <h4>Set your local password</h4>
+            @*<p>You're logged in as <strong>@User.Identity.Name</strong>.</p>*@
+            @Html.Partial("_SetPasswordPartial")
+        </div>
+    }
+
+@*    <div class="span4">
+        @Html.Action("RemoveExternalLogins")
+    </div>*@
+    <div class="span5">
+        <h4>Choose the social network you want to login from</h4>
+        <p>You can add make your account more flexible by adding more externad logins below.</p>
+        <legend></legend>
+        @Html.Action("ExternalLoginsList", new { ReturnUrl = ViewBag.ReturnUrl })
+    </div>
+</div>

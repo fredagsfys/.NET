@@ -1,0 +1,15 @@
+﻿@model Easyfy.CHS.Model.ViewModel.WodSearchViewModel
+
+@{
+    ViewBag.Title = "Wods";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Wods</h2>
+
+<label>Search wod:</label>
+<input type="text" id="term" />
+
+<div id="searchResults">
+  @Html.Partial("_ListofWods", Model)
+</div>

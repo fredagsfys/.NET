@@ -1,0 +1,29 @@
+﻿@model IEnumerable<Easyfy.CHS.Model.Athlete.Athlete>
+
+
+<h3>Athletes:</h3>
+
+<table class="table">
+
+    <tr>
+        <th>@Html.DisplayNameFor(model => model.Username)</th>
+        <th>@Html.DisplayNameFor(model => model.City)</th>
+        <th>@Html.DisplayNameFor(model => model.Country)</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(m => item.Username)</td>
+            <td>@Html.DisplayFor(m => item.City)</td>
+            <td>@Html.DisplayFor(m => item.Country)</td>
+            <td>
+                @Html.ActionLink("Details", "Details", new { controller = "Athlete", id = item.Username }) |
+                @Html.ActionLink("Delete", "DeleteAthlete", new { controller = "Admin", id = item.Username },
+                    new { onclick = "return confirm('Are you sure?');" })
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,25 @@
+{
+  "Name": "ContentPage/View",
+  "LockMode": "Unlock",
+  "Map": "docs.ContentPages.Select(category => new {\r\n    Id = category.__document_id,\r\n    Title = category.Title,\r\n    Url = category.Url,\r\n    MetaData = category.MetaData,\r\n    MenuData = category.MenuData,\r\n    PublishFrom = category.PublishFrom,\r\n    PublishTo = category.PublishTo,\r\n    IsPublished = category.IsPublished,\r\n    Roles = category.Roles,\r\n    AdditionalContent = category.ContentReferences.Select(o => this.LoadDocument(o.ToString(CultureInfo.InvariantCulture)))\r\n})",
+  "Maps": [
+    "docs.ContentPages.Select(category => new {\r\n    Id = category.__document_id,\r\n    Title = category.Title,\r\n    Url = category.Url,\r\n    MetaData = category.MetaData,\r\n    MenuData = category.MenuData,\r\n    PublishFrom = category.PublishFrom,\r\n    PublishTo = category.PublishTo,\r\n    IsPublished = category.IsPublished,\r\n    Roles = category.Roles,\r\n    AdditionalContent = category.ContentReferences.Select(o => this.LoadDocument(o.ToString(CultureInfo.InvariantCulture)))\r\n})"
+  ],
+  "Reduce": null,
+  "TransformResults": null,
+  "IsMapReduce": false,
+  "IsCompiled": false,
+  "Stores": {
+    "AdditionalContent": "Yes"
+  },
+  "Indexes": {
+    "Id": "Analyzed"
+  },
+  "SortOptions": {},
+  "Analyzers": {},
+  "Fields": [],
+  "Suggestions": {},
+  "TermVectors": {},
+  "SpatialIndexes": {},
+  "Type": "Map"
+}

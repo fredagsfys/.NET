@@ -1,0 +1,6 @@
+C:\Builds\RavenDB-Unstable-v2.5\build\Raven.Sample.EventSourcing.exe.config
+C:\Builds\RavenDB-Unstable-v2.5\build\Raven.Sample.EventSourcing.exe
+C:\Builds\RavenDB-Unstable-v2.5\build\Raven.Sample.EventSourcing.pdb
+C:\Builds\RavenDB-Unstable-v2.5\Samples\Raven.Sample.EventSourcing\obj\x86\Release\Raven.Sample.EventSourcing.csprojResolveAssemblyReference.cache
+C:\Builds\RavenDB-Unstable-v2.5\Samples\Raven.Sample.EventSourcing\obj\x86\Release\Raven.Sample.EventSourcing.exe
+C:\Builds\RavenDB-Unstable-v2.5\Samples\Raven.Sample.EventSourcing\obj\x86\Release\Raven.Sample.EventSourcing.pdb

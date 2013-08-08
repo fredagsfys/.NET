@@ -1,0 +1,29 @@
+{
+  "Name": "Notification/View",
+  "LockMode": "Unlock",
+  "Map": "docs.Notifications.Select(notification => new {\r\n    FullName = String.Format(\"{0} {1}\", this.LoadDocument(notification.ReferenceFrom).FirstName, this.LoadDocument(notification.ReferenceFrom).LastName),\r\n    ReferenceFrom = notification.ReferenceFrom,\r\n    ReferenceTo = notification.ReferenceTo,\r\n    Created = notification.Created,\r\n    Content = notification.Content,\r\n    WallPostId = notification.WallPostId,\r\n    NotificationType = notification.NotificationType,\r\n    NotificationId = notification.__document_id,\r\n    PictureUrl = this.LoadDocument(notification.ReferenceFrom).WallImageUrl,\r\n    FriendlyUrl = this.LoadDocument(notification.ReferenceTo).FriendlyUrl\r\n})",
+  "Maps": [
+    "docs.Notifications.Select(notification => new {\r\n    FullName = String.Format(\"{0} {1}\", this.LoadDocument(notification.ReferenceFrom).FirstName, this.LoadDocument(notification.ReferenceFrom).LastName),\r\n    ReferenceFrom = notification.ReferenceFrom,\r\n    ReferenceTo = notification.ReferenceTo,\r\n    Created = notification.Created,\r\n    Content = notification.Content,\r\n    WallPostId = notification.WallPostId,\r\n    NotificationType = notification.NotificationType,\r\n    NotificationId = notification.__document_id,\r\n    PictureUrl = this.LoadDocument(notification.ReferenceFrom).WallImageUrl,\r\n    FriendlyUrl = this.LoadDocument(notification.ReferenceTo).FriendlyUrl\r\n})"
+  ],
+  "Reduce": null,
+  "TransformResults": null,
+  "IsMapReduce": false,
+  "IsCompiled": false,
+  "Stores": {
+    "FullName": "Yes",
+    "PictureUrl": "Yes",
+    "FriendlyUrl": "Yes",
+    "ReferenceTo": "Yes",
+    "ReferenceFrom": "Yes"
+  },
+  "Indexes": {
+    "NotificationId": "NotAnalyzed"
+  },
+  "SortOptions": {},
+  "Analyzers": {},
+  "Fields": [],
+  "Suggestions": {},
+  "TermVectors": {},
+  "SpatialIndexes": {},
+  "Type": "Map"
+}

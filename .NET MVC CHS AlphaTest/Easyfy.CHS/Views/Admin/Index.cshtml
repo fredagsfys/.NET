@@ -1,0 +1,27 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Index";
+}
+
+<div class="row-fluid">
+    <div class="span12">
+        <nav id="profileMenuList">
+            <ul class="unstyled">
+                <li class="adminMenuListHead">
+                    <h2 class="menuHeader">Admin page<i class="icon-double-angle-right"></i>
+                    </h2>
+                <li class="profileMenuListLinks">
+                    @Ajax.ActionLink("Handle athletes", "Athletes", "Admin", new AjaxOptions { UpdateTargetId = "result" })
+                </li>
+                <li class="profileMenuListLinks">
+                    @Ajax.ActionLink("Handle affiliates", "Affiliates", "Admin", new AjaxOptions { UpdateTargetId = "result" })
+                </li>
+                <li class="profileMenuListLinks">
+                    @Ajax.ActionLink("Handle exercises", "Edit", "Exercises", new AjaxOptions { UpdateTargetId = "result" })
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+<div class="row-fluid" id="result"></div>

@@ -1,0 +1,6 @@
+C:\Builds\RavenDB-Unstable-v2.5\build\Raven.Sample.ShardClient.exe.config
+C:\Builds\RavenDB-Unstable-v2.5\build\Raven.Sample.ShardClient.exe
+C:\Builds\RavenDB-Unstable-v2.5\build\Raven.Sample.ShardClient.pdb
+C:\Builds\RavenDB-Unstable-v2.5\Samples\Raven.Sample.ShardClient\obj\x86\Release\Raven.Sample.ShardClient.exe
+C:\Builds\RavenDB-Unstable-v2.5\Samples\Raven.Sample.ShardClient\obj\x86\Release\Raven.Sample.ShardClient.pdb
+C:\Builds\RavenDB-Unstable-v2.5\Samples\Raven.Sample.ShardClient\obj\x86\Release\Raven.Sample.ShardClient.csprojResolveAssemblyReference.cache

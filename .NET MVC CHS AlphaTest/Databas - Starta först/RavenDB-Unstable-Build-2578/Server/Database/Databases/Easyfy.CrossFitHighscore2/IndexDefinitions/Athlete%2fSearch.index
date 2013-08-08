@@ -1,0 +1,23 @@
+{
+  "Name": "Athlete/Search",
+  "LockMode": "Unlock",
+  "Map": "docs.Athletes.Select(athlete => new {\r\n    FirstName = athlete.FirstName,\r\n    LastName = athlete.LastName,\r\n    Username = athlete.Username,\r\n    City = athlete.City,\r\n    Country = athlete.Country,\r\n    AffiliateSearchField = athlete.AffiliateSearchField\r\n})",
+  "Maps": [
+    "docs.Athletes.Select(athlete => new {\r\n    FirstName = athlete.FirstName,\r\n    LastName = athlete.LastName,\r\n    Username = athlete.Username,\r\n    City = athlete.City,\r\n    Country = athlete.Country,\r\n    AffiliateSearchField = athlete.AffiliateSearchField\r\n})"
+  ],
+  "Reduce": null,
+  "TransformResults": null,
+  "IsMapReduce": false,
+  "IsCompiled": false,
+  "Stores": {},
+  "Indexes": {
+    "AffiliateSearchField": "Analyzed"
+  },
+  "SortOptions": {},
+  "Analyzers": {},
+  "Fields": [],
+  "Suggestions": {},
+  "TermVectors": {},
+  "SpatialIndexes": {},
+  "Type": "Map"
+}

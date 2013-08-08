@@ -1,0 +1,15 @@
+﻿@model Easyfy.CHS.Model.ViewModel.AthleteSearchViewModel
+
+@{
+    ViewBag.Title = "Athletes";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Athletes</h2>
+
+<label>Search athlete:</label>
+<input type="text" id="athleteTerm" />
+
+<div id="athleteSearchResults">
+  @Html.Partial("_ListofAthletes", Model)
+</div>

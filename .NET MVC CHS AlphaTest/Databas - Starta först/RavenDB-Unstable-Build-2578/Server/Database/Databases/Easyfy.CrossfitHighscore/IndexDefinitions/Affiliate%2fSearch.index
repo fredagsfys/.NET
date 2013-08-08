@@ -1,0 +1,23 @@
+{
+  "Name": "Affiliate/Search",
+  "LockMode": "Unlock",
+  "Map": "docs.Affiliates.Select(affiliate => new {\r\n    Id = affiliate.__document_id,\r\n    FriendlyUrl = affiliate.FriendlyUrl,\r\n    Name = affiliate.Name,\r\n    Description = affiliate.Description,\r\n    Created = affiliate.AuditInfo.CreatedOn,\r\n    Address = affiliate.Address,\r\n    Postal = affiliate.Postal,\r\n    City = affiliate.City,\r\n    Country = affiliate.Country,\r\n    Latitude = affiliate.Latitude,\r\n    Longitude = affiliate.Longitude,\r\n    Image = affiliate.Image\r\n})",
+  "Maps": [
+    "docs.Affiliates.Select(affiliate => new {\r\n    Id = affiliate.__document_id,\r\n    FriendlyUrl = affiliate.FriendlyUrl,\r\n    Name = affiliate.Name,\r\n    Description = affiliate.Description,\r\n    Created = affiliate.AuditInfo.CreatedOn,\r\n    Address = affiliate.Address,\r\n    Postal = affiliate.Postal,\r\n    City = affiliate.City,\r\n    Country = affiliate.Country,\r\n    Latitude = affiliate.Latitude,\r\n    Longitude = affiliate.Longitude,\r\n    Image = affiliate.Image\r\n})"
+  ],
+  "Reduce": null,
+  "TransformResults": "results.Select(affiliate => new {\r\n    Id = affiliate.Id,\r\n    FriendlyUrl = affiliate.FriendlyUrl,\r\n    Name = affiliate.Name,\r\n    Description = affiliate.Description,\r\n    Created = affiliate.Created,\r\n    Address = affiliate.Address,\r\n    Postal = affiliate.Postal,\r\n    City = affiliate.City,\r\n    Country = affiliate.Country,\r\n    Latitude = affiliate.Latitude,\r\n    Longitude = affiliate.Longitude,\r\n    Image = affiliate.Image,\r\n    Score = affiliate[\"@metadata\"].Value(\"Temp-Index-Score\")\r\n})",
+  "IsMapReduce": false,
+  "IsCompiled": false,
+  "Stores": {
+    "Created": "Yes"
+  },
+  "Indexes": {},
+  "SortOptions": {},
+  "Analyzers": {},
+  "Fields": [],
+  "Suggestions": {},
+  "TermVectors": {},
+  "SpatialIndexes": {},
+  "Type": "Map"
+}

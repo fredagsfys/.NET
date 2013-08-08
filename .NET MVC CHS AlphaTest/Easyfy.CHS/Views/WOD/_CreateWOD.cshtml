@@ -1,0 +1,97 @@
+﻿@model Easyfy.CHS.ViewModels.WodViewModel
+
+<div class="span12" id="Content">
+    <h4>Create WOD</h4>
+    <i class="icon-remove-circle" id="ClosePageArrow"><span id="ClosePageText">Close</span></i>
+
+        <div class="row-fluid">
+            @using (Html.BeginForm("CreateWOD", "Wod", FormMethod.Post, new { @class = "form-horizontal", @id = "CreateWODForm" }))
+            {
+                <div class="span6">
+                     @Html.HiddenFor(o=>o.AffiliateId)
+                     @Html.HiddenFor(o=>o.AffiliateFriendlyUrl)
+                     @Html.HiddenFor(o=>o.AffiliateName)
+
+                    <div class="control-group">
+                        @Html.LabelFor(m => m.WodBase.WodType, new { @class = "control-label", @for = "selectWODType" })
+                        <div class="controls">
+                            @Html.ValidationMessageFor(m => m.WodBase.WodType)
+                            @Html.DropDownListFor(m => m.WodBase.WodType, Model.WODTypeValue, new { @id = "selectWODType" })
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        @Html.LabelFor(m => m.WodBase.BenchmarkType, new { @class = "control-label", @for = "selectBenchmarkType" })
+                        <div class="controls">
+                            @Html.ValidationMessageFor(m => m.WodBase.BenchmarkType)
+                            @Html.DropDownListFor(m => m.WodBase.BenchmarkType, Model.BenchmarkTypeValue, new { @id = "selectBenchmarkType" })
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        @Html.LabelFor(model => model.WodBase.Name, new { @class = "control-label", @for = "inputWODName" })
+                        <div class="controls">
+                            @Html.ValidationMessageFor(model => model.WodBase.Name)
+                            @Html.TextBoxFor(model => model.WodBase.Name, new { @id = "inputWODName", placeholder = "Name the WOD" })
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        @Html.LabelFor(model => model.WodBase.Description, new { @class = "control-label", @for = "inputWODDescription" })
+                        <div class="controls">
+                            @Html.ValidationMessageFor(model => model.WodBase.Description)
+                            @Html.TextAreaFor(model => model.WodBase.Description, new { @id = "inputWODDescription", placeholder = "Describe the WOD" })
+                        </div>
+                    </div>
+                </div>
+                <div class="span6">
+                    <div class="control-group">
+                        @Html.LabelFor(m => m.WodBase.DefaultResultType, new { @class = "control-label", @for = "selectResultType" })
+                        <div class="controls">
+                            @Html.ValidationMessageFor(m => m.WodBase.DefaultResultType)
+                            @Html.DropDownListFor(m => m.WodBase.DefaultResultType, Model.ResultTypeValue, new { @id = "selectResultType" })
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        @Html.LabelFor(m => m.WodBase.LowerIsBetter, new { @class = "control-label", @for = "selectLowerIsBetter" })
+                        <div class="controls">
+                            @Html.ValidationMessageFor(m => m.WodBase.LowerIsBetter)
+                            @Html.DropDownListFor(m => m.WodBase.LowerIsBetter, new List<SelectListItem>() { new SelectListItem() { Text = "Yes", Value = "True" }, new SelectListItem() { Text = "No", Value = "False" } }, new { @id = "selectLowerIsBetter" })
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label">Is the WOD timed?</label>
+                        <div class="controls">
+                            @Html.DropDownList("IsTime", new List<SelectListItem>() { new SelectListItem() { Text = "No", Value = "no" }, new SelectListItem() { Text = "Yes", Value = "yes" } }, new { @id = "wod_TimedChoose", onchange = "onIsTimed('wod_TimedChoose')" })
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="dd_er_Time" style="display: none;">Time (minutes):</label>
+                        <div class="controls">
+                            @Html.ValidationMessageFor(model => model.WodBase.Time)
+                            @Html.TextBoxFor(model => model.WodBase.Time, new { @class = "dd_er_Time", @id = "wod_Timed", style = "display:none;" })
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="span12 img-polaroid">
+                    <div class="ui-sortable" id="WODRounds">
+                        @Html.EditorFor(m => m.WodBase.Rounds)
+                        <div class="showRoundSearch btn"><span class="button_submit_Text">New round</span></div>
+                    </div>
+                </div>
+                <button type="submit" id="CreateWODButton" class="createButtons">Create WOD</button>
+            }
+        </div>
+</div>
+<script>
+    $.validator.unobtrusive.parse("form");
+
+    $("#WODRounds").sortable({
+        handle: ".roundHandle"
+    });
+    $("#WODRounds").disableSelection();
+</script>

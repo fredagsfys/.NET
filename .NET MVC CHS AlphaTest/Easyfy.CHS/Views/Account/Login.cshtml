@@ -1,0 +1,43 @@
+﻿@model Easyfy.CHS.Models.LoginModel
+
+@{
+    ViewBag.Title = "";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row-fluid" id="LoginForm">
+    <div class="span6">
+        @using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl })) {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+    
+                <fieldset>
+                    <h4>Log in locally</h4>
+                        @Html.LabelFor(m => m.UserName)
+                        @Html.ValidationMessageFor(m => m.UserName)
+                        @Html.TextBoxFor(m => m.UserName)
+
+                        @Html.LabelFor(m => m.Password)
+                        @Html.ValidationMessageFor(m => m.Password)
+                        @Html.PasswordFor(m => m.Password)
+                    <br />
+                        <span class="loginRememberMe">
+                                @Html.CheckBoxFor(m => m.RememberMe)
+                                @Html.LabelFor(m => m.RememberMe, new { @class = "checkbox" })
+                        </span>
+
+                    <input type="submit" value="Log in" class="socialButton" />
+                </fieldset>
+            <p class="retrievePassword">
+                @*@Html.ActionLink("Register", "Register") if you don't have an account.*@
+                Forgot your password? @Html.ActionLink("Retrieve it here.", "ForgotPassword")
+            </p>
+        }
+
+    </div>
+
+    <div class="span6">
+        <h4>Choose the social network you want to login from</h4>
+        @Html.Action("ExternalLoginsList", new { ReturnUrl = ViewBag.ReturnUrl })
+    </div>
+</div>

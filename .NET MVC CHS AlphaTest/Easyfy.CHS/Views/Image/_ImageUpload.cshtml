@@ -1,0 +1,15 @@
+﻿@model Easyfy.CHS.ViewModels.EditAthleteViewModel
+
+<div id="UploadImage" class="uploadImage">
+        @using (Html.BeginForm("FileUploadForm", "api", FormMethod.Post, new { enctype = "multipart/form-data", @class = "fileUploadForm" }))
+        {          
+            <input type='file' name='file' id='file' class='fileUpload' /><br />
+            <div class="fakeButton">
+                <input type="text" class="fakeTextField" readonly="readonly" disabled="disabled" />
+			    <input type='button' value='Browse image' class='fakeUploadButton' title="Browse for an image to upload" />
+            </div>            
+            <button name="Upload" id="Upload" id="UploadButton" class="uploadButton" title="Upload the image">
+                <i class="icon-upload-alt"></i>Uplaod image
+            </button>
+        }
+</div>

@@ -1,0 +1,61 @@
+﻿@model Easyfy.CHS.Model.Affiliate.Affiliate
+@{var CurrentUser = Session["CurrentUser"] as Easyfy.CHS.Model.Athlete.Athlete; }
+<div id="PersonalInfoContent" class="row-fluid">
+    <div class="span6">
+        <table class="table">
+            <tbody>
+                <tr>
+                    <td class="iconCell">
+                        <i class="icon-star"></i>
+                    </td>
+                    @if (!String.IsNullOrWhiteSpace(Model.Name))
+                    {
+                        <td>
+                            @Model.Name
+                        </td>
+                    }
+                    else
+                    {
+                        <td>
+                            <span class="muted"><em>Not specified.</em></span>
+                        </td>
+                    }
+                </tr>
+                <tr>
+                    <td class="iconCell">
+                        <i class="icon-home"></i>
+                    </td>
+                    <td>
+                        <span class="muted">Located at </span>@Model.Address, @Model.City
+                        <span>,</span>
+                        @Model.Country
+                        <br />
+                        @Model.Postal
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="span6" id="DescriptionTable">
+        <table class="table">
+            <tbody>
+                <tr id="DescriptionRow">
+                    <td class="iconCell">
+                        <i class="icon-align-right"></i>
+                    </td>
+                    <td>
+                        @Model.Description
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="editLinks span12">
+        @if ((CurrentUser.Affiliates.FirstOrDefault(m => m.Id == Model.Id) != null && 
+                CurrentUser.Affiliates.FirstOrDefault(m => m.Id == Model.Id).AffiliateRoles.Contains("Owner")) || CurrentUser.Admin) 
+        {
+            <button type="button" class="editAffiliate" id="editAffiliate" data-url="@Url.Action("Edit", "Affiliate", new { id = Model.FriendlyUrl })" data-loading-text="Loading..."><i class="icon-pencil"></i>Edit info</button>
+            <a class="editAffiliate" href="@Url.Action("Delete", "Affiliate", new { id = Model.FriendlyUrl })"><i class="icon-remove-circle"></i>Delete</a>
+        }
+    </div>
+</div>

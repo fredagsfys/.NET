@@ -1,0 +1,45 @@
+﻿@model Easyfy.CHS.Models.RegisterExternalLoginModel
+@{
+    ViewBag.Title = "";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<hgroup class="title">
+    <h1>@ViewBag.Title</h1>
+</hgroup>
+
+@using (Html.BeginForm("ExternalLoginConfirmation", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "ExternalLoginConfirmationForm" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+<section class="loginSection">
+    <fieldset>
+        <h4>Associate your @ViewBag.ProviderDisplayName account</h4>
+        <i class="icon-thumbs-up" id="ThumbsUp"></i>
+        <p>
+            Hello <strong>@Model.FirstName @Model.LastName</strong>, you've successfully authenticated with <strong>@ViewBag.ProviderDisplayName</strong>.
+            Please enter the required email field below click the Register button to finish
+            logging in.
+        </p>
+        <div id="LogoutFacebook">            
+            <img src="@Model.ProfilePicture" class="img-polaroid img-rounded" />
+            Not you? Then @Html.ActionLink("sign out.", "LogOffFacebook", new { controller = "Account", accessToken = Model.AccessToken })
+        </div>
+        <div class="row-fluid">
+            <div class="span9" id="ExternalLoginConfirmationContent">
+                @Html.LabelFor(m => m.Email)
+                @Html.ValidationMessageFor(m => m.Email)
+                @Html.TextBoxFor(m => m.Email, new { @maxlength = "200", @size = "200", @class = "registerInput" })
+
+                <br />
+                @Html.HiddenFor(m => m.ExternalLoginData)
+                @Html.HiddenFor(m => m.AccessToken)
+                @Html.HiddenFor(m => m.UserName)
+
+                <input type="submit" value="Register" class="socialButton" id="RegisterButton" />
+            </div>
+        </div>
+    </fieldset>
+</section>
+}

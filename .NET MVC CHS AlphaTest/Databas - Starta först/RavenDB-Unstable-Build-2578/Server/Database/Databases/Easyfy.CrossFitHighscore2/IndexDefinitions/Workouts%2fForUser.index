@@ -1,0 +1,27 @@
+{
+  "Name": "Workouts/ForUser",
+  "LockMode": "Unlock",
+  "Map": "docs.WorkoutResults.Select(workout => new {\r\n    AthleteName = String.Format(\"{0} {1}\", this.LoadDocument(workout.AthleteId).FirstName, this.LoadDocument(workout.AthleteId).LastName),\r\n    AthleteId = workout.AthleteId,\r\n    Date = workout.Date,\r\n    Results = workout.Results,\r\n    WorkoutResultId = workout.__document_id,\r\n    AthleteImageUrl = this.LoadDocument(workout.AthleteId).WallImageUrl\r\n})",
+  "Maps": [
+    "docs.WorkoutResults.Select(workout => new {\r\n    AthleteName = String.Format(\"{0} {1}\", this.LoadDocument(workout.AthleteId).FirstName, this.LoadDocument(workout.AthleteId).LastName),\r\n    AthleteId = workout.AthleteId,\r\n    Date = workout.Date,\r\n    Results = workout.Results,\r\n    WorkoutResultId = workout.__document_id,\r\n    AthleteImageUrl = this.LoadDocument(workout.AthleteId).WallImageUrl\r\n})"
+  ],
+  "Reduce": null,
+  "TransformResults": null,
+  "IsMapReduce": false,
+  "IsCompiled": false,
+  "Stores": {
+    "AthleteName": "Yes",
+    "AthleteImageUrl": "Yes",
+    "WorkoutResultId": "Yes"
+  },
+  "Indexes": {
+    "AthleteId": "NotAnalyzed"
+  },
+  "SortOptions": {},
+  "Analyzers": {},
+  "Fields": [],
+  "Suggestions": {},
+  "TermVectors": {},
+  "SpatialIndexes": {},
+  "Type": "Map"
+}

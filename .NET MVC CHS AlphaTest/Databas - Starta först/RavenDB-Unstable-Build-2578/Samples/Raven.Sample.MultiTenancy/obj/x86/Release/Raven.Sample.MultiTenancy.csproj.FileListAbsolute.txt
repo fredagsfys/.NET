@@ -1,0 +1,6 @@
+C:\Builds\RavenDB-Unstable-v2.5\build\Raven.Sample.MultiTenancy.exe.config
+C:\Builds\RavenDB-Unstable-v2.5\build\Raven.Sample.MultiTenancy.exe
+C:\Builds\RavenDB-Unstable-v2.5\build\Raven.Sample.MultiTenancy.pdb
+C:\Builds\RavenDB-Unstable-v2.5\Samples\Raven.Sample.MultiTenancy\obj\x86\Release\Raven.Sample.MultiTenancy.exe
+C:\Builds\RavenDB-Unstable-v2.5\Samples\Raven.Sample.MultiTenancy\obj\x86\Release\Raven.Sample.MultiTenancy.pdb
+C:\Builds\RavenDB-Unstable-v2.5\Samples\Raven.Sample.MultiTenancy\obj\x86\Release\Raven.Sample.MultiTenancy.csprojResolveAssemblyReference.cache

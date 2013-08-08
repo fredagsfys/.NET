@@ -1,0 +1,21 @@
+{
+  "Name": "Auto/exercisebases/ByLengthAndLengthTypeAndName",
+  "LockMode": "Unlock",
+  "Map": "from doc in docs.exercisebases\r\nselect new { LengthType = doc.LengthType, Length = doc.Length, Name = doc.Name }",
+  "Maps": [
+    "from doc in docs.exercisebases\r\nselect new { LengthType = doc.LengthType, Length = doc.Length, Name = doc.Name }"
+  ],
+  "Reduce": null,
+  "TransformResults": null,
+  "IsMapReduce": false,
+  "IsCompiled": false,
+  "Stores": {},
+  "Indexes": {},
+  "SortOptions": {},
+  "Analyzers": {},
+  "Fields": [],
+  "Suggestions": {},
+  "TermVectors": {},
+  "SpatialIndexes": {},
+  "Type": "Auto"
+}

@@ -1,0 +1,29 @@
+{
+  "Name": "Athlete/Search",
+  "LockMode": "Unlock",
+  "Map": "docs.Athletes.Select(athlete => new {\r\n    FirstName = athlete.FirstName,\r\n    LastName = athlete.LastName,\r\n    Username = athlete.Username,\r\n    CurrentRank = athlete.CurrentRank,\r\n    City = athlete.City,\r\n    Created = athlete.AuditInfo.CreatedOn,\r\n    Country = athlete.Country,\r\n    AffiliateSearchField = athlete.AffiliateSearchField,\r\n    Affiliates = athlete.Affiliates,\r\n    ListImageUrl = athlete.ListImageUrl,\r\n    FriendlyUrl = athlete.FriendlyUrl\r\n})",
+  "Maps": [
+    "docs.Athletes.Select(athlete => new {\r\n    FirstName = athlete.FirstName,\r\n    LastName = athlete.LastName,\r\n    Username = athlete.Username,\r\n    CurrentRank = athlete.CurrentRank,\r\n    City = athlete.City,\r\n    Created = athlete.AuditInfo.CreatedOn,\r\n    Country = athlete.Country,\r\n    AffiliateSearchField = athlete.AffiliateSearchField,\r\n    Affiliates = athlete.Affiliates,\r\n    ListImageUrl = athlete.ListImageUrl,\r\n    FriendlyUrl = athlete.FriendlyUrl\r\n})"
+  ],
+  "Reduce": null,
+  "TransformResults": "results.Select(athlete => new {\r\n    FirstName = athlete.FirstName,\r\n    LastName = athlete.LastName,\r\n    Username = athlete.Username,\r\n    City = athlete.City,\r\n    CurrentRank = athlete.CurrentRank,\r\n    Created = athlete.Created,\r\n    Country = athlete.Country,\r\n    AffiliateSearchField = athlete.AffiliateSearchField,\r\n    Affiliates = athlete.Affiliates,\r\n    ListImageUrl = athlete.ListImageUrl,\r\n    FriendlyUrl = athlete.FriendlyUrl,\r\n    Score = athlete[\"@metadata\"].Value(\"Temp-Index-Score\")\r\n})",
+  "IsMapReduce": false,
+  "IsCompiled": false,
+  "Stores": {
+    "Created": "Yes",
+    "CurrentRank": "Yes",
+    "FriendlyUrl": "Yes"
+  },
+  "Indexes": {
+    "LastName": "Analyzed"
+  },
+  "SortOptions": {},
+  "Analyzers": {
+    "AffiliateSearchField": "Lucene.Net.Analysis.WhitespaceAnalyzer"
+  },
+  "Fields": [],
+  "Suggestions": {},
+  "TermVectors": {},
+  "SpatialIndexes": {},
+  "Type": "Map"
+}

@@ -1,0 +1,21 @@
+{
+  "Name": "Auto/Affiliates/ByFriendlyUrl",
+  "LockMode": "Unlock",
+  "Map": "from doc in docs.Affiliates\r\nselect new { FriendlyUrl = doc.FriendlyUrl }",
+  "Maps": [
+    "from doc in docs.Affiliates\r\nselect new { FriendlyUrl = doc.FriendlyUrl }"
+  ],
+  "Reduce": null,
+  "TransformResults": null,
+  "IsMapReduce": false,
+  "IsCompiled": false,
+  "Stores": {},
+  "Indexes": {},
+  "SortOptions": {},
+  "Analyzers": {},
+  "Fields": [],
+  "Suggestions": {},
+  "TermVectors": {},
+  "SpatialIndexes": {},
+  "Type": "Auto"
+}

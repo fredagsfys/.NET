@@ -1,0 +1,6 @@
+C:\Builds\RavenDB-Unstable-v2.5\build\Raven.Sample.ReplicationComplex.exe.config
+C:\Builds\RavenDB-Unstable-v2.5\build\Raven.Sample.ReplicationComplex.exe
+C:\Builds\RavenDB-Unstable-v2.5\build\Raven.Sample.ReplicationComplex.pdb
+C:\Builds\RavenDB-Unstable-v2.5\Samples\Raven.Sample.ReplicationComplex\obj\x86\Release\Raven.Sample.ReplicationComplex.exe
+C:\Builds\RavenDB-Unstable-v2.5\Samples\Raven.Sample.ReplicationComplex\obj\x86\Release\Raven.Sample.ReplicationComplex.pdb
+C:\Builds\RavenDB-Unstable-v2.5\Samples\Raven.Sample.ReplicationComplex\obj\x86\Release\Raven.Sample.ReplicationComplex.csprojResolveAssemblyReference.cache

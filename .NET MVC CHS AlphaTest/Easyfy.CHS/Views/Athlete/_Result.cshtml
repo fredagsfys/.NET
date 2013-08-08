@@ -1,0 +1,21 @@
+﻿@model  List<Easyfy.CHS.Model.Athlete.WorkoutResult>
+
+@if (Model.Count > 0)
+{
+  foreach (var resultList in Model)
+  {
+    <article class="span10 resultList">
+      <h4>@resultList.Date</h4>
+      @foreach (var item in resultList.Results)
+      {
+        <blockquote>
+          <span class="text-info">Result:</span> @item.Value
+          <br/>
+          <span class="text-info">Did it as recommended:</span> @item.Recommended
+        </blockquote>
+        <hr/>
+      }
+    </article>
+  }
+}
+

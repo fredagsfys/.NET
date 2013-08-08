@@ -1,0 +1,22 @@
+﻿@model List<Easyfy.CHS.Model.Athlete.WorkoutResult>
+
+@{
+    ViewBag.Title = "Achievements";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@if(Model != null)
+{
+	<div class="result-wrapper dynamic-load" data-url="/Athlete/Results/" data-append=".resultList:last" data-page="0">
+		@Html.Partial("_Result", Model)
+
+		<div class="span12">
+			<button class="btn btn-github btn-small loadResults">Load more results</button>
+			<div id="loadingResult"></div>
+		</div>
+	</div>
+} else 
+{
+    <p>Hasn't reported any results yet.</p>
+}
+

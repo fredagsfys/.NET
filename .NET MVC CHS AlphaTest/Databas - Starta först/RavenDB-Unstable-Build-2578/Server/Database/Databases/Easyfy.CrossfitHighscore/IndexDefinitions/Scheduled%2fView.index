@@ -1,0 +1,21 @@
+{
+  "Name": "Scheduled/View",
+  "LockMode": "Unlock",
+  "Map": "docs.ScheduleWods.Select(wod => new {\r\n    Id = wod.__document_id,\r\n    AffiliateId = wod.AffiliateId,\r\n    Date = wod.Date.Date\r\n})",
+  "Maps": [
+    "docs.ScheduleWods.Select(wod => new {\r\n    Id = wod.__document_id,\r\n    AffiliateId = wod.AffiliateId,\r\n    Date = wod.Date.Date\r\n})"
+  ],
+  "Reduce": null,
+  "TransformResults": null,
+  "IsMapReduce": false,
+  "IsCompiled": false,
+  "Stores": {},
+  "Indexes": {},
+  "SortOptions": {},
+  "Analyzers": {},
+  "Fields": [],
+  "Suggestions": {},
+  "TermVectors": {},
+  "SpatialIndexes": {},
+  "Type": "Map"
+}

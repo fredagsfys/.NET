@@ -1,0 +1,219 @@
+﻿@model Easyfy.CHS.ViewModels.AthleteAffiliateViewModel
+@{var CurrentUser = Session["CurrentUser"] as Easyfy.CHS.Model.Athlete.Athlete; }
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@{var userGyms = String.Empty;}
+@{var userGymsEmpty = String.Empty;}
+
+@if (Model.Athlete.Username == CurrentUser.Username)
+{
+    userGyms = "Your affiliate connections";
+    userGymsEmpty = "You don't seem to have any affiliate connections.";
+}
+else
+{
+    userGyms = Model.Athlete.FirstName + "'s affiliate connections";
+    userGymsEmpty = Model.Athlete.FirstName + " don't seem to have any affiliate connections.";
+}
+
+
+<div class="row-fluid">
+    <div class="span12">
+        <nav id="profileMenuList">
+            <ul class="unstyled">
+                <li class="profileMenuListHead">
+                    <h2>@Model.Athlete.FirstName @Model.Athlete.LastName<i class="icon-double-angle-right"></i></h2>
+                </li>
+                @*<li class="profileMenuListLinks">@Html.ActionLink("Edit profile", "Edit", new { controller = "User", id = @id })</li>*@
+                <li class="profileMenuListLinks">@Html.ActionLink("Achievements", "Achievements", new { controller = "Athlete", id = Model.Athlete.Username })</li>
+                <li class="profileMenuListLinks">@Html.ActionLink("Diary", "Diary", new { controller = "Athlete", id = Model.Athlete.Username })</li>
+                <li class="profileMenuListLinks">@Html.ActionLink("Goals", "Goals", new { controller = "Athlete", id = Model.Athlete.Username })</li>
+                <li class="profileMenuListLinks">@Html.ActionLink("Records", "Records", new { controller = "Athlete", id = Model.Athlete.Username })</li>
+                <li class="profileMenuListLinks">@Html.ActionLink("Results", "Results", new { controller = "Athlete", id = Model.Athlete.Username })</li>
+                <li class="profileMenuListLinks">@Html.ActionLink("Stats", "Stats", new { controller = "Athlete", id = Model.Athlete.Username })</li>
+                <li class="profileMenuListLinks">@Html.ActionLink("Follows", "Follows", new { controller = "Athlete", id = Model.Athlete.Username })</li>
+            </ul>
+        </nav>
+    </div>
+</div>
+<div class="row-fluid">
+    <div class="span2" id="ProfileSection">
+        <div class="image">
+            @if (Model.Athlete.ProfilePicture == null)
+            {
+                <div id="DefaultProfilePicture" class="img-polaroid">
+                    <i class="icon-user"></i>
+                </div>
+            }
+            else
+            {
+                <img src="@Model.Athlete.ProfilePicture" class="img-polaroid" />
+            }
+        </div>
+
+        <div id="PersonalInfo">
+            @Html.Partial("_PersonalInfo", Model.Athlete)
+        </div>
+        <div id="EditPartial"></div>
+    </div>
+    <div class="span4">
+        <h4>@userGyms</h4>
+        @if (Model.Athlete.Affiliates != null && Model.Athlete.Affiliates.Count > 0)
+        {
+            var ownerAt = Model.Athlete.Affiliates.Where(m => m.AffiliateRoles.Contains("Owner")).ToList();
+            var memberAt = Model.Athlete.Affiliates.Where(m => m.AffiliateRoles.Contains("Member")).ToList();
+            var followerAt = Model.Athlete.Affiliates.Where(m => m.AffiliateRoles.Contains("Follow")).ToList();
+            var coachAt = Model.Athlete.Affiliates.Where(m => m.AffiliateRoles.Contains("Coach")).ToList();
+
+            <div id="AthleteGyms">
+                @if (ownerAt.Count > 0)
+                {
+                    <div class="athleteAffiliateConnections">
+                        <h5 class="AthleteGymHeaders">Owner:</h5>
+                        <div class="content">
+                            @foreach (var item in ownerAt)
+                            {
+                                <a href="@Url.Action("Details", "Affiliate", new { id = item.FriendlyUrl })">
+                                    <p>
+                                        @item.Name
+                                    </p>
+                                </a>
+                            }
+                        </div>
+                    </div>
+                }
+                
+                @if (coachAt.Count > 0)
+                {                    
+                    <div class="athleteAffiliateConnections">
+                        <h5 class="AthleteGymHeaders">Coach:</h5>
+                        <div class="content">
+                            @foreach (var item in coachAt)
+                            {
+                                <a href="@Url.Action("Details", "Affiliate", new { id = item.FriendlyUrl })">
+                                    <p>
+                                        @item.Name
+                                    </p>
+                                </a>
+                            }
+                        </div>
+                    </div>
+                }
+
+                @if (memberAt.Count > 0)
+                {
+                    <div class="athleteAffiliateConnections">
+                        <h5 class="AthleteGymHeaders">Member:</h5>
+                        <div class="content">
+                            @foreach (var item in memberAt)
+                            {
+                                <a href="@Url.Action("Details", "Affiliate", new { id = item.FriendlyUrl })">
+                                    <p>
+                                        @item.Name
+                                    </p>
+                                </a>
+                            }
+                        </div>
+                    </div>
+                }
+
+                 
+                @if (followerAt.Count > 0)
+                {
+                    <div class="athleteAffiliateConnections">
+                        <h5 class="AthleteGymHeaders">Follower:</h5>
+                        <div class="content">
+                            @foreach (var item in followerAt)
+                            {
+                                <a href="@Url.Action("Details", "Affiliate", new { id = item.FriendlyUrl })">
+                                    <p>
+                                        @item.Name
+                                    </p>
+                                </a>
+                            }
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+        else
+        {
+            <p class="emptyDetailsPart">
+                <i class="icon-folder-open-alt"></i>
+                <span class="muted">
+                    @userGymsEmpty.
+                </span>
+            </p>
+        }
+    </div>
+     <div class="span4">
+        <h4>Todays Wods</h4>
+        
+        @{var member = Model.Athlete.Affiliates.Where(m => m.AffiliateRoles.Contains("Member")).ToList();}
+        @foreach (var item in member)
+        {
+            <div class="athleteWOD">
+                <h5 class="AthleteGymHeaders">@item.Name's WOD:</h5>
+                <div class="content">
+                    @foreach (var m in Model.ScheduledWod.Where(m => m.AffiliateId == item.Id))
+                    {
+                        var id = CurrentUser.Username;
+                        <div class="WOD">
+
+                            <p>@m.Description</p>
+
+                            @foreach (var i in m.WodList) 
+                            { 
+                                <p>@i.WodTitleDescription</p>
+                                    <p>@i.WodTimeDescription</p>
+                                    <p>@i.WodHeroesDescription</p>
+                                    if (i.WodExerciseInfo != null) 
+                                    {
+                                        foreach (var e in i.WodExerciseInfo)
+                                        {
+                                            <p>@e.LapInfo</p>
+                                            <ul>
+                                                @foreach (var exercise in e.ExerciseInfoList)
+                                                {
+                                                    <li>@exercise</li>
+                                                }
+                                            </ul>
+                                        }
+                                    }
+                               <p>@i.WodResultDescription</p>
+                         
+                                <div id="@id">
+                                    <p>@Ajax.ActionLink("Report result »", "WodReportResult", new { controller = "WOD", wodId = i.WodId }, new AjaxOptions { UpdateTargetId = @id }, new { @class="btn btn-small btn-success"})</p>
+                                </div>
+                            }
+                        </div>
+                    }                      
+                </div>
+            </div>
+                               
+        }
+    </div>
+    @if (Model.Athlete.Username != CurrentUser.Username)
+    {
+        if(CurrentUser.Follows.Exists(x => x.Id == Model.Athlete.Id))
+        {
+        <div class="span1">
+               @Html.ActionLink("UnFollow", "UnFollows", new { controller = "Athlete", id = Model.Athlete.Username, followId = Model.Athlete.Id }, new { @class = "btn btn-inverse"}) 
+
+                
+        </div>
+        }
+        else{
+            <div class="span1">
+                @Html.ActionLink("Follow", "Follows", new { controller = "Athlete", id = Model.Athlete.Username, followId = Model.Athlete.Id, name = Model.Athlete.FirstName, lName = Model.Athlete.LastName }, new { id = "follow", @class = "btn btn-inverse" })
+            </div>
+            
+        }
+    }
+
+</div>

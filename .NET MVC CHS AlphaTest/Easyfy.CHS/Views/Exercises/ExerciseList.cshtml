@@ -1,0 +1,34 @@
+﻿@using Easyfy.CHS.Model.Exercise
+@model IList<Easyfy.CHS.Model.Exercise.ExerciseBase>
+
+@*<span class="exerciseType">Gymnastic</span>*@
+<span>Gymnastic</span>
+<ul class="exerciseList">
+
+    @foreach (var item in Model.Where(o => o.ExerciseType == ExerciseType.Gymnastic).OrderBy(o => o.Name))
+    {
+        <li class="liExercise"><span class="editGymnasticExercise">@item.Name</span></li>
+    }
+
+</ul>
+
+<span>Metabolic</span>
+<ul class="exerciseList">
+
+    @foreach (var item in Model.Where(o => o.ExerciseType == ExerciseType.Metabolic).OrderBy(o => o.Name))
+    {
+        <li class="liExercise"><span class="editMetabolicExercise"><span>@item.Name</span> <span>@item.Length</span> <span>@item.LengthTypeToString</span></span></li>
+
+    }
+
+</ul>
+
+<span>WeightLift</span>
+<ul class="exerciseList">
+
+    @foreach (var item in Model.Where(o => o.ExerciseType == ExerciseType.WeightLift).OrderBy(o => o.Name))
+    {
+        <li class="liExercise"><span class="editGymnasticExercise">@item.Name</span></li>
+    }
+
+</ul>

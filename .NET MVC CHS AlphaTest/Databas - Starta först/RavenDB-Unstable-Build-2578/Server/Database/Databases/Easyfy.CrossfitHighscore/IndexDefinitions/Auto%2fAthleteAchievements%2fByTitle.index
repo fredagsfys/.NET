@@ -1,0 +1,21 @@
+{
+  "Name": "Auto/AthleteAchievements/ByTitle",
+  "LockMode": "Unlock",
+  "Map": "from doc in docs.AthleteAchievements\r\nselect new { Title = doc.Title }",
+  "Maps": [
+    "from doc in docs.AthleteAchievements\r\nselect new { Title = doc.Title }"
+  ],
+  "Reduce": null,
+  "TransformResults": null,
+  "IsMapReduce": false,
+  "IsCompiled": false,
+  "Stores": {},
+  "Indexes": {},
+  "SortOptions": {},
+  "Analyzers": {},
+  "Fields": [],
+  "Suggestions": {},
+  "TermVectors": {},
+  "SpatialIndexes": {},
+  "Type": "Auto"
+}

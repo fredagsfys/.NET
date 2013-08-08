@@ -1,0 +1,23 @@
+{
+  "Name": "Auto/WorkoutResults/ByAthleteIdAndDateSortByDate",
+  "LockMode": "Unlock",
+  "Map": "from doc in docs.WorkoutResults\r\nselect new { AthleteId = doc.AthleteId, Date = doc.Date }",
+  "Maps": [
+    "from doc in docs.WorkoutResults\r\nselect new { AthleteId = doc.AthleteId, Date = doc.Date }"
+  ],
+  "Reduce": null,
+  "TransformResults": null,
+  "IsMapReduce": false,
+  "IsCompiled": false,
+  "Stores": {},
+  "Indexes": {},
+  "SortOptions": {
+    "Date": "String"
+  },
+  "Analyzers": {},
+  "Fields": [],
+  "Suggestions": {},
+  "TermVectors": {},
+  "SpatialIndexes": {},
+  "Type": "Auto"
+}

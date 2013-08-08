@@ -1,0 +1,40 @@
+﻿@model Easyfy.CHS.Model.Affiliate.ScheduledWod
+
+<div class="span10 scheduleWod" id="Content">
+    <h4>Schedule wod</h4>
+    <i class="icon-remove-circle" id="ClosePageArrow"><span id="ClosePageText">Close</span></i>
+
+    @using (Html.BeginForm("ScheduleWod", "Affiliate", FormMethod.Post, new Dictionary<string, object> { {"id", "scheduleForm"}, { "class", "form-horizontal" } }))
+    {
+        @Html.ValidationSummary(true)
+
+        @Html.HiddenFor(m => m.AffiliateId)
+        @Html.HiddenFor(m => m.AffiliateUrl)
+        
+        @Html.EditorFor(m => m.WodList)
+
+
+        @Html.Partial("_AddWod", Model.WodList)
+        <div class="showWodSearch btn"><span class="button_submit_Text">Add wod</span></div>
+        
+        <div class="control-group">
+            @Html.ValidationMessageFor(m => m.Date)
+            @Html.LabelFor(m => m.Date)
+            <div class="controls" id="moveLeft">
+                @Html.TextBoxFor(m => m.Date, new { @class = "datepicker" })
+            </div>
+        </div>
+        
+        <div class="control-group">
+            @Html.ValidationMessageFor(m => m.Description)
+            @Html.LabelFor(m => m.Description)
+            <div class="controls" id="moveLeft">
+                @Html.TextBoxFor(m => m.Description)
+            </div>
+        </div>
+
+        <p><button type="submit" class="createButtons">Save</button></p>
+    }
+</div>
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>

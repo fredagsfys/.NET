@@ -1,0 +1,58 @@
+﻿@model Easyfy.CHS.Model.ViewModel.AthleteSearchViewModel
+
+@{
+  int [] arr = new int[3];
+  arr[0] = 5;
+  arr[1] = 10;
+  arr[2] = 15;
+}
+
+@foreach (var item in arr) {
+  if (Model.PageSize == item) {
+    <input type="radio" name="athletePaging" value="@item" class="athletePaging" checked="checked" />
+    @item
+  }
+  else {
+    <input type="radio" name="athletePaging" value="@item" class="athletePaging" />
+    @item
+  }
+}
+
+@foreach (var facets in Model.FacetResults.Results) {
+  <div class="facets">
+    <h3>Key: @Html.Raw(facets.Key)</h3>
+    @foreach (var value in facets.Value.Values) {
+      <p>
+        @if (Model.CheckboxFilterList.Any(m => m.Key.ToLower()==facets.Key.ToLower() && m.Value.ToLower() == value.Range.ToLower())) {
+          <input type="checkbox" data-key="@facets.Key" class="athleteCheckboxFilter" value="@value.Range" checked="checked" />
+        }
+        else {
+          <input type="checkbox" data-key="@facets.Key" class="athleteCheckboxFilter" value="@value.Range" />
+        }
+        <label>@value.Range (@value.Hits)</label>
+      </p>
+    }
+  </div>
+}
+
+<ul>
+  @foreach (var item in Model.AthleteList) {
+    <li>
+      <p>@item.FirstName @item.LastName (@item.Username)</p>
+      <p>@item.City, @item.Country</p>
+    </li>
+  }
+</ul>
+
+<ul>
+  @for (int i = 1; i < Model.TotalPages + 1; i++) {
+    <li>
+      @if (Model.Page == i) {
+        <a href="javascript:athleteRefreshData(@i);" class="activePage">@i</a>
+      }
+      else {
+        <a href="javascript:athleteRefreshData(@i);">@i</a>
+      }
+    </li>
+  }
+</ul>

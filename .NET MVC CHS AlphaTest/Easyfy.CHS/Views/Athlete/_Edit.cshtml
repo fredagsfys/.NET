@@ -1,0 +1,58 @@
+﻿@model Easyfy.CHS.ViewModels.EditAthleteViewModel
+
+@{
+    ViewBag.Title = "Edit";
+
+    var options = new AjaxOptions()
+    {
+        LoadingElementId = "saving",
+        LoadingElementDuration = 2000
+    };
+}
+
+@using (Ajax.BeginForm(options))
+{        
+        if (Model.ProfilePicture != null)
+        {
+            <div id="ShowProfilePicture"><span>Visible?</span> @Html.CheckBoxFor(m => m.ShowPicture)</div>
+        }
+        <p><span>Email</span><br />
+            @Html.ValidationMessageFor(m => m.Email)
+            @Html.TextBoxFor(m => m.Email)
+        </p>
+
+        <p><span>City</span><br />
+            @Html.ValidationMessageFor(m => m.City)
+            @Html.TextBoxFor(m => m.City)
+        </p>
+
+        <p><span>Country</span><br />            
+            @Html.ValidationMessageFor(m => m.Country)
+            @Html.TextBoxFor(m => m.Country)
+        </p>
+        
+        <p><span>Height</span><br />
+            @Html.ValidationMessageFor(m => m.Height)
+            @Html.TextBoxFor(m => m.Height)
+        </p>
+        <p><span>Weight</span><br />
+            @Html.ValidationMessageFor(m => m.Weight)
+            @Html.TextBoxFor(m => m.Weight)
+        </p>
+        <p><span>Birth</span><br />
+            @Html.ValidationMessageFor(m => m.Birth)
+            @Html.TextBoxFor(m => m.Birth, new { @Value = Model.Birth.ToShortDateString() })
+        </p>
+        <p><span>Gender</span><br />
+            @Html.DropDownListFor(m => m.Gender, Model.GenderOptionValues)
+        </p>
+        @Html.HiddenFor(m => m.ProfilePicture)
+        @Html.HiddenFor(m => m.FirstName)
+        @Html.HiddenFor(m => m.LastName)
+        @Html.HiddenFor(m => m.Username)
+        <input type="button" class="createButtons" id="EditSubmit" value="Save" data-url="@Url.Action("Edit", "Athlete", new { id = Model.Username, ReturnUrl = "_PersonalInfo" })" />
+        <span class="cancelButtons">Cancel</span>
+}
+<script type="text/javascript">
+    $.validator.unobtrusive.parse("form");
+</script>

@@ -1,0 +1,53 @@
+﻿@model Easyfy.CHS.Model.Affiliate.Affiliate
+
+@{
+    ViewBag.Title = "Edit";
+
+    var options = new AjaxOptions()
+    {
+        LoadingElementId = "saving",
+        LoadingElementDuration = 2000
+    };
+}
+
+<div class="row-fluid">
+    @using (Ajax.BeginForm(options))
+    {
+        <div class="span6">
+            <p><span>Name</span><br />
+                @Html.ValidationMessageFor(m => m.Name)
+                @Html.TextBoxFor(m => m.Name)
+            </p>
+            <p><span>Address</span><br />
+                @Html.ValidationMessageFor(m => m.Address)
+                @Html.TextBoxFor(m => m.Address)
+            </p>
+            <p><span>City</span><br />
+                @Html.ValidationMessageFor(m => m.City)
+                @Html.TextBoxFor(m => m.City)
+            </p>
+
+            <p><span>Country</span><br />            
+                @Html.ValidationMessageFor(m => m.Country)
+                @Html.TextBoxFor(m => m.Country)
+            </p>
+        
+            <p><span>Postal code</span><br />            
+                @Html.ValidationMessageFor(m => m.Postal)
+                @Html.TextBoxFor(m => m.Postal)
+            </p>
+        </div>
+        <div class="span6">        
+            <p><span>Description</span><br />
+                @Html.ValidationMessageFor(m => m.Description)
+                @Html.TextAreaFor(m => m.Description)
+            </p>
+            @Html.HiddenFor(m => m.FriendlyUrl)
+    
+            <input type="button" class="createButtons" id="EditSubmit" value="Save" data-url="@Url.Action("Edit", "Affiliate", new { id = Model.FriendlyUrl })" />
+            <span class="cancelButtons">Cancel</span>
+        </div>
+    }
+    <script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+</div>

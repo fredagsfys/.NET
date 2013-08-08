@@ -1,0 +1,23 @@
+{
+  "Name": "Auto/workouts/ByDateAndReferenceToAndScheduleWodIdSortByDate",
+  "LockMode": "Unlock",
+  "Map": "from doc in docs.workouts\r\nselect new { ReferenceTo = doc.ReferenceTo, Date = doc.Date, ScheduleWodId = doc.ScheduleWodId }",
+  "Maps": [
+    "from doc in docs.workouts\r\nselect new { ReferenceTo = doc.ReferenceTo, Date = doc.Date, ScheduleWodId = doc.ScheduleWodId }"
+  ],
+  "Reduce": null,
+  "TransformResults": null,
+  "IsMapReduce": false,
+  "IsCompiled": false,
+  "Stores": {},
+  "Indexes": {},
+  "SortOptions": {
+    "Date": "String"
+  },
+  "Analyzers": {},
+  "Fields": [],
+  "Suggestions": {},
+  "TermVectors": {},
+  "SpatialIndexes": {},
+  "Type": "Auto"
+}

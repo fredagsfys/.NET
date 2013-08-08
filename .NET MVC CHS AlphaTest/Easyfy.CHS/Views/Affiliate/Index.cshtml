@@ -1,0 +1,26 @@
+﻿@model Easyfy.CHS.Model.ViewModel.AffiliateSearchViewModel
+
+@{
+  ViewBag.Title = "Affiliates";
+  Layout = "~/Views/Shared/_Layout.cshtml";
+  var CurrentUser = Session["CurrentUser"] as Easyfy.CHS.Model.Athlete.Athlete;
+}
+
+<div class="row-fluid" id="AffiliatesContainer">
+  <h4>Affiliates</h4>
+  @if (CurrentUser != null)
+  {
+    <div class="createButtonSection">
+      <button type="submit" class="createButtons" id="CreateSubmit" data-url="@Url.Action("Create", "Affiliate")" data-loading-text="Loading...">Create</button>
+      <div id="CreatePartial">
+      </div>
+    </div>
+  }
+
+  <label>Search affiliate:</label>
+  <input type="text" id="affiliateTerm" />
+
+  <div id="affiliateSearchResults">
+    @Html.Partial("_ListofAffiliates", Model)
+  </div>
+</div>

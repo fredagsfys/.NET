@@ -1,0 +1,14 @@
+﻿@{var CurrentUser = Session["CurrentUser"] as Easyfy.CHS.Model.Athlete.Athlete; } 
+
+@if (CurrentUser != null)
+{
+    <a href="javascript:document.getElementById('logoutForm').submit()" id="LogoutButton">Log off</a>
+    <text>
+        @Html.ActionLink(string.Format("{0} {1}", CurrentUser.FirstName, CurrentUser.LastName), "Details", new { controller = "Athlete", id = CurrentUser.Username }, new { @class = "username", @title = "Manage your account" })
+        @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" })) {
+            @Html.AntiForgeryToken()
+        }
+    </text>
+} else {
+        @Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "LoginButton" })
+}

@@ -1,0 +1,21 @@
+{
+  "Name": "Auto/resourcecollections/ByLanguage",
+  "LockMode": "Unlock",
+  "Map": "from doc in docs.resourcecollections\r\nselect new { Language = doc.Language }",
+  "Maps": [
+    "from doc in docs.resourcecollections\r\nselect new { Language = doc.Language }"
+  ],
+  "Reduce": null,
+  "TransformResults": null,
+  "IsMapReduce": false,
+  "IsCompiled": false,
+  "Stores": {},
+  "Indexes": {},
+  "SortOptions": {},
+  "Analyzers": {},
+  "Fields": [],
+  "Suggestions": {},
+  "TermVectors": {},
+  "SpatialIndexes": {},
+  "Type": "Auto"
+}

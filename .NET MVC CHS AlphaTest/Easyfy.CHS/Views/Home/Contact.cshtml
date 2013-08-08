@@ -1,0 +1,24 @@
+﻿@{
+    ViewBag.Title = "Contact";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Contact us.</h2>
+
+@using (Html.BeginForm()) {
+
+    <label>Email:</label>
+    @Html.TextBox("email")
+
+    <label>Name:</label>
+    @Html.TextBox("name")
+
+    <label>Subject:</label>
+    @Html.TextBox("subject")
+
+    <label>Description:</label>
+    @Html.TextArea("body")
+
+    <p><input type="submit" value="Send" /></p>
+}
+

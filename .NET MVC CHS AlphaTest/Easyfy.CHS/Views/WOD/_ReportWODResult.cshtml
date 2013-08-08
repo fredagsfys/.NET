@@ -1,0 +1,27 @@
+﻿@using Easyfy.CHS.Helpers
+@model Easyfy.CHS.ViewModels.WodViewModel
+@{var CurrentUser = Session["CurrentUser"] as Easyfy.CHS.Model.Athlete.Athlete; }
+
+<div class="wodResultContent">
+    @using (Html.BeginForm("CreateWodResult", "WOD", FormMethod.Post, new Dictionary<string, object> { { "id", "createWODResultForm" }, { "class", "form-horizontal"} }))
+    {
+        @Html.HiddenFor(m => m.Result.WodId)
+        @Html.HiddenFor(m=>m.Result.ScheduledWodId)
+        @Html.HiddenFor(m => m.Result.WodName)
+        @Html.HiddenFor(m => m.Result.Date)
+        @Html.HiddenFor(m => m.Result.ResultType)
+        @Html.LabelFor(m=>m.Result.Value)
+        @Html.TextBoxFor(m=>m.Result.Value)
+        
+        <label class="checkbox">
+            @Html.CheckBoxFor(m => m.Result.Recommended) asRxd (as recommended).
+        </label>
+
+        <p><button type="submit" id="ReportWod" class="btn-inverse btn-small">Save my results</button></p>
+    }
+</div>
+
+@Scripts.Render("~/bundles/jquery")
+<script src="@Url.Content("~/Scripts/jquery.signalR-1.0.1.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/signalr/hubs")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/activity.js")" type="text/javascript"></script>

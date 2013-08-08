@@ -1,0 +1,6 @@
+C:\Builds\RavenDB-Unstable-v2.5\build\Raven.Samples.IndexReplication.exe.config
+C:\Builds\RavenDB-Unstable-v2.5\build\Raven.Samples.IndexReplication.exe
+C:\Builds\RavenDB-Unstable-v2.5\build\Raven.Samples.IndexReplication.pdb
+C:\Builds\RavenDB-Unstable-v2.5\Samples\Raven.Samples.IndexReplication\obj\x86\Release\Raven.Samples.IndexReplication.exe
+C:\Builds\RavenDB-Unstable-v2.5\Samples\Raven.Samples.IndexReplication\obj\x86\Release\Raven.Samples.IndexReplication.pdb
+C:\Builds\RavenDB-Unstable-v2.5\Samples\Raven.Samples.IndexReplication\obj\x86\Release\Raven.Samples.IndexReplication.csprojResolveAssemblyReference.cache

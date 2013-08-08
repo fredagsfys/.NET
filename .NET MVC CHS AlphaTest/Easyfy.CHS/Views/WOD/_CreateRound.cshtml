@@ -1,0 +1,47 @@
+@using Easyfy.CHS.Helpers
+@model Easyfy.CHS.Model.Wod.Round
+@if (this.ViewContext.FormContext == null)
+{
+    this.ViewContext.FormContext = new FormContext();
+}
+<div class="wodbase_round span12 img-polaroid offset2">
+    <h3 class="roundHandle">
+        Round
+    </h3>
+    <a href="#" class="deleteRound pull-right" onclick="return confirm('Do you want to delete round?')">
+        Delete round
+    </a>
+
+  @using (Html.BeginCollectionItem("WodBase.Rounds"))
+  {
+    <hr />
+    <div class="field">
+        @Html.LabelFor(o => Model.Laps)
+        @Html.ValidationMessageFor(o => Model.Laps)
+        @Html.TextBoxFor(o => Model.Laps, "1" , new { @class = "span3"})
+    </div>
+    <br />
+    <div class="field">
+        @Html.TextBoxFor(o => Model.SortOrder, new { style = "display: none;" })
+    </div>
+        <div class="ui-sortable" id="WODRoundExercise">
+            @foreach (var item in Model.ExerciseRounds)
+            {
+                @Html.Partial("_CreateExerciseRound", @item);
+                <input type="button" class="showExerciseRoundSearch btn btn-info" data-containerPrefix="@ViewData["ContainerPrefix"]" value="Add exercise" /> 
+            }
+        </div>
+  }
+</div>
+<script>
+    $("form").removeData("validator");
+    $("form").removeData("unobtrusiveValidation");
+    $.validator.unobtrusive.parse("form");
+
+
+    $("#WODRoundExercise").sortable({
+        handle: ".Handle",
+        placeholder: "exRound row-fluid"
+    });
+    $("#WODRounds").disableSelection();
+</script>

@@ -1,0 +1,6 @@
+C:\Builds\RavenDB-Unstable-v2.5\build\Raven.Sample.SimpleClient.exe.config
+C:\Builds\RavenDB-Unstable-v2.5\build\Raven.Sample.SimpleClient.exe
+C:\Builds\RavenDB-Unstable-v2.5\build\Raven.Sample.SimpleClient.pdb
+C:\Builds\RavenDB-Unstable-v2.5\Samples\Raven.Sample.SimpleClient\obj\x86\Release\Raven.Sample.SimpleClient.exe
+C:\Builds\RavenDB-Unstable-v2.5\Samples\Raven.Sample.SimpleClient\obj\x86\Release\Raven.Sample.SimpleClient.pdb
+C:\Builds\RavenDB-Unstable-v2.5\Samples\Raven.Sample.SimpleClient\obj\x86\Release\Raven.Sample.SimpleClient.csprojResolveAssemblyReference.cache

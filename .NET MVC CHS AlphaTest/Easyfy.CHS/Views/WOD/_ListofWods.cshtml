@@ -1,0 +1,38 @@
+﻿@model Easyfy.CHS.Model.ViewModel.WodSearchViewModel
+
+@if (Model.CheckboxFilterList != null) {
+  foreach (var item in Model.CheckboxFilterList) {
+    @Html.Raw(item.Key+":"+@item.Value)
+  }
+}
+
+<div class="leftsearch">
+  @foreach (var facets in Model.FacetResults.Results) {
+    <div class="facets">
+      <h3>Key: @Html.Raw(facets.Key)</h3>
+      @foreach (var value in facets.Value.Values) {
+        <p>
+          @if (Model.CheckboxFilterList.Any(m => m.Key.ToLower()==facets.Key.ToLower() && m.Value.ToLower() == value.Range.ToLower())) {
+            <input type="checkbox" data-key="@facets.Key" class="wodCheckboxFilter" value="@value.Range" checked="checked" />
+          }
+          else {
+            <input type="checkbox" data-key="@facets.Key" class="wodCheckboxFilter" value="@value.Range" />
+          }
+          <label>@value.Range (@value.Hits)</label>
+        </p>
+      }
+    </div>
+  }
+</div>
+<div class="rightsearch">
+<ul>
+  @foreach (var item in Model.WodList) {
+    <li>
+      <p>@item.Name, (@item.WodType)</p>
+      <p>@item.Description</p>
+      <p>@Html.Raw(item.ToString())</p>
+      <p>@item.Score</p>
+    </li>
+  }
+</ul>
+  </div>

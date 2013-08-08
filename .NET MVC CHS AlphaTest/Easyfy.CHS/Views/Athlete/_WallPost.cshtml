@@ -1,0 +1,22 @@
+﻿
+  @model Easyfy.CHS.Model.ViewModel.ActivityViewModel 
+ 
+@foreach (var item in Model.Activity)
+{
+    var ulId = @item.WorkoutResultId.Split('/');
+
+  <ul id="@ulId[1]">
+    @item.Date @item.AthleteName @item.AthleteId <br />
+    <img src="@item.AthleteImageUrl" /><br />
+
+  @foreach (var r in item.Results) {
+      <li>
+    @r.WodName <br />
+    @r.Value<br />
+      </li>
+    
+    
+  }
+  </ul>
+
+}

@@ -1,0 +1,10 @@
+﻿@model Easyfy.CHS.ViewModels.ExerciseViewModel
+
+@{
+    ViewBag.Title = "Exercises";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Exercises</h2>
+
+@Html.Partial("ExerciseList", Model.Exercises)

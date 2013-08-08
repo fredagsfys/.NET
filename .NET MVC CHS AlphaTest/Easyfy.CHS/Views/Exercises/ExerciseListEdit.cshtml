@@ -1,0 +1,56 @@
+﻿@using Easyfy.CHS.Model.Exercise
+@model IList<Easyfy.CHS.Model.Exercise.ExerciseBase>
+
+<strong>Gymnastic</strong>
+<ul class="exerciseList">
+
+    @foreach (var item in Model.Where(o => o.ExerciseType == ExerciseType.Gymnastic).OrderBy(o => o.Name))
+    {
+        <li id="li_@(item.GetIntId())" class="liExercise">
+            <span id="e_@(item.GetIntId())" class="editGymnasticExercise">@item.Name</span>
+            <a href="#" class="deleteExercise" title="Delete exercise" id="d_@(item.GetIntId())">Delete</a>
+        </li>
+    }
+
+</ul>
+
+<strong>Metabolic</strong>
+<ul class="exerciseList">
+
+    @foreach (var item in Model.Where(o => o.ExerciseType == ExerciseType.Metabolic).OrderBy(o => o.Name))
+    {
+        <li id="li_@(item.GetIntId())" class="liExercise"><span id="e_@(item.GetIntId())" class="editMetabolicExercise">
+            <span id="eN_@(item.GetIntId())">@item.Name</span>
+            <span id="eL_@(item.GetIntId())">@item.Length</span> 
+            <span id="eM_@(item.GetIntId())">@item.LengthTypeToString</span></span>
+            <a href="#" id="d_@(item.GetIntId())" class="deleteExercise" title="Delete exercise">Delete</a>
+        </li>
+    }
+
+</ul>
+
+<strong>Weightlift</strong>
+<ul class="exerciseList">
+
+    @foreach (var item in Model.Where(o => o.ExerciseType == ExerciseType.WeightLift).OrderBy(o => o.Name))
+    {
+        <li id="li_@(item.GetIntId())" class="liExercise">
+            <span id="e_@(item.GetIntId())" class="editWeightLiftExercise">@item.Name</span>
+            <a id="d_@(item.GetIntId())" href="#" class="deleteExercise" title="Delete exercise">Delete</a>
+        </li>
+    }
+
+</ul>
+
+<strong>Rest period</strong>
+<ul class="exerciseList">
+
+    @foreach (var item in Model.Where(o => o.ExerciseType == ExerciseType.RestPeriod).OrderBy(o => o.Name))
+    {
+        <li id="li_@(item.GetIntId())" class="liExercise">
+            <span id="e_@(item.GetIntId())" class="editRestPeriodExercise">@item.Name</span>
+            <a href="#" id="d_@(item.GetIntId())" class="deleteExercise" title="Delete exercise">Delete</a>
+        </li>
+    }
+
+</ul>

@@ -1,0 +1,21 @@
+{
+  "Name": "Auto/workouts/ByReferenceTo",
+  "LockMode": "Unlock",
+  "Map": "from doc in docs.workouts\r\nselect new { ReferenceTo = doc.ReferenceTo }",
+  "Maps": [
+    "from doc in docs.workouts\r\nselect new { ReferenceTo = doc.ReferenceTo }"
+  ],
+  "Reduce": null,
+  "TransformResults": null,
+  "IsMapReduce": false,
+  "IsCompiled": false,
+  "Stores": {},
+  "Indexes": {},
+  "SortOptions": {},
+  "Analyzers": {},
+  "Fields": [],
+  "Suggestions": {},
+  "TermVectors": {},
+  "SpatialIndexes": {},
+  "Type": "Auto"
+}

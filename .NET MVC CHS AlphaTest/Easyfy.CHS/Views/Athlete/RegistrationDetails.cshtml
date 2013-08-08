@@ -1,0 +1,133 @@
+﻿@model Easyfy.CHS.ViewModels.EditAthleteViewModel
+
+@{
+    ViewBag.Title = "RegistrationDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row-fluid" id="FirstTimeViewHead">
+    <div class="span12">
+        <h4>Welcome, @Model.FirstName @Model.LastName, I see you're new at <strong>Crossfit Highscore</strong>
+        </h4>
+        <p>
+            We took this opportunity to set you up with an account and a profile here on Crossfit Hightscore,
+            but for now it's empty. You can personalize your profile right now or save it for later. If you're
+            in a hurry, just skip this and move on to @Html.ActionLink("check the site out", "Index", "Home").
+        </p>
+    </div>
+</div>
+
+<div class="row-fluid">
+    <div class="span4">
+        <h4>What do you look like?</h4>
+        <div id="ProfileImage" class="row-fluid">
+            <div class="span6">
+                @if (Model.ProfilePicture == null)
+                {
+                    <div id="FirstTimeDefaultProfilePicture" class="img-polaroid">
+                        <i class="icon-user"></i>
+                    </div>
+                }
+                else
+                {
+                    <img src="@Model.ProfilePicture" class="img-polaroid" />
+                    <span>
+                        Is this you? If not, you can choose to upload a new photo, or
+                        just use the default icon photo.
+                    </span>
+                }
+            </div>
+        </div>
+        @Html.Partial("~/Views/Image/_ImageUpload.cshtml")
+    </div>
+
+    <div class="span8">
+        <div class="row-fluid">
+            <h4>Personalize your profile</h4>
+            <span>Is this information about you correct? If not, please change it.</span>
+
+            @using (Html.BeginForm("Edit", "Athlete", new { id = Model.Username, ReturnUrl = "Details" }, FormMethod.Post, new { @class = "form-horizontal" }))
+            {  
+                <div class="span6">
+                    @*@Html.ValidationSummary(false, "Getting the locations was unseccessful. Please correct the errors and try again.")*@
+                    @*<div class="control-group">
+                        @Html.LabelFor(model => model.FirstName, new { @class = "control-label", @for = "inputFirstName" })
+                        <div class="controls">
+                            @Html.TextBoxFor(model => model.FirstName, new { @id = "inputFirstName", placeholder = "First name" })
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        @Html.LabelFor(model => model.LastName, new { @class = "control-label", @for = "inputLastName" })
+                        <div class="controls">
+                            @Html.TextBoxFor(model => model.LastName, new { @id = "inputLastName", placeholder = "First name" })
+                        </div>
+                    </div>*@
+
+                    <div class="control-group">
+                        @Html.LabelFor(model => model.Email, new { @class = "control-label", @for = "inputEmail" })
+                        <div class="controls">
+                            @Html.ValidationMessageFor(model => model.Email)
+                            @Html.TextBoxFor(model => model.Email, new { @id = "inputEmail", placeholder = "Email" })
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        @Html.LabelFor(model => model.Country, new { @class = "control-label", @for = "inputCountry" })
+                        <div class="controls">
+                            @Html.TextBoxFor(model => model.Country, new { @id = "inputCountry", placeholder = "Country" })
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        @Html.LabelFor(model => model.City, new { @class = "control-label", @for = "inputCity" })
+                        <div class="controls">
+                            @Html.TextBoxFor(model => model.City, new { @id = "inputCity", placeholder = "City" })
+                        </div>
+                    </div>                    
+                    <div class="control-group">
+                        @Html.LabelFor(model => model.Birth, new { @class = "control-label", @for = "inputAge" })
+                        <div class="controls" id="RegistrateDateOfBirth">
+                            @Html.ValidationMessageFor(model => model.Birth)
+                            @Html.TextBoxFor(model => model.Birth, new { @id = "inputAge", placeholder = "Date of birth", @Value = Model.Birth.ToShortDateString() })
+                        </div>
+                    </div>
+                </div>
+                <div class="span6">
+                    <div class="control-group">
+                        @Html.LabelFor(model => model.Weight, new { @class = "control-label", @for = "inputWeight" })
+                        <div class="controls">
+                            @Html.TextBoxFor(model => model.Weight, new { @id = "inputWeight", placeholder = "Weight" })
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        @Html.LabelFor(model => model.Height, new { @class = "control-label", @for = "inputHeight" })
+                        <div class="controls">
+                            @Html.TextBoxFor(model => model.Height, new { @id = "inputHeight", placeholder = "Height" })
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        @Html.LabelFor(model => model.Gender, new { @class = "control-label", @for = "inputGender" })
+                        <div class="controls">
+                            @Html.DropDownListFor(m => m.Gender, Model.GenderOptionValues, new { @id = "inputGender", placeholder = "Gender" })
+                        <p><span>Show profilepicture: @Html.CheckBoxFor(m => m.ShowPicture)</span> 
+                        </div>                        
+                    </div>
+                    @Html.HiddenFor(m => m.FirstName)
+                    @Html.HiddenFor(m => m.LastName)
+                    @Html.HiddenFor(m => m.ProfilePicture)
+                    @Html.HiddenFor(m => m.Username)
+                    <div class="control-group">
+                        <div class="controls">
+                            <button type="submit" class="createButtons" id="FirstViewSaveButton">Save profile</button>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+
+        @Html.ActionLink("I'll do this later >>", "Details", "Athlete", new { @class = "moveOnButton", id = Model.Username })
+    </div>
+</div>

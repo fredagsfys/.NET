@@ -1,0 +1,51 @@
+﻿@model Easyfy.CHS.ViewModels.AthleteAffiliateViewModel
+
+@{
+    ViewBag.Title = "ShowAffiliateAthletes";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+@using (Html.BeginForm()) {
+    
+    @Html.ValidationSummary(true)
+    <h2>Athletes in @Model.Affiliate.Name</h2>
+    
+    //Hämtar current logged in user
+    var loggedUser = Model.AthleteList.Find(u => u.Username == User.Identity.Name);
+    
+    
+    <div id="affiliateAthleteList">
+        @foreach (var item in Model.AthleteList)
+        {
+            string id = @Model.Affiliate.Id.Split('/')[1];
+            <article class="athlete">
+                <div class="image">
+                    <img src="@Url.Content(item.ProfilePicture)" alt="" />
+                </div>
+                 <div class="userinfo">
+                    @Html.DisplayFor(modelItem => item.FirstName), @Html.DisplayFor(model => item.LastName)
+                    <br />
+                    @Html.DisplayFor(modelItem => item.City), @Html.DisplayFor(modelItem => item.Country)
+                    <br />
+
+                    @*Kollar om u loggad user är Owner i affiliaten *@
+                    @if (loggedUser.Affiliates.Find(u => u.Id == Model.Affiliate.Id).AffiliateRoles.Contains("Owner"))
+                    {
+                            <div class="btn-group">
+                                <button class="icon-wrench" data-toggle="dropdown">
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li> @Html.ActionLink("Make owner", "UpdateAffiliateRole", new { controller = "Athlete", affiliateid = @id, username = item.Username, role = "Owner" })</li>
+                                    <li>@Html.ActionLink("Make coach", "UpdateAffiliateRole", new { controller = "Athlete", affiliateid = @id, username = item.Username, role = "Coach" })</li>
+                                    <li>@Html.ActionLink("Make member", "UpdateAffiliateRole", new { controller = "Athlete", affiliateid = @id, username = item.Username,  role = "Member" })</li>
+                                </ul>
+                            </div>
+                            @Html.ActionLink("Remove", "RemoveAffiliateAthlete", new { controller = "Athlete", id = @id, Username = @item.Username })                        
+                    }
+                </div>
+            </article>
+        }
+    </div>
+}   

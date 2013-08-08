@@ -1,0 +1,28 @@
+{
+  "Name": "Wod/Search",
+  "LockMode": "Unlock",
+  "Map": "docs.WodBases.Select(wod => new {\r\n    WodId = wod.__document_id,\r\n    Name = wod.Name,\r\n    Description = wod.Description,\r\n    WodType = wod.WodType.ToString(),\r\n    BenchmarkType = wod.BenchmarkType.ToString(),\r\n    ExerciseSearchField = wod.ExerciseSearchField,\r\n    ExerciseList = wod.ExerciseList,\r\n    RoundDescription = wod.RoundDescription\r\n})",
+  "Maps": [
+    "docs.WodBases.Select(wod => new {\r\n    WodId = wod.__document_id,\r\n    Name = wod.Name,\r\n    Description = wod.Description,\r\n    WodType = wod.WodType.ToString(),\r\n    BenchmarkType = wod.BenchmarkType.ToString(),\r\n    ExerciseSearchField = wod.ExerciseSearchField,\r\n    ExerciseList = wod.ExerciseList,\r\n    RoundDescription = wod.RoundDescription\r\n})"
+  ],
+  "Reduce": null,
+  "TransformResults": "results.Select(wod => new {\r\n    WodId = wod.WodId,\r\n    Name = wod.Name,\r\n    Description = wod.Description,\r\n    WodType = wod.WodType,\r\n    BenchmarkType = wod.BenchmarkType,\r\n    ExerciseSearchField = wod.ExerciseSearchField,\r\n    ExerciseList = wod.ExerciseList,\r\n    RoundDescription = wod.RoundDescription,\r\n    Score = wod[\"@metadata\"].Value(\"Temp-Index-Score\")\r\n})",
+  "IsMapReduce": false,
+  "IsCompiled": false,
+  "Stores": {},
+  "Indexes": {
+    "Name": "Analyzed",
+    "WodType": "Analyzed",
+    "BenchmarkType": "Analyzed",
+    "ExerciseSearchField": "Analyzed"
+  },
+  "SortOptions": {},
+  "Analyzers": {
+    "ExerciseSearchField": "Lucene.Net.Analysis.WhitespaceAnalyzer"
+  },
+  "Fields": [],
+  "Suggestions": {},
+  "TermVectors": {},
+  "SpatialIndexes": {},
+  "Type": "Map"
+}

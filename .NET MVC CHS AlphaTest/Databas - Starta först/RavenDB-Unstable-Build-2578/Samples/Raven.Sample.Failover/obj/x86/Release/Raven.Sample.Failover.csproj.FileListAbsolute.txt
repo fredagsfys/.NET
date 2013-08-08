@@ -1,0 +1,6 @@
+C:\Builds\RavenDB-Unstable-v2.5\build\Raven.Sample.Failover.exe.config
+C:\Builds\RavenDB-Unstable-v2.5\build\Raven.Sample.Failover.exe
+C:\Builds\RavenDB-Unstable-v2.5\build\Raven.Sample.Failover.pdb
+C:\Builds\RavenDB-Unstable-v2.5\Samples\Raven.Sample.Failover\obj\x86\Release\Raven.Sample.Failover.exe
+C:\Builds\RavenDB-Unstable-v2.5\Samples\Raven.Sample.Failover\obj\x86\Release\Raven.Sample.Failover.pdb
+C:\Builds\RavenDB-Unstable-v2.5\Samples\Raven.Sample.Failover\obj\x86\Release\Raven.Sample.Failover.csprojResolveAssemblyReference.cache
