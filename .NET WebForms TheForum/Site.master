@@ -1,0 +1,129 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site.master.cs" Inherits="SiteMaster" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head id="Head1" runat="server">
+	<title>
+		The Forum
+	</title>
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+
+	<style type="text/css">
+      body {
+        padding-top: 60px;
+      }
+    </style>
+</head>
+  <body>
+  <form id="Form" runat="server">
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="brand" href="#">The Forum</a>
+          <div class="nav-collapse collapse">
+            <span class="pull-right login">
+                <asp:LoginView ID="LoginView1" runat="server" EnableViewState="false">
+                    <AnonymousTemplate>
+                        <a href="~/Account/Login.aspx" ID="HeadLoginStatus" class="btn btn-success" runat="server">Log In</a>
+                    </AnonymousTemplate>
+                    <LoggedInTemplate>
+                        Welcome <span class="bold"><asp:LoginName ID="HeadLoginName" runat="server" /></span>!
+                        <asp:LoginStatus ID="HeadLoginStatus" runat="server" CssClass="btn btn-danger" LogoutAction="Redirect" LogoutText="Log Out" LogoutPageUrl="~/"/>
+                    </LoggedInTemplate>
+                </asp:LoginView>
+            </span>
+            <span class="clear hideSkiplink">
+                <%-- Menyn hämtas från Web.sitemap --%>
+                <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" ShowStartingNode="False" />
+                <ul class="nav">
+                <asp:Menu ID="Menu1" runat="server" CssClass="nav" EnableViewState="false"
+                    IncludeStyleBlock="false" DataSourceID="SiteMapDataSource1" 
+                        Orientation="Horizontal" />
+                </ul>
+            </span>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div id="header">
+		<div id="container-fluid">
+      <div class="row-fluid">
+        <div class="span9">
+	        <div class="main  maincontainer">
+	            <asp:Label runat="server" ID="MessageLabel" CssClass="messageLabel" Visible="False" Text=""></asp:Label>
+                <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+            </div>
+            <div class="clear">
+            </div>
+        </div><!--/span-->
+     </div><!--/row-->
+		</div>
+	</div>
+    </div> <!-- /container -->
+      <footer class="footer navbar-static-bottom">
+        <section class="container">
+          <div class='row-fluid'>
+            <div class='span4' id='FooterLeft'>
+              <h4 id='FooterNavigation'>navigation</h4>
+              <ul class='unstyled'>
+                <li>
+                  <i class="icon-thumbs-up"></i>
+                  <a id="A1" runat="server" href='~/Account/Login.aspx'>Login</a>
+                </li>
+                <li>
+                  <i class="icon-user"></i>
+                  <a runat="server" href='~/Default.aspx'>Home</a>
+                </li>
+                <li>
+                  <i class="icon-wrench"></i>
+                  <a runat="server" href='~/About.aspx'>About</a>
+                </li>
+              </ul>
+            </div>
+            <div class='span4' id="FooterMiddle">
+              © Copyright 2013
+              <br />
+              <span>The Forum</span>
+            </div>
+            <div class='span4' id='FooterRight'>
+              <h4 id='FooterAddress'>contact</h4>
+              <address>
+                <strong> The Forum</strong>
+                <br>
+                Linneuniversitetet, Kalmar län
+                <br>
+                Sverige
+                <br>
+              </address>
+            </div>
+            </div>
+        </section>
+    </footer>
+    </form>
+    <script type="text/javascript" src="<%=ResolveUrl("~")%>Scripts/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="<%=ResolveUrl("~")%>Scripts/bootstrap.js"></script>
+    <script type="text/javascript" src="<%=ResolveUrl("~")%>Scripts/bootstrap-transition.js"></script>
+    <script type="text/javascript" src="<%=ResolveUrl("~")%>Scripts/bootstrap-alert.js"></script>
+    <script type="text/javascript" src="<%=ResolveUrl("~")%>Scripts/bootstrap-modal.js"></script>
+    <script type="text/javascript" src="<%=ResolveUrl("~")%>Scripts/bootstrap-dropdown.js"></script>
+    <script type="text/javascript" src="<%=ResolveUrl("~")%>Scripts/bootstrap-scrollspy.js"></script>
+    <script type="text/javascript" src="<%=ResolveUrl("~")%>Scripts/bootstrap-tab.js"></script>
+    <script type="text/javascript" src="<%=ResolveUrl("~")%>Scripts/bootstrap-tooltip.js"></script>
+    <script type="text/javascript" src="<%=ResolveUrl("~")%>Scripts/bootstrap-popover.js"></script>
+    <script type="text/javascript" src="<%=ResolveUrl("~")%>Scripts/bootstrap-button.js"></script>
+    <script type="text/javascript" src="<%=ResolveUrl("~")%>Scripts/bootstrap-collapse.js"></script>
+    <script type="text/javascript" src="<%=ResolveUrl("~")%>Scripts/bootstrap-carousel.js"></script>
+    <script type="text/javascript" src="<%=ResolveUrl("~")%>Scripts/bootstrap-typeahead.js"></script>
+    <script type="text/javascript" src="<%=ResolveUrl("~")%>Scripts/bootstrap-affix.js"></script>
+    <script type="text/javascript">
+        $(".messageLabel").show('slow');
+        setTimeout(function () {
+            $('.messageLabel').fadeOut('slow');
+        }, 3000);
+    </script>
+  </body>
+</html>
+
+
