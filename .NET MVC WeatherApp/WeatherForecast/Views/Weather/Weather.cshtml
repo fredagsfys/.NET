@@ -1,0 +1,35 @@
+﻿@model WeatherForecast.ViewModels.LocationIndexViewModel
+
+@{
+    ViewBag.Title = "Weather";
+}
+<p></p>
+@using (Html.BeginForm())
+{
+    <fieldset>
+         <h1>5-day forecast</h1>
+         <img class="eye" src="@Url.Content("~/Content/pics/eye.png")" />
+         <p class="lol"></p>
+    @foreach (var weather in Model.Weathers)
+    {
+        var date = DateTime.Parse(weather.Time);
+        var dayDate = date.DayOfWeek;
+        <div class="weather">
+        <h3>@dayDate</h3>
+        <img width="100px" height="100px" src="@Url.Content("~/Content/pics/" + weather.Symbol + ".png")" alt=@Url.Content("" + weather.Symbol + "") />
+        <p>@weather.Temp</p>
+        </div>
+            
+    }
+    </fieldset>
+    <p>
+        <a href="@Url.Content("~/")"><input type="button" class="btn-success" value="New search" /></a>
+    </p>
+    
+    string map1 = "http://maps.googleapis.com/maps/api/staticmap?center=" + Model.Lat + "" + Model.Lng +
+    "&zoom=8&size=600x300&maptype=roadmap&markers=color:red%7Ccolor:green%7Clabel:!%7C" + Model.Lat + "," + Model.Lng + "&sensor=false";
+    <img src="@Url.Content(map1)" alt="Weather location" class="map"/>
+    
+}
+
+

@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3BD1885D-B4A3-4507-BC6A-DF2B90C9DC2B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AnimalLibrary1</RootNamespace>
+    <AssemblyName>AnimalLibrary1</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Animal.cs" />
+    <Compile Include="AnimalManager.cs" />
+    <Compile Include="Canine\CanineSpecies.cs" />
+    <Compile Include="Canine\Cat.cs" />
+    <Compile Include="Canine\Dog.cs" />
+    <Compile Include="Categories\Canine.cs" />
+    <Compile Include="Categories\Insects.cs" />
+    <Compile Include="Categories\Reptile.cs" />
+    <Compile Include="Factory\CanineFactory.cs" />
+    <Compile Include="Factory\InsectFactory.cs" />
+    <Compile Include="Factory\ReptileFactory.cs" />
+    <Compile Include="IAnimal.cs" />
+    <Compile Include="Insect\Bee.cs" />
+    <Compile Include="Insect\ButterFly.cs" />
+    <Compile Include="Insect\InsectSpecies.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reptile\Anaconda.cs" />
+    <Compile Include="Reptile\Crocodile.cs" />
+    <Compile Include="Reptile\ReptileSpecies.cs" />
+    <Compile Include="Types\CategoryType.cs" />
+    <Compile Include="Types\GenderType.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,7 @@
+C:\Users\haris\Documents\GitHub\ASP.NET-MVC-PROJEKT\WeatherForecast\bin\WeatherForecast.dll
+C:\Users\haris\Documents\GitHub\ASP.NET-MVC-PROJEKT\WeatherForecast\bin\WeatherForecast.pdb
+C:\Users\haris\Documents\GitHub\ASP.NET-MVC-PROJEKT\WeatherForecast\bin\EntityFramework.dll
+C:\Users\haris\Documents\GitHub\ASP.NET-MVC-PROJEKT\WeatherForecast\bin\EntityFramework.xml
+C:\Users\haris\Documents\GitHub\ASP.NET-MVC-PROJEKT\WeatherForecast\obj\Debug\WeatherForecast.csprojResolveAssemblyReference.cache
+C:\Users\haris\Documents\GitHub\ASP.NET-MVC-PROJEKT\WeatherForecast\obj\Debug\WeatherForecast.dll
+C:\Users\haris\Documents\GitHub\ASP.NET-MVC-PROJEKT\WeatherForecast\obj\Debug\WeatherForecast.pdb

@@ -1,0 +1,28 @@
+﻿<Window x:Class="ControlTower.ControlTowerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Control Tower" mc:Ignorable="d" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" d:DesignHeight="475" d:DesignWidth="662" SizeToContent="WidthAndHeight" ResizeMode="NoResize" FontFamily="Calibri">
+    <Grid Height="447" Width="639">
+        <ListView Height="331" HorizontalAlignment="Left" Margin="-2,38,0,0" Name="ListView" VerticalAlignment="Top" Width="651" FontFamily="Calibri" BorderBrush="#FF2F96AD" BorderThickness="1" Background="#FFF2F2F2" FontSize="13"></ListView>
+        <Label Content="Flight Code" Height="28" HorizontalAlignment="Left" Name="flightCodeLabel" VerticalAlignment="Top" Width="71" Margin="34,12,0,0" FontFamily="Calibri" FontWeight="Thin" FontSize="13" Foreground="#AAFFFFFF" />
+        <Label Content="Status" Height="28" HorizontalAlignment="Left" Margin="197,12,0,0" Name="statusLabel" VerticalAlignment="Top" Width="51" FontSize="13" FontFamily="Calibri" FontWeight="Thin" Foreground="#AAFFFFFF" />
+        <Label Content="Time" Height="28" HorizontalAlignment="Left" Margin="378,12,0,0" Name="timeLabel" VerticalAlignment="Top" Width="51" FontSize="13" FontFamily="Calibri" FontWeight="Thin" Foreground="#AAFFFFFF" />
+        <Label Content="Next flight: " FontFamily="Calibri" FontSize="13" FontWeight="Bold" Foreground="#AA0048FF" HorizontalAlignment="Left" Margin="12,384,0,35" Name="nextFlightLabel" Width="71" />
+        <TextBox Height="35" HorizontalAlignment="Right" Margin="0,385,379,0" Name="nextFlightBox" VerticalAlignment="Top" Width="161" Padding="8" UseLayoutRounding="True" Background="White" FontFamily="Calibri" FontSize="13" Foreground="#FF185AEB" BorderThickness="0" Text=""></TextBox>
+        <Button Content="Send next airplane to Runway" Height="42" HorizontalAlignment="Left" Margin="300,381,0,0"  Name="SendButton" VerticalAlignment="Top" Width="296" FontFamily="Calibri" FontSize="14" FontWeight="Normal" AllowDrop="False" BorderThickness="0" UseLayoutRounding="True" BorderBrush="{x:Null}" Padding="8" Foreground="#FF1457FF" Click="SendButton_Click">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFCECECF" Offset="1" />
+                    <GradientStop Color="White" Offset="0" />
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Label Content="ex. ZZ4444" FontFamily="Calibri" FontSize="12" FontWeight="Normal" Foreground="#AA000000" Height="37" HorizontalAlignment="Left" Margin="12,398,0,0" Name="label1" VerticalAlignment="Top" Width="71" FontStyle="Italic" />
+        <Grid.Background>
+            <RadialGradientBrush>
+                <GradientStop Color="#FFD16E6E" Offset="1" />
+                <GradientStop Color="White" Offset="0.207" />
+            </RadialGradientBrush>
+        </Grid.Background>
+    </Grid>
+</Window>

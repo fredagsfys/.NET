@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="WeatherDbModelStoreContainer" CdmEntityContainer="WeatherEntities">
+    <EntitySetMapping Name="Locations">
+      <EntityTypeMapping TypeName="WeatherDbModel.Location">
+        <MappingFragment StoreEntitySet="Location">
+          <ScalarProperty Name="Lng" ColumnName="Lng" />
+          <ScalarProperty Name="Lat" ColumnName="Lat" />
+          <ScalarProperty Name="NextUpdate" ColumnName="NextUpdate" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="County" ColumnName="County" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="WeatherDbModel.Location">
+        <ModificationFunctionMapping>
+          <InsertFunction FunctionName="WeatherDbModel.Store.InsertLocation">
+            <ScalarProperty Name="Lng" ParameterName="Lng" />
+            <ScalarProperty Name="Lat" ParameterName="Lat" />
+            <ScalarProperty Name="NextUpdate" ParameterName="NextUpdate" />
+            <ScalarProperty Name="Country" ParameterName="Country" />
+            <ScalarProperty Name="County" ParameterName="County" />
+            <ScalarProperty Name="City" ParameterName="City" />
+            <ResultBinding Name="LocationID" ColumnName="NewId" />
+          </InsertFunction>
+          <UpdateFunction FunctionName="WeatherDbModel.Store.UpdateLocation">
+            <ScalarProperty Name="NextUpdate" ParameterName="NextUpdate" Version="Current" />
+            <ScalarProperty Name="LocationID" ParameterName="LocationID" Version="Current" />
+          </UpdateFunction>
+        </ModificationFunctionMapping>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Weathers">
+      <EntityTypeMapping TypeName="WeatherDbModel.Weather">
+        <MappingFragment StoreEntitySet="Weather">
+          <ScalarProperty Name="Temp" ColumnName="Temp" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="Period" ColumnName="Period" />
+          <ScalarProperty Name="Symbol" ColumnName="Symbol" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="WeatherID" ColumnName="WeatherID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="WeatherDbModel.Weather">
+        <ModificationFunctionMapping>
+          <InsertFunction FunctionName="WeatherDbModel.Store.InsertWeather">
+            <ScalarProperty Name="Temp" ParameterName="Temp" />
+            <ScalarProperty Name="Time" ParameterName="Time" />
+            <ScalarProperty Name="Period" ParameterName="Period" />
+            <ScalarProperty Name="Symbol" ParameterName="Symbol" />
+            <ScalarProperty Name="LocationID" ParameterName="LocationID" />
+            <ResultBinding Name="WeatherID" ColumnName="NewId" />
+          </InsertFunction>
+          <DeleteFunction FunctionName="WeatherDbModel.Store.DeleteWeather">
+            <ScalarProperty Name="WeatherID" ParameterName="WeatherID" />
+          </DeleteFunction>
+        </ModificationFunctionMapping>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

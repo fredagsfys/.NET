@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WeatherDbModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="WeatherEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Locations" EntityType="WeatherDbModel.Location" />
+    <EntitySet Name="Weathers" EntityType="WeatherDbModel.Weather" />
+    <AssociationSet Name="FK_Weather_Location" Association="WeatherDbModel.FK_Weather_Location">
+      <End Role="Location" EntitySet="Locations" />
+      <End Role="Weather" EntitySet="Weathers" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Location">
+    <Key>
+      <PropertyRef Name="LocationID" />
+    </Key>
+    <Property Type="Int32" Name="LocationID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="City" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="County" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Country" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="NextUpdate" />
+    <Property Type="String" Name="Lat" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Lng" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Weathers" Relationship="WeatherDbModel.FK_Weather_Location" FromRole="Location" ToRole="Weather" />
+  </EntityType>
+  <EntityType Name="Weather">
+    <Key>
+      <PropertyRef Name="WeatherID" />
+    </Key>
+    <Property Type="Int32" Name="WeatherID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="LocationID" Nullable="false" />
+    <Property Type="String" Name="Symbol" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Period" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Time" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Temp" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Location" Relationship="WeatherDbModel.FK_Weather_Location" FromRole="Weather" ToRole="Location" />
+  </EntityType>
+  <Association Name="FK_Weather_Location">
+    <End Type="WeatherDbModel.Location" Role="Location" Multiplicity="1" />
+    <End Type="WeatherDbModel.Weather" Role="Weather" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Location">
+        <PropertyRef Name="LocationID" />
+      </Principal>
+      <Dependent Role="Weather">
+        <PropertyRef Name="LocationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

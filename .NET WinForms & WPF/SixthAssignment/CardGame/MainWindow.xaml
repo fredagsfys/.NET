@@ -1,0 +1,17 @@
+﻿<Window x:Class="CardGame.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:myControl="clr-namespace:CardGameControlLibrary;assembly=CardGameControlLibrary"
+        Title="Card game" Height="481" Width="932">
+    <Grid Background="Black">
+        <Button Content="Create new deck and shuffle" Height="26" HorizontalContentAlignment="Center" Margin="22,380,710,36" Name="newDeckShuffleButton" Width="178" Click="newDeckShuffleButton_Click" Background="#FF6EDB6E" />
+        <Label Content="Show card(s)" Height="28" HorizontalAlignment="Left" Margin="395,356,0,0" Name="showCardsLabel" VerticalAlignment="Top" Background="#FF070707" Foreground="#FF9C9C9C" />
+        <RadioButton Content="Show one card" Height="16" HorizontalAlignment="Left" Margin="395,390,0,0" Name="showOneCardButton" VerticalAlignment="Top" IsChecked="True" Background="Silver" Foreground="#FFB7B7B7" />
+        <RadioButton Content="Show all cards" Height="16" HorizontalAlignment="Left" Margin="395,0,0,14" Name="showAllCardsButton" VerticalAlignment="Bottom" Background="Silver" Foreground="#FFB7B7B7" />
+        <Button Content="Draw card(s)" Height="26" HorizontalContentAlignment="Center" Margin="530,380,254,36" Name="drawCardsButton" IsEnabled="False" Click="drawCardsButton_Click" Background="#FF5C27B3" Foreground="#FF030303" BorderBrush="Black" />
+        <myControl:HandGUI HorizontalAlignment="Left" Margin="12,11,0,0" Name="handGUI1" VerticalAlignment="Top" Width="886" Height="317" />
+        <myControl:CardGUI HorizontalAlignment="Left" Margin="32,24,0,0" Name="cardGUI1" VerticalAlignment="Top" Visibility="Hidden" Background="#FFC15B5B" />
+        <CheckBox Content="Show cards face up in pile" Height="16" HorizontalAlignment="Left" Margin="22,334,0,0" Name="faceUpCheckBox" VerticalAlignment="Top" Checked="faceUpCheckBox_Checked" Unchecked="faceUpCheckBox_Unchecked" IsEnabled="False" Background="#FF863400" Foreground="#FF979997" />
+        <ListBox Height="100" HorizontalAlignment="Left" Margin="730,334,0,0" Name="acesListBox" VerticalAlignment="Top" Width="120" SelectionChanged="acesListBox_SelectionChanged" Background="#FFA54A4A" />
+    </Grid>
+</Window>

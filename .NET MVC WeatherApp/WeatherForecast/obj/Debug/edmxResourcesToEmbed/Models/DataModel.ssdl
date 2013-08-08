@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WeatherDbModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="WeatherDbModelStoreContainer">
+    <EntitySet Name="Location" EntityType="WeatherDbModel.Store.Location" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Weather" EntityType="WeatherDbModel.Store.Weather" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_Weather_Location" Association="WeatherDbModel.Store.FK_Weather_Location">
+      <End Role="Location" EntitySet="Location" />
+      <End Role="Weather" EntitySet="Weather" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Location">
+    <Key>
+      <PropertyRef Name="LocationID" />
+    </Key>
+    <Property Name="LocationID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="City" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="County" Type="varchar" MaxLength="50" />
+    <Property Name="Country" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="NextUpdate" Type="datetime" />
+    <Property Name="Lat" Type="varchar" MaxLength="50" />
+    <Property Name="Lng" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Weather">
+    <Key>
+      <PropertyRef Name="WeatherID" />
+    </Key>
+    <Property Name="WeatherID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="LocationID" Type="int" Nullable="false" />
+    <Property Name="Symbol" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="Period" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="Time" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="Temp" Type="varchar" Nullable="false" MaxLength="5" />
+  </EntityType>
+  <Association Name="FK_Weather_Location">
+    <End Role="Location" Type="WeatherDbModel.Store.Location" Multiplicity="1" />
+    <End Role="Weather" Type="WeatherDbModel.Store.Weather" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Location">
+        <PropertyRef Name="LocationID" />
+      </Principal>
+      <Dependent Role="Weather">
+        <PropertyRef Name="LocationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="DeleteWeather" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="WeatherID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="InsertLocation" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="City" Type="varchar" Mode="In" />
+    <Parameter Name="County" Type="varchar" Mode="In" />
+    <Parameter Name="Country" Type="varchar" Mode="In" />
+    <Parameter Name="NextUpdate" Type="datetime" Mode="In" />
+    <Parameter Name="Lat" Type="varchar" Mode="In" />
+    <Parameter Name="Lng" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="InsertWeather" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LocationID" Type="int" Mode="In" />
+    <Parameter Name="Symbol" Type="varchar" Mode="In" />
+    <Parameter Name="Period" Type="varchar" Mode="In" />
+    <Parameter Name="Time" Type="varchar" Mode="In" />
+    <Parameter Name="Temp" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="UpdateLocation" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LocationID" Type="int" Mode="In" />
+    <Parameter Name="NextUpdate" Type="datetime" Mode="In" />
+  </Function>
+</Schema>
