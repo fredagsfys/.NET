@@ -1,0 +1,126 @@
+.widget .widget-head,
+.btn-primary,
+.btn-group.open .btn-primary.dropdown-toggle,
+.btn-primary.disabled,
+.btn-primary[disabled],
+.btn-primary:hover,
+.widget.widget-2.primary .widget-head,
+.widget .widget-body.list.list-2 ul li.active a i:before,
+.label.label-important,
+.table-primary thead th,
+.gallery ul li .thumb,
+.widget-activity ul.filters li.glyphicons.active i,
+.accordion-heading .accordion-toggle,
+.widget.widget-tabs-2 .widget-head ul li.active,
+.pagination ul > li > a:hover,
+.pagination ul > li > a,
+.pagination ul > li > span,
+.glyphicons.btn-action.btn-primary,
+.glyphicons.btn-action.btn-primary:hover,
+.progress.progress-primary .bar,
+.nav-tabs > li > a:hover,
+.nav-pills > li > a,
+.nav-pills > li > a:hover,
+.gallery ul li .thumb .hover,
+.blog ul li .item .hover,
+.alert.alert-primary {
+  background-color: #496cad;
+}
+a,
+a:hover,
+a:focus,
+#menu .profile span a,
+.widget .widget-body.list ul li .count,
+.breadcrumb .glyphicons i:before,
+#menu > li.active > a,
+#menu li.active > a,
+#menu ul li.active > a,
+#menu li a:hover,
+#menu ul li a:hover,
+.glyphicons.single i:before,
+.glyphicons.single,
+.table-primary tbody td.important,
+.widget.widget-3 .widget-body.large.cancellations span span:first-child,
+.widget-stats.line .txt strong,
+.widget-stats.line .glyphicons i:before,
+#docs_icons .glyphicons i:before,
+.widget.widget-3 .widget-footer a:hover,
+.widget.widget-3 .widget-footer a:hover i:before,
+.twitter .tweet:before,
+ul.history li h4,
+.color-primary,
+.color-primary.glyphicons i:before,
+blockquote small {
+  color: #496cad;
+}
+#menu .profile .img,
+.widget .widget-head,
+.btn-primary,
+.widget.widget-2.primary .widget-head,
+.widget .widget-body.list.list-2 ul li.active a i:before,
+.table-primary thead th,
+.pagination ul > .active > a,
+.pagination ul > .active > span,
+.widget.widget-4 .widget-head .heading,
+.widget.widget-tabs-2 .widget-head,
+.nav-tabs > li > a:hover,
+.nav-pills > li > a,
+.nav-pills > li > a:hover {
+  border-color: #496cad;
+}
+.table-primary tbody td {
+  background-color: #f9fafc;
+}
+.table-primary tbody tr.selected td,
+.table-primary tbody tr.selectable:hover td {
+  background-color: #d5dded;
+}
+.table-primary.table-bordered tbody td,
+.table-primary,
+.pagination ul > .disabled > a,
+.pagination ul > .disabled > span {
+  border-color: #f9fafc;
+}
+#menu .hire-me span {
+  color: #0c121e;
+}
+#menu .profile span a i:before {
+  color: #2b3f65;
+}
+ul.history li h4 {
+  background-color: rgba(73, 108, 173, 0.1);
+}
+.nav-pills > .active > a,
+.nav-pills > .active > a:hover {
+  background-color: #2b3f65;
+}
+.widget-activity ul.activities li.highlight {
+  background-color: rgba(73, 108, 173, 0.6);
+}
+.widget-stats .glyphicons i:before {
+  color: #fff;
+}
+body {
+  background-color: rgba(73, 108, 173, 0.1);
+}
+.pagination ul > .active > a,
+.pagination ul > .active > span {
+  background-color: rgba(73, 108, 173, 0.5);
+}
+.glyphicons.btn-action.btn-primary.border-only i:before {
+  color: #fff;
+}
+.glyphicons.btn-action.btn-primary {
+  border: none;
+}
+.widget .widget-body.list.list-2 ul li.active {
+  border-color: #8da4cf;
+}
+.widget .widget-body.list.list-2 ul li a {
+  color: #8da4cf;
+}
+.widget .widget-body.list.list-2 ul li a i:before {
+  background: #f9fafc;
+  color: #6988c0;
+  border-color: #8da4cf;
+}
